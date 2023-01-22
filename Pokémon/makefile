@@ -1,5 +1,5 @@
 main: affichage.o main.o moteur.o sauvegarde.o libisentlib.a
-	gcc -Wall main.o -o main libisentlib.a -lm -lglut -lGL -lX11
+	gcc -Wall -o main affichage.o main.o moteur.o sauvegarde.o libisentlib.a -lm -lglut -lGL -lX11
 
 exemple: exemple.o libisentlib.a
 	gcc -Wall exemple.o -o exemple libisentlib.a -lm -lglut -lGL -lX11
