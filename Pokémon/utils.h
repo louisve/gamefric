@@ -1,5 +1,5 @@
-#ifndef AFFICHAGE_H
-#define AFFICHAGE_H
+#ifndef UTILS_H
+#define UTILS_H
 
 //Include des librairies
 
@@ -12,19 +12,12 @@
 
 //include des fichiers
 
-#include "moteur.h"
+#include "affichage.h"
 #include "sauvegarde.h"
+#include "moteur.h"
 #include "pokedex.h"
-#include "utils.h"
 
 //Initialisation de fonctions/structures
-
-
-
-
-
-
-
 
 
 

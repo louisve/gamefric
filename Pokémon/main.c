@@ -1,15 +1,16 @@
-// #include <stdlib.h> // Pour pouvoir utiliser exit()
-// #include <stdio.h> // Pour pouvoir utiliser printf()
-// #include <math.h> // Pour pouvoir utiliser sin() et cos()
 #include "GfxLib.h" // Seul cet include est necessaire pour faire du graphique
 #include "BmpLib.h" // Cet include permet de manipuler des fichiers BMP
 #include "ESLib.h" // Pour utiliser valeurAleatoire()
 #include "affichage.h"
 #include "sauvegarde.h"
 #include "moteur.h" 
+#include "pokedex.h"
+#include "utils.h"
+
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
-#define LargeurFenetre 800
-#define HauteurFenetre 600
+#define LargeurFenetre 1920
+#define HauteurFenetre 1080
+
 // Fonction de trace de cercle
 void cercle(float centreX, float centreY, float rayon);
 /* La fonction de gestion des evenements, appelee automatiquement par le systeme
@@ -17,8 +18,14 @@ des qu'une evenement survient */
 
 int main(int argc, char **argv)
 {
-    initialiseGfx(argc, argv);
-    prepareFenetreGraphique("GfxLib", LargeurFenetre, HauteurFenetre);
+    //initialiseGfx(argc, argv);
+
+    //Pokemon pokedex[NUM_POKEMON];
+
+
+    attaquer();
+
+    //prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
     /* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
         qui elle-meme utilise fonctionAffichage ci-dessous */
     lanceBoucleEvenements();
@@ -139,8 +146,8 @@ void gestionEvenement(EvenementGfx evenement)
             break;
         case Redimensionnement: // La taille de la fenetre a ete modifie ou on est passe en plein ecran
             // Donc le systeme nous en informe
-            printf("Largeur : %d\t", largeurFenetre());
-            printf("Hauteur : %d\n", hauteurFenetre());
+            // printf("Largeur : %d\t", largeurFenetre());
+            // printf("Hauteur : %d\n", hauteurFenetre());
             break;
     }
 }

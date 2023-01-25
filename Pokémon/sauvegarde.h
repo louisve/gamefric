@@ -14,6 +14,7 @@
 
 #include "affichage.h"
 #include "moteur.h"
+#include "pokedex.h"
 
 //Initialisation de fonctions/structures
 

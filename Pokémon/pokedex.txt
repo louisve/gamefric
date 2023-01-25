@@ -1,0 +1,56 @@
+Nom : Bulbizarre
+Type : Plante
+Niveau : 1
+PV max : 11
+PV actuels : 11
+Attaque : 4
+Défense : 5
+Attaque1 : 
+Attaque2 : 
+Rapport PV evo0 : 1.909090
+Rapport Attaque evo0 : 0.888888
+Rapport Défense evo0 : 1.090909
+Coef PV evo1 : 1.15
+Coef Attaque evo1 : 1.260869
+Coef Défense evo1 : 1.274336
+Coef PV evo2 : 1.35
+Coef Attaque evo2 : 1.652173
+Coef Défense evo2 : 1.663716
+
+Nom : Salamèche
+Type : Feu
+Niveau : 1
+PV max : 
+PV actuels : 
+Attaque : 
+Défense : 
+Attaque1 : 
+Attaque2 : 
+Rapport PV evo0 : 
+Rapport Attaque evo0 : 
+Rapport Défense evo0 : 
+Coef PV evo1 : 
+Coef Attaque evo1 : 
+Coef Défense evo1 : 
+Coef PV evo2 : 
+Coef Attaque evo2 : 
+Coef Défense evo2 : 
+
+Nom : Carapuce
+Type : Eau
+Niveau : 1
+PV max : 
+PV actuels : 
+Attaque : 
+Défense : 
+Attaque1 : 
+Attaque2 : 
+Rapport PV evo0 : 
+Rapport Attaque evo0 : 
+Rapport Défense evo0 : 
+Coef PV evo1 : 
+Coef Attaque evo1 : 
+Coef Défense evo1 : 
+Coef PV evo2 : 
+Coef Attaque evo2 : 
+Coef Défense evo2 : 

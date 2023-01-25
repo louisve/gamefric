@@ -1,5 +1,5 @@
-main: affichage.o main.o moteur.o sauvegarde.o libisentlib.a
-	gcc -Wall -o main affichage.o main.o moteur.o sauvegarde.o libisentlib.a -lm -lglut -lGL -lX11
+main: affichage.o main.o moteur.o sauvegarde.o pokedex.o utils.o libisentlib.a
+	gcc -Wall -o main affichage.o main.o moteur.o sauvegarde.o pokedex.o utils.o libisentlib.a -lm -lglut -lGL -lX11
 
 exemple: exemple.o libisentlib.a
 	gcc -Wall exemple.o -o exemple libisentlib.a -lm -lglut -lGL -lX11
@@ -25,6 +25,12 @@ moteur.o: moteur.c
 
 sauvegarde.o: sauvegarde.c
 	gcc -g -Wall -c sauvegarde.c
+
+pokedex.o: pokedex.c
+	gcc -g -Wall -c pokedex.c
+
+utils.o: utils.c
+	gcc -g -Wall -c utils.c
 
 exemple.o: exemple.c GfxLib.h BmpLib.h ESLib.h
 	gcc -Wall -c exemple.c

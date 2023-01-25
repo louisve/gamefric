@@ -14,11 +14,14 @@
 
 #include "affichage.h"
 #include "sauvegarde.h"
+#include "pokedex.h"
+#include "utils.h"
 
 //Initialisation de fonctions/structures
 
 
 
+void attaquer(/*char attaque, Pokemon pokedex[], int pokemonAttaquant, int pokemonVictime*/);
 
 
 
