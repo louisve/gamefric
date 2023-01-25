@@ -21,11 +21,6 @@
 
 
 
-void attaquer(/*char attaque, Pokemon pokedex[], int pokemonAttaquant, int pokemonVictime*/);
-
-
-
-
 
 
 
