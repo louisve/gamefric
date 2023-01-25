@@ -1,11 +1,11 @@
-#include "GfxLib.h" // Seul cet include est necessaire pour faire du graphique
-#include "BmpLib.h" // Cet include permet de manipuler des fichiers BMP
-#include "ESLib.h" // Pour utiliser valeurAleatoire()
-#include "affichage.h"
-#include "sauvegarde.h"
-#include "moteur.h" 
-#include "pokedex.h"
-#include "utils.h"
+#include "Librairie/GfxLib.h" // Seul cet include est necessaire pour faire du graphique
+#include "Librairie/BmpLib.h" // Cet include permet de manipuler des fichiers BMP
+#include "Librairie/ESLib.h" // Pour utiliser valeurAleatoire()
+#include "Fonctions/affichage.h"
+#include "Fonctions/sauvegarde.h"
+#include "Fonctions/moteur.h" 
+#include "Fonctions/pokedex.h"
+#include "Fonctions/utils.h"
 
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1920

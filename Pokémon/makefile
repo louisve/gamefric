@@ -1,80 +1,61 @@
 main: affichage.o main.o moteur.o sauvegarde.o pokedex.o utils.o libisentlib.a
 	gcc -Wall -o main affichage.o main.o moteur.o sauvegarde.o pokedex.o utils.o libisentlib.a -lm -lglut -lGL -lX11
 
-exemple: exemple.o libisentlib.a
-	gcc -Wall exemple.o -o exemple libisentlib.a -lm -lglut -lGL -lX11
-# Sous MacOSX, commenter la ligne de commande ci-dessus (en mettant un # au debut)
-# et de-commenter la ligne de commande ci-apres :
-#	gcc -Wall exemple.o -o exemple libisentlib.a -lm -framework OpenGL -framework GLUT
-
-
-exempleTortue: exempleTortue.o libisentlib.a
-	gcc -Wall exempleTortue.o -o exempleTortue libisentlib.a -lm -lglut -lGL -lX11
-# Sous MacOSX, commenter la ligne de commande ci-dessus (en mettant un # au debut)
-# et de-commenter la ligne de commande ci-apres :
-#	gcc -Wall exempleTortue.o -o exempleTortue libisentlib.a -lm -framework OpenGL -framework GLUT
-
-main.o: main.c GfxLib.h BmpLib.h ESLib.h
+main.o: main.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
 	gcc -Wall -c main.c
 
-affichage.o: affichage.c
-	gcc -g -Wall -c affichage.c
+affichage.o: Fonctions/affichage.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
+	gcc -g -Wall -c Fonctions/affichage.c
 
-moteur.o: moteur.c
-	gcc -g -Wall -c moteur.c
+moteur.o: Fonctions/moteur.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
+	gcc -g -Wall -c Fonctions/moteur.c
 
-sauvegarde.o: sauvegarde.c
-	gcc -g -Wall -c sauvegarde.c
+sauvegarde.o: Fonctions/sauvegarde.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
+	gcc -g -Wall -c Fonctions/sauvegarde.c
 
-pokedex.o: pokedex.c
-	gcc -g -Wall -c pokedex.c
+pokedex.o: Fonctions/pokedex.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
+	gcc -g -Wall -c Fonctions/pokedex.c
 
-utils.o: utils.c
-	gcc -g -Wall -c utils.c
-
-exemple.o: exemple.c GfxLib.h BmpLib.h ESLib.h
-	gcc -Wall -c exemple.c
-
-exempleTortue.o: exempleTortue.c GfxLib.h BmpLib.h ESLib.h TortueLib.h
-	gcc -Wall -c exempleTortue.c
+utils.o: Fonctions/utils.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
+	gcc -g -Wall -c Fonctions/utils.c
 
 
 libisentlib.a: BmpLib.o ErreurLib.o ESLib.o GfxLib.o OutilsLib.o SocketLib.o ThreadLib.o TortueLib.o VectorLib.o WavLib.o
 	ar r libisentlib.a BmpLib.o ErreurLib.o ESLib.o GfxLib.o OutilsLib.o SocketLib.o ThreadLib.o TortueLib.o VectorLib.o WavLib.o
 	ranlib libisentlib.a
 
-BmpLib.o: BmpLib.c BmpLib.h OutilsLib.h
-	gcc -Wall -O2 -c BmpLib.c
+BmpLib.o: Librairie/BmpLib.c Librairie/BmpLib.h Librairie/OutilsLib.h
+	gcc -Wall -O2 -c Librairie/BmpLib.c
 
-ESLib.o: ESLib.c ESLib.h ErreurLib.h
-	gcc -Wall -O2 -c ESLib.c
+ESLib.o: Librairie/ESLib.c Librairie/ESLib.h Librairie/ErreurLib.h
+	gcc -Wall -O2 -c Librairie/ESLib.c
 
-ErreurLib.o: ErreurLib.c ErreurLib.h
-	gcc -Wall -O2 -c ErreurLib.c
+ErreurLib.o: Librairie/ErreurLib.c Librairie/ErreurLib.h
+	gcc -Wall -O2 -c Librairie/ErreurLib.c 
 
-GfxLib.o: GfxLib.c GfxLib.h ESLib.h
-	gcc -Wall -O2 -c GfxLib.c -I/usr/include/GL
+GfxLib.o: Librairie/GfxLib.c Librairie/GfxLib.h Librairie/ESLib.h
+	gcc -Wall -O2 -c Librairie/GfxLib.c -I/usr/include/GL
 # Sous MacOSX, commenter la ligne de commande ci-dessus (en mettant un # au debut)
 # et de-commenter la ligne de commande ci-apres :
 #	gcc -Wall -O2 -c GfxLib.c -Wno-deprecated-declarations
 
-OutilsLib.o: OutilsLib.c OutilsLib.h
-	gcc -Wall -O2 -c OutilsLib.c
+OutilsLib.o: Librairie/OutilsLib.c Librairie/OutilsLib.h
+	gcc -Wall -O2 -c Librairie/OutilsLib.c
 
-SocketLib.o: SocketLib.c SocketLib.h
-	gcc -Wall -O2 -c SocketLib.c
+SocketLib.o: Librairie/SocketLib.c Librairie/SocketLib.h
+	gcc -Wall -O2 -c Librairie/SocketLib.c
 
-ThreadLib.o: ThreadLib.c ThreadLib.h
-	gcc -Wall -O2 -c ThreadLib.c
+ThreadLib.o: Librairie/ThreadLib.c Librairie/ThreadLib.h
+	gcc -Wall -O2 -c Librairie/ThreadLib.c
 
-TortueLib.o: TortueLib.c TortueLib.h GfxLib.h
-	gcc -Wall -O2 -c TortueLib.c
+TortueLib.o: Librairie/TortueLib.c Librairie/TortueLib.h Librairie/GfxLib.h
+	gcc -Wall -O2 -c Librairie/TortueLib.c
 
-VectorLib.o: VectorLib.c VectorLib.h
-	gcc -Wall -O2 -c VectorLib.c -msse3
+VectorLib.o: Librairie/VectorLib.c Librairie/VectorLib.h
+	gcc -Wall -O2 -c Librairie/VectorLib.c -msse3
 
-WavLib.o: WavLib.c WavLib.h OutilsLib.h
-	gcc -Wall -O2 -c WavLib.c -Wno-unused-result
+WavLib.o: Librairie/WavLib.c Librairie/WavLib.h Librairie/OutilsLib.h
+	gcc -Wall -O2 -c Librairie/WavLib.c -Wno-unused-result
 # Sous MacOSX, commenter la ligne de commande ci-dessus (en mettant un # au debut)
 # et de-commenter la ligne de commande ci-apres :
 #	gcc -Wall -O2 -c WavLib.c
