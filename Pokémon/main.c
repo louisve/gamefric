@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     //prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
     /* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
         qui elle-meme utilise fonctionAffichage ci-dessous */
-    lanceBoucleEvenements();
+    //lanceBoucleEvenements();
     return 0;
 }
 /* Fonction de trace de cercle */
