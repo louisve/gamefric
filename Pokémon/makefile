@@ -1,23 +1,23 @@
 main: affichage.o main.o moteur.o sauvegarde.o pokedex.o utils.o libisentlib.a
-	gcc -Wall -o main affichage.o main.o moteur.o sauvegarde.o pokedex.o utils.o libisentlib.a -lm -lglut -lGL -lX11
+	gcc -Wall affichage.o main.o moteur.o sauvegarde.o pokedex.o utils.o -o main libisentlib.a -lm -lglut -lGL -lX11
 
 main.o: main.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
-	gcc -Wall -c main.c
+	gcc -Wall -O2 -c main.c
 
 affichage.o: Fonctions/affichage.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
-	gcc -g -Wall -c Fonctions/affichage.c
+	gcc -g -Wall -O2 -c Fonctions/affichage.c
 
-moteur.o: Fonctions/moteur.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
-	gcc -g -Wall -c Fonctions/moteur.c
+moteur.o: Fonctions/moteur.c Fonctions/moteur.h
+	gcc -g -Wall -O2 -c Fonctions/moteur.c Fonctions/moteur.h
 
-sauvegarde.o: Fonctions/sauvegarde.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
-	gcc -g -Wall -c Fonctions/sauvegarde.c
+sauvegarde.o: Fonctions/sauvegarde.c Fonctions/sauvegarde.h
+	gcc -g -Wall -O2 -c Fonctions/sauvegarde.c Fonctions/sauvegarde.h
 
-pokedex.o: Fonctions/pokedex.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
-	gcc -g -Wall -c Fonctions/pokedex.c
+pokedex.o: Fonctions/pokedex.c Fonctions/pokedex.h
+	gcc -g -Wall -O2 -c Fonctions/pokedex.c Fonctions/pokedex.h
 
-utils.o: Fonctions/utils.c Librairie/GfxLib.h Librairie/BmpLib.h Librairie/ESLib.h
-	gcc -g -Wall -c Fonctions/utils.c
+utils.o: Fonctions/utils.c Fonctions/utils.h
+	gcc -g -Wall -O2 -c Fonctions/utils.c Fonctions/utils.h
 
 
 libisentlib.a: BmpLib.o ErreurLib.o ESLib.o GfxLib.o OutilsLib.o SocketLib.o ThreadLib.o TortueLib.o VectorLib.o WavLib.o

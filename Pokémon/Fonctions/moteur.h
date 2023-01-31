@@ -20,6 +20,11 @@
 //Initialisation de fonctions/structures
 
 
+void deplacementsperso();
+
+
+
+
 
 
 
