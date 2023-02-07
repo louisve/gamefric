@@ -20,8 +20,8 @@
 //Initialisation de fonctions/structures
 
 
-#define NUM_POKEMON 3
-#define NUM_ATTAQUE 4
+#define NUM_POKEMON 12
+#define NUM_ATTAQUE 5
 
 
 
