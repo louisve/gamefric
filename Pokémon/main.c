@@ -11,64 +11,61 @@
 #define LargeurFenetre 1920
 #define HauteurFenetre 1080
 
-// Fonction de trace de cercle
-void cercle(float centreX, float centreY, float rayon);
-/* La fonction de gestion des evenements, appelee automatiquement par le systeme
-des qu'une evenement survient */
-
-void gestionEvenement(EvenementGfx evenement);
-
-int main(int argc, char **argv){
-    // initialiseGfx(argc, argv);
-
-    deplacementsperso();
+int main(int argc, char **argv)
+{
+    initialiseGfx(argc, argv); //Initialisation de l'acceleration graphique si elle existe
 
     //Pokemon pokedex[NUM_POKEMON];
 
-    // prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
-    // /* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
-    //     qui elle-meme utilise fonctionAffichage ci-dessous */
-    // lanceBoucleEvenements();
+
+    //attaquer();
+    // On ouvre la fenetre de notre application
+	prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
+    /* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
+        qui elle-meme utilise fonctionAffichage ci-dessous */
+    lanceBoucleEvenements();
     return 0;
 }
-/* Fonction de trace de cercle */
-void cercle(float centreX, float centreY, float rayon)
-{
-    const int Pas = 20; // Nombre de secteurs pour tracer le cercle
-    const double PasAngulaire = 2.*M_PI/Pas;
-    int index;
-    for (index = 0; index < Pas; ++index) // Pour chaque secteur
-    {
-        const double angle = 2.*M_PI*index/Pas; // on calcule l'angle de depart du secteur
-        triangle(centreX, centreY,
-                 centreX+rayon*cos(angle), centreY+rayon*sin(angle),
-                 centreX+rayon*cos(angle+PasAngulaire), centreY+rayon*sin(angle+PasAngulaire));
-            // On trace le secteur a l'aide d'un triangle => approximation d'un cercle
-    }
-}
+
 /* La fonction de gestion des evenements, appelee automatiquement par le systeme
 des qu'une evenement survient */
 void gestionEvenement(EvenementGfx evenement)
 {
+    static int etat = 0;
     static bool pleinEcran = false; // Pour savoir si on est en mode plein ecran ou pas
-    static DonneesImageRGB *Joueurs = NULL; // L'image a afficher au centre de l'ecran
-   
+    static DonneesImageRGB *image = NULL; // L'image a afficher au centre de l'ecran
+    /* On va aussi animer une balle traversant l'ecran */
+
+    printf("Evt %i",evenement);
+
     switch (evenement)
     {
         case Initialisation:
-
+            {
+            /* Le message "Initialisation" est envoye une seule fois, au debut du
+            programme : il permet de fixer "image" a la valeur qu'il devra conserver
+            jusqu'a la fin du programme : soit "image" reste a NULL si l'image n'a
+            pas pu etre lue, soit "image" pointera sur une structure contenant
+            les caracteristiques de l'image "imageNB.bmp" */
             // Configure le systeme pour generer un message Temporisation
             // toutes les 20 millisecondes
+            initImage();
             demandeTemporisation(20);
+            }
             break;
         case Temporisation:
-            
+            {
+                printf("Temorisation Etat %i",etat);
+            }
             break;
         case Affichage:
-            // On part d'un fond d'ecran blanc
-            effaceFenetre (255, 255, 255);
-            
+            {
+            // On part d'un fond d'ecran noir
+            effaceFenetre (0, 0, 0);
+            affichage(etat);
+            }
             break;
+
         case Clavier:
             printf("%c : ASCII %d\n", caractereClavier(), caractereClavier());
             switch (caractereClavier())
@@ -116,24 +113,23 @@ void gestionEvenement(EvenementGfx evenement)
 
             }
             break;
+
         case ClavierSpecial:
             printf("ASCII %d\n", toucheClavier());
             break;
-        case BoutonSouris:
+
+        case BoutonSouris:{
             if (etatBoutonSouris() == GaucheAppuye)
             {
-                
-                //printf("Bouton gauche appuye en : (%d, %d)\n", abscisseSouris(), ordonneeSouris());
-                // Si le bouton gauche de la souris est appuye, faire repartir
-                // la balle de la souris
-                //xBalle = abscisseSouris();
-                //yBalle = ordonneeSouris();
+                etat=gereClicBoutons(etat);
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {
                 printf("Bouton gauche relache en : (%d, %d)\n", abscisseSouris(), ordonneeSouris());
             }
+            }
             break;
+
         case Souris: // Si la souris est deplacee
             break;
         case Inactivite: // Quand aucun message n'est disponible
