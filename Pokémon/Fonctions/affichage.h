@@ -22,16 +22,9 @@
 
 //Initialisation de fonctions/structures
 
-void initImage();
-void affichage(int etat);
+void initImage(); 
+void afficheImg_menus(int etat);
 int gereClicBoutons(int etat);
-
-
-
-
-
-
-
-
+void deplacement_souris_varianteMenu(int etat);
 
 #endif

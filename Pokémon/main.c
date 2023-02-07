@@ -15,12 +15,10 @@ int main(int argc, char **argv)
 {
     initialiseGfx(argc, argv); //Initialisation de l'acceleration graphique si elle existe
 
-    //Pokemon pokedex[NUM_POKEMON];
-
-
-    //attaquer();
     // On ouvre la fenetre de notre application
 	prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
+    modePleinEcran();
+
     /* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
         qui elle-meme utilise fonctionAffichage ci-dessous */
     lanceBoucleEvenements();
@@ -31,12 +29,8 @@ int main(int argc, char **argv)
 des qu'une evenement survient */
 void gestionEvenement(EvenementGfx evenement)
 {
-    static int etat = 0;
+    static int etat = 0; // on commence à état = 0 (ecran-titre)
     static bool pleinEcran = false; // Pour savoir si on est en mode plein ecran ou pas
-    static DonneesImageRGB *image = NULL; // L'image a afficher au centre de l'ecran
-    /* On va aussi animer une balle traversant l'ecran */
-
-    printf("Evt %i",evenement);
 
     switch (evenement)
     {
@@ -55,25 +49,23 @@ void gestionEvenement(EvenementGfx evenement)
             break;
         case Temporisation:
             {
-                printf("Temorisation Etat %i",etat);
+                rafraichisFenetre();
             }
             break;
         case Affichage:
             {
             // On part d'un fond d'ecran noir
             effaceFenetre (0, 0, 0);
-            affichage(etat);
+            afficheImg_menus(etat);
             }
             break;
 
         case Clavier:
-            printf("%c : ASCII %d\n", caractereClavier(), caractereClavier());
+            //printf("%c : ASCII %d\n", caractereClavier(), caractereClavier());
             switch (caractereClavier())
             {
                 case 'Q': /* Pour sortir quelque peu proprement du programme */
                 case 'q':
-                    libereDonneesImageRGB(&image); /* On libere la structure image,
-                    c'est plus propre, meme si on va sortir du programme juste apres */
                     termineBoucleEvenements();
                     break;
                 case 'F':
@@ -101,21 +93,14 @@ void gestionEvenement(EvenementGfx evenement)
                     // Configure le systeme pour ne plus generer de message Temporisation
                     demandeTemporisation(-1);
                     break;
-                case 'b':
-                case 'B':
-
-
+                case 13:
+                    etat=gereClicBoutons(etat);    
                     break;
-                case 'z':
-                case 'Z':
-
-                    break;
-
             }
             break;
 
         case ClavierSpecial:
-            printf("ASCII %d\n", toucheClavier());
+            //printf("ASCII %d\n", toucheClavier());
             break;
 
         case BoutonSouris:{
@@ -125,12 +110,15 @@ void gestionEvenement(EvenementGfx evenement)
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {
-                printf("Bouton gauche relache en : (%d, %d)\n", abscisseSouris(), ordonneeSouris());
+                //printf("Bouton gauche relache en : (%d, %d)\n", abscisseSouris(), ordonneeSouris());
             }
             }
             break;
 
         case Souris: // Si la souris est deplacee
+            if(etatBoutonSouris()==1){
+                
+            }
             break;
         case Inactivite: // Quand aucun message n'est disponible
             break;
