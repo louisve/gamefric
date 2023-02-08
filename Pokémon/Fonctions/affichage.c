@@ -2,9 +2,9 @@
 
 //Initialisation de la structure image
 
-static DonneesImageRGB *image0 = NULL;
-static DonneesImageRGB *image1 = NULL;
-static DonneesImageRGB *image2 = NULL;
+static DonneesImageRGB *accueil = NULL;
+static DonneesImageRGB *menu = NULL;
+static DonneesImageRGB *choix_pk = NULL;
 
 // Création des fonctions
 
@@ -13,9 +13,9 @@ les informations de l'image.*/
 
 void initImage(){
 
-	image0 = lisBMPRGB("bmp/Menus/ecran-titre.bmp");					
-	image1 = lisBMPRGB("bmp/Menus/Menu.bmp");
-	image2 = lisBMPRGB("bmp/Menus/menu_pokemon.bmp");
+	accueil = lisBMPRGB("bmp/Menus/accueil.bmp");					
+	menu = lisBMPRGB("bmp/Menus/menu.bmp");
+	choix_pk = lisBMPRGB("bmp/Menus/choix_pk.bmp");
 }
 
 /* Fonction qui affiche l'image du menu adéquat en fonction de l'état, cette fonction sera appelé en boucle dans le
@@ -25,26 +25,26 @@ void afficheImg_menus(int etat){
 
 	switch(etat){
 	case 0:
-	if (image0 != NULL) // Si l'image a pu etre lue
+	if (accueil != NULL) // Si l'image a pu etre lue
 	{
 		// On affiche l'image
-		ecrisImage(0, 0, image0->largeurImage, image0->hauteurImage, image0->donneesRGB);
+		ecrisImage(0, 0, accueil->largeurImage, accueil->hauteurImage, accueil->donneesRGB);
 	}
 	break;
 
 	case 1:
-	if (image1 != NULL) // Si l'image a pu etre lue
+	if (menu != NULL) // Si l'image a pu etre lue
 	{
 		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, image1->largeurImage, image1->hauteurImage, image1->donneesRGB); // On affiche l'image
+		ecrisImage(0, 0, menu->largeurImage, menu->hauteurImage, menu->donneesRGB); // On affiche l'image
 	}
 	break;
 
 	case 2:
-	if (image2 != NULL) // Si l'image a pu etre lue
+	if (choix_pk != NULL) // Si l'image a pu etre lue
 	{
 		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, image2->largeurImage, image2->hauteurImage, image2->donneesRGB); // On affiche l'image
+		ecrisImage(0, 0, choix_pk->largeurImage, choix_pk->hauteurImage, choix_pk->donneesRGB); // On affiche l'image
 	}
 	}
 }
