@@ -31,7 +31,7 @@ des qu'une evenement survient */
 void gestionEvenement(EvenementGfx evenement)
 {
     static int etat = 0;
-    static bool pleinEcran = false; // Pour savoir si on est en mode plein ecran ou pas
+    static bool pleinEcran = true; // Pour savoir si on est en mode plein ecran ou pas
     //Initialisation de l'image de salle ici de manière temporaire avant qu'elle soit utilisée dans la fonction affichage des images
     static DonneesImageRGB *salle1 = NULL;
     static DonneesImageRGB *persoFace = NULL;
@@ -121,17 +121,20 @@ void gestionEvenement(EvenementGfx evenement)
             switch(toucheClavier())
             {
                 case 13: //Pour se déplacer vers le haut grâce à la flèche du haut
-                    *placey = *placey + 20;
-                    //ControleDeplacementsHaut(placey, placex);
+                    //*placey = *placey + 20;
+                    ControleDeplacementsHaut(placey, placex);
                     break;
                 case 14: //Pour se déplacer vers le bas grâce à la flèche du bas
-                    *placey = *placey - 20;
+                    //*placey = *placey - 1;
+                    ControleDeplacementsBas(placey, placex);
                     break;
                 case 15: //Pour se déplacer vers la gauche grâce à la flèche de gauche
-                    *placex = *placex - 20;
+                    //*placex = *placex - 1;
+                    ControleDeplacementsGauche(placey, placex);
                     break;
                 case 16: //Pour se déplacer vers la droite grâce à la flèche de droite
-                    *placex = *placex + 20;
+                    //*placex = *placex + 1;
+                    ControleDeplacementsDroite(placey, placex);
                     break;
             }
             break;

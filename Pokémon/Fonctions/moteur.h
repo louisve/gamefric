@@ -1,7 +1,7 @@
 #ifndef MOTEUR_H
 #define MOTEUR_H
 
-#define VPerso 20
+#define VPerso 4
 
 //Include des librairies
 

@@ -115,9 +115,6 @@ void affichePerso(int *placex, int *placey, DonneesImageRGB *persoFace){
 	if(persoFace != NULL){
 		ecrisImage(*placex, *placey, persoFace->largeurImage, persoFace->hauteurImage, persoFace->donneesRGB);
 	}
-	else{
-		printf("NUUULLL\n");
-	}
 	
 	
 }
