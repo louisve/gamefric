@@ -12,10 +12,6 @@
 
 //include des fichiers
 
-#include "affichage.h"
-#include "sauvegarde.h"
-#include "moteur.h"
-#include "utils.h"
 
 //Initialisation de fonctions/structures
 
@@ -51,6 +47,13 @@ typedef struct POKEMON {
     float pv;
     attaque att[2];
 }Pokemon;
+
+typedef struct DRESSEUR{
+    char nom[20];
+    Pokemon equipe[3];
+    int etage;
+
+}dresseur;
 
 attaque* readAttaque();
 Pokemon* readPokedex();
