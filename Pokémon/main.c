@@ -10,6 +10,8 @@
 // Largeur et hauteur par defaut d'une image correspondant a nos criteres
 #define LargeurFenetre 1920
 #define HauteurFenetre 1080
+#define largeurPerso 50
+#define hauteurPerso 60
 
 int main(int argc, char **argv)
 {
@@ -18,7 +20,6 @@ int main(int argc, char **argv)
     // On ouvre la fenetre de notre application
 	prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
     modePleinEcran();
-
     /* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
         qui elle-meme utilise fonctionAffichage ci-dessous */
     lanceBoucleEvenements();
@@ -29,22 +30,29 @@ int main(int argc, char **argv)
 des qu'une evenement survient */
 void gestionEvenement(EvenementGfx evenement)
 {
-    static int etat = 0; // on commence à état = 0 (ecran-titre)
+    static int etat = 0;
     static bool pleinEcran = false; // Pour savoir si on est en mode plein ecran ou pas
+    //Initialisation de l'image de salle ici de manière temporaire avant qu'elle soit utilisée dans la fonction affichage des images
+    static DonneesImageRGB *salle1 = NULL;
+    static DonneesImageRGB *persoFace = NULL;
+    //Position initial du perso doivent être initialiser ici pour être utilisé dans les autres fichiers
+    static int x = 960 - largeurPerso/2;
+    static int y = 285 - hauteurPerso/2;
+    static int *placex = &x;
+    static int *placey = &y;
 
     switch (evenement)
     {
         case Initialisation:
             {
-            /* Le message "Initialisation" est envoye une seule fois, au debut du
-            programme : il permet de fixer "image" a la valeur qu'il devra conserver
-            jusqu'a la fin du programme : soit "image" reste a NULL si l'image n'a
-            pas pu etre lue, soit "image" pointera sur une structure contenant
-            les caracteristiques de l'image "imageNB.bmp" */
-            // Configure le systeme pour generer un message Temporisation
-            // toutes les 20 millisecondes
-            initImage();
-            demandeTemporisation(20);
+                //initImage();
+                salle1 = lisBMPRGB("bmp/Etages/salle1.bmp");
+                persoFace = lisBMPRGB("bmp/Perso/perso1/face_fixe.bmp");
+                // persoDos = lisBMPRGB("bmp/Perso/sprite_perso_dos.bmp");
+
+                // Configure le systeme pour generer un message Temporisation
+                // toutes les 20 millisecondes
+                demandeTemporisation(20);
             }
             break;
         case Temporisation:
@@ -54,14 +62,24 @@ void gestionEvenement(EvenementGfx evenement)
             break;
         case Affichage:
             {
-            // On part d'un fond d'ecran noir
-            effaceFenetre (0, 0, 0);
-            afficheImg_menus(etat);
+            // On part d'un fond d'ecran blanc
+            effaceFenetre (255, 255, 255);
+            //afficheImg_menus(etat);
+
+            if (salle1 != NULL) {
+			    ecrisImage(0, 0, salle1->largeurImage, salle1->hauteurImage, salle1->donneesRGB);
+		    }
+
+            affichePerso(placex, placey, persoFace);
+            printf("place x : %d\n", *placex);
+            printf("place y : %d\n", *placey);
+
+
             }
             break;
 
         case Clavier:
-            //printf("%c : ASCII %d\n", caractereClavier(), caractereClavier());
+            printf("%c : ASCII %d\n", caractereClavier(), caractereClavier());
             switch (caractereClavier())
             {
                 case 'Q': /* Pour sortir quelque peu proprement du programme */
@@ -93,32 +111,47 @@ void gestionEvenement(EvenementGfx evenement)
                     // Configure le systeme pour ne plus generer de message Temporisation
                     demandeTemporisation(-1);
                     break;
-                case 13:
-                    etat=gereClicBoutons(etat);    
+                case 13: // Pour utiliser la touche entrée sur la première image
+                    //etat=gereClicBoutons(etat);    
                     break;
             }
             break;
 
-        case ClavierSpecial:
-            //printf("ASCII %d\n", toucheClavier());
+        case ClavierSpecial: 
+            switch(toucheClavier())
+            {
+                case 13: //Pour se déplacer vers le haut grâce à la flèche du haut
+                    *placey = *placey + 20;
+                    //ControleDeplacementsHaut(placey, placex);
+                    break;
+                case 14: //Pour se déplacer vers le bas grâce à la flèche du bas
+                    *placey = *placey - 20;
+                    break;
+                case 15: //Pour se déplacer vers la gauche grâce à la flèche de gauche
+                    *placex = *placex - 20;
+                    break;
+                case 16: //Pour se déplacer vers la droite grâce à la flèche de droite
+                    *placex = *placex + 20;
+                    break;
+            }
             break;
 
         case BoutonSouris:{
-            if (etatBoutonSouris() == GaucheAppuye)
-            {
-                etat=gereClicBoutons(etat);
-            }
-            else if (etatBoutonSouris() == GaucheRelache)
-            {
-                //printf("Bouton gauche relache en : (%d, %d)\n", abscisseSouris(), ordonneeSouris());
-            }
+            // if (etatBoutonSouris() == GaucheAppuye)
+            // {
+            //     etat=gereClicBoutons(etat);
+            // }
+            // else if (etatBoutonSouris() == GaucheRelache)
+            // {
+            //     printf("Bouton gauche relache en : (%d, %d)\n", abscisseSouris(), ordonneeSouris());
+            // }
             }
             break;
 
         case Souris: // Si la souris est deplacee
-            if(etatBoutonSouris()==1){
+            // if(etatBoutonSouris()==1){
                 
-            }
+            // }
             break;
         case Inactivite: // Quand aucun message n'est disponible
             break;

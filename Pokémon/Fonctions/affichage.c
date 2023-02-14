@@ -1,12 +1,19 @@
 #include "affichage.h"
 
-//Initialisation de la structure image
+//Initialisation des structures image
 
 static DonneesImageRGB *accueil = NULL;
 static DonneesImageRGB *menu = NULL;
 static DonneesImageRGB *choix_pk = NULL;
+// static DonneesImageRGB *salle1 = NULL;
+// static DonneesImageRGB *salle2 = NULL;
+// static DonneesImageRGB *salle3 = NULL;
+// static DonneesImageRGB *salle4 = NULL;
+// static DonneesImageRGB *salle5 = NULL;
+// static DonneesImageRGB *salle6 = NULL;
+// static DonneesImageRGB *salle7 = NULL;
 
-// Création des fonctions
+//création des fonctions
 
 /* Fonction qui initalise les images en utilisant la fonction lisBMPRGB qui renvoie une structure contenant
 les informations de l'image.*/
@@ -16,6 +23,14 @@ void initImage(){
 	accueil = lisBMPRGB("bmp/Menus/accueil.bmp");					
 	menu = lisBMPRGB("bmp/Menus/menu.bmp");
 	choix_pk = lisBMPRGB("bmp/Menus/choix_pk.bmp");
+	//salle1 = lisBMPRGB("bmp/Etages/salle1.bmp");
+	// salle2 = lisBMPRGB("bmp/Etages/salle2.bmp");
+    // salle3 = lisBMPRGB("bmp/Etages/salle3.bmp");
+    // salle4 = lisBMPRGB("bmp/Etages/salle4.bmp");
+    // salle5 = lisBMPRGB("bmp/Etages/salle5.bmp");
+    // salle6 = lisBMPRGB("bmp/Etages/salle6.bmp");
+    // salle7 = lisBMPRGB("bmp/Etages/salle7.bmp");
+
 }
 
 /* Fonction qui affiche l'image du menu adéquat en fonction de l'état, cette fonction sera appelé en boucle dans le
@@ -89,4 +104,20 @@ void deplacement_souris_varianteMenu(int etat){
 			printf("tamere2");
 		}
 	}
+}
+
+/*Fonction qui permet d'afficher le personnage je pense qu'elle est temporaire
+plus tard le perso sera peut-etre afficher dans une autre fonction
+*/
+
+void affichePerso(int *placex, int *placey, DonneesImageRGB *persoFace){
+	
+	if(persoFace != NULL){
+		ecrisImage(*placex, *placey, persoFace->largeurImage, persoFace->hauteurImage, persoFace->donneesRGB);
+	}
+	else{
+		printf("NUUULLL\n");
+	}
+	
+	
 }

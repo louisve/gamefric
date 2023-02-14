@@ -1,6 +1,8 @@
 #ifndef MOTEUR_H
 #define MOTEUR_H
 
+#define VPerso 20
+
 //Include des librairies
 
 #include <stdio.h>
@@ -19,8 +21,10 @@
 
 //Initialisation de fonctions/structures
 
-
-void deplacementsperso();
+void ControleDeplacementsHaut(int *placey, int *placex);
+void ControleDeplacementsBas(int *placey, int *placex);
+void ControleDeplacementsDroite(int *placey, int *placex);
+void ControleDeplacementsGauche(int *placey, int *placex);
 
 
 
