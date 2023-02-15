@@ -1,11 +1,13 @@
+#include "affichage.h"
+
+//Initialisation des structures image
+
 static DonneesImageRGB *accueil = NULL;
 static DonneesImageRGB *menu = NULL;
 static DonneesImageRGB *choix_pk = NULL;
 static DonneesImageRGB *image3 = NULL;
 static DonneesImageRGB *image4 = NULL;
 static DonneesImageRGB *image5 = NULL;
-
-
 static DonneesImageRGB *choix_perso = NULL;
 static DonneesImageRGB *salle1 = NULL;
 static DonneesImageRGB *persoFace1 = NULL;
@@ -52,86 +54,87 @@ void initImage(){
 /* Fonction qui affiche l'image du menu adéquat en fonction de l'état, cette fonction sera appelé en boucle dans le  */
 void afficheImg_menus(int etat,int *placex,int *placey, dresseur *perso ){
 
-	case 0:
-	if (accueil != NULL) // Si l'image a pu etre lue
-	{
-		// On affiche l'image
-		ecrisImage(0, 0, accueil->largeurImage, accueil->hauteurImage, accueil->donneesRGB);
-	}
-	break;
-
-	case 1:
-	if (menu != NULL) // Si l'image a pu etre lue
-	{
-		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, menu->largeurImage, menu->hauteurImage, menu->donneesRGB); // On affiche l'image
-	}
-	break;
-
-	case 2:
-	if (choix_pk != NULL) // Si l'image a pu etre lue
-	{
-		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, choix_pk->largeurImage, choix_pk->hauteurImage, choix_pk->donneesRGB); // On affiche l'image
-	}
-	break;
-
-	case 3:
-	if (image3 != NULL) // Si l'image a pu etre lue
-	{
-		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, image3->largeurImage, image3->hauteurImage, image3->donneesRGB); // On affiche l'image
-	}
-	break;
-
-	case 4:
-	if (image4 != NULL) // Si l'image a pu etre lue
-	{
-		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, image4->largeurImage, image4->hauteurImage, image4->donneesRGB); // On affiche l'image
-	}
-	break;
-
-	case 5:
-	if (image5 != NULL) // Si l'image a pu etre lue
-	{
-		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, image5->largeurImage, image5->hauteurImage, image5->donneesRGB); // On affiche l'image
-	}
-	break;
-	case 6:
-	if (choix_perso != NULL) // Si l'image a pu etre lue
-	{
-		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, choix_perso->largeurImage, choix_perso->hauteurImage, choix_perso->donneesRGB); // On affiche l'image
-	}
-	break;
-
-	case 7:
-	if (salle1 != NULL) {
-		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, salle1->largeurImage, salle1->hauteurImage, salle1->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
+	switch(etat){
+		case 0:
+		if (accueil != NULL) // Si l'image a pu etre lue
+		{
+			// On affiche l'image
+			ecrisImage(0, 0, accueil->largeurImage, accueil->hauteurImage, accueil->donneesRGB);
 		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
+		break;
+
+		case 1:
+		if (menu != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, menu->largeurImage, menu->hauteurImage, menu->donneesRGB); // On affiche l'image
 		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
+		break;
+
+		case 2:
+		if (choix_pk != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, choix_pk->largeurImage, choix_pk->hauteurImage, choix_pk->donneesRGB); // On affiche l'image
 		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
+		break;
+
+		case 3:
+		if (image3 != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, image3->largeurImage, image3->hauteurImage, image3->donneesRGB); // On affiche l'image
 		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
+		break;
+
+		case 4:
+		if (image4 != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, image4->largeurImage, image4->hauteurImage, image4->donneesRGB); // On affiche l'image
 		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
+		break;
+
+		case 5:
+		if (image5 != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, image5->largeurImage, image5->hauteurImage, image5->donneesRGB); // On affiche l'image
 		}
-	}
-	break;
-	}
+		break;
+		case 6:
+		if (choix_perso != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, choix_perso->largeurImage, choix_perso->hauteurImage, choix_perso->donneesRGB); // On affiche l'image
+		}
+		break;
+
+		case 7:
+		if (salle1 != NULL) {
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, salle1->largeurImage, salle1->hauteurImage, salle1->donneesRGB);
+			if(strcmp(perso->nom,"Perso 1.1") == 0){
+				affichePerso(placex, placey, persoFace1);
+			}
+			else if(strcmp(perso->nom,"Perso 1.2") == 0){
+				affichePerso(placex, placey, persoFace2);
+			}
+			else if(strcmp(perso->nom,"Perso 1.3") == 0){
+				affichePerso(placex, placey, persoFace3);
+			}
+			else if(strcmp(perso->nom,"Perso 2.1") == 0){
+				affichePerso(placex, placey, persoFace4);
+			}
+			else if(strcmp(perso->nom,"Perso 2.2") == 0){
+				affichePerso(placex, placey, persoFace5);
+			}
+			else if(strcmp(perso->nom,"Perso 2.3") == 0){
+				affichePerso(placex, placey, persoFace6);
+			}
+		}
+		break;
+		}
 }
 
  /*coordonnées de la souris (CAD en fonction du bouton du menu sur lequel on se trouvera lors du click). */
@@ -232,13 +235,14 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 	}
 	else if (etat == 5) // Si on est dans le menu sur le bouton "quitter" :
 	{
-		libereDonneesImageRGB(&image0);
-		libereDonneesImageRGB(&image1);
-		libereDonneesImageRGB(&image2);
-		libereDonneesImageRGB(&image3); // et qu'on clic, on ferme l'application proprement
-		libereDonneesImageRGB(&image4); // en libérant les structures images,
+		libereDonneesImageRGB(&accueil);
+		libereDonneesImageRGB(&menu);
+		libereDonneesImageRGB(&choix_pk);
+		libereDonneesImageRGB(&choix_perso);
+		libereDonneesImageRGB(&image3);
+		libereDonneesImageRGB(&image4); 
 		libereDonneesImageRGB(&image5);
-		termineBoucleEvenements();      // et en terminant la boucle des événements.
+		termineBoucleEvenements();
 	}
 	
 		else if(etat == 6)
@@ -306,7 +310,6 @@ int verif_survol_souris(int etat){
 			etat = 5; // si coordonnées souris = bouton " quitter " alors etat = 5 (on affiche l'image variante3).
 		}
 	}
-}
 	else if(etat==4) // si on est sur l'image variante2.
 	{
 		if(!(abscisseSouris() >= 486 && abscisseSouris() <= 1437 && ordonneeSouris() >= 439 && ordonneeSouris() <= 640))
@@ -328,7 +331,7 @@ int verif_survol_souris(int etat){
 			etat = 1; // et que nous ne sommes pas sur le bouton "quitter", retour à l'image de l'état 1.
 		}
 	}
-return etat;
+	return etat;
 }
 
 /*Fonction qui permet d'afficher le personnage je pense qu'elle est temporaire
