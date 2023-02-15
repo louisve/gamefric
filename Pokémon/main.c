@@ -18,8 +18,9 @@ int main(int argc, char **argv)
     initialiseGfx(argc, argv); //Initialisation de l'acceleration graphique si elle existe
 
     // On ouvre la fenetre de notre application
-	prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
+    prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
     modePleinEcran();
+
     /* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
         qui elle-meme utilise fonctionAffichage ci-dessous */
     lanceBoucleEvenements();
@@ -30,11 +31,9 @@ int main(int argc, char **argv)
 des qu'une evenement survient */
 void gestionEvenement(EvenementGfx evenement)
 {
-    static int etat = 0;
+    static int etat = 0; // on commence à état = 0 (ecran-titre)
     static bool pleinEcran = true; // Pour savoir si on est en mode plein ecran ou pas
-    //Initialisation de l'image de salle ici de manière temporaire avant qu'elle soit utilisée dans la fonction affichage des images
-    // static DonneesImageRGB *salle1 = NULL;
-    // static DonneesImageRGB *persoFace = NULL;
+    activeGestionDeplacementPassifSouris();
     //Position initial du perso doivent être initialiser ici pour être utilisé dans les autres fichiers
     static int x = 960 - largeurPerso/2;
     static int y = 285 - hauteurPerso/2;
@@ -50,16 +49,11 @@ void gestionEvenement(EvenementGfx evenement)
     {
         case Initialisation:
             {
-                initImage();
-                // salle1 = lisBMPRGB("bmp/Etages/salle1.bmp");
-                // persoFace = lisBMPRGB("bmp/Perso/perso1/face_fixe.bmp");
-                // persoDos = lisBMPRGB("bmp/Perso/sprite_perso_dos.bmp");
-                pokedex = malloc(NUM_POKEMON*sizeof(Pokemon));
-                pokedex = readPokedex();
-                pstarter = malloc(sizeof(Pokemon));
-                // Configure le systeme pour generer un message Temporisation
-                // toutes les 20 millisecondes
-                demandeTemporisation(20);
+            initImage();
+            pokedex = malloc(NUM_POKEMON*sizeof(Pokemon));
+            pokedex = readPokedex();
+            pstarter = malloc(sizeof(Pokemon));
+            demandeTemporisation(20);
             }
             break;
         case Temporisation:
@@ -69,14 +63,14 @@ void gestionEvenement(EvenementGfx evenement)
             break;
         case Affichage:
             {
-            // On part d'un fond d'ecran blanc
-            effaceFenetre (255, 255, 255);
+            // On part d'un fond d'ecran noir
+            effaceFenetre (0, 0, 0);
             afficheImg_menus(etat,placex,placey,pperso);
             }
             break;
 
         case Clavier:
-            printf("%c : ASCII %d\n", caractereClavier(), caractereClavier());
+            //printf("%c : ASCII %d\n", caractereClavier(), caractereClavier());
             switch (caractereClavier())
             {
                 case 'Q': /* Pour sortir quelque peu proprement du programme */
@@ -108,14 +102,14 @@ void gestionEvenement(EvenementGfx evenement)
                     // Configure le systeme pour ne plus generer de message Temporisation
                     demandeTemporisation(-1);
                     break;
-                case 13: // Pour utiliser la touche entrée sur la première image
+                case 13:
                     etat=gereClicBoutons(etat,pokedex,pstarter,pperso);    
                     break;
             }
             break;
 
-        case ClavierSpecial: 
-            switch(toucheClavier())
+        case ClavierSpecial:
+         switch(toucheClavier())
             {
                 case 13: //Pour se déplacer vers le haut grâce à la flèche du haut
                     ControleDeplacementsHaut(placey, placex);
@@ -139,15 +133,15 @@ void gestionEvenement(EvenementGfx evenement)
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {
-                printf("Bouton gauche relache en : (%d, %d)\n", abscisseSouris(), ordonneeSouris());
+                //printf("Bouton gauche relache en : (%d, %d)\n", abscisseSouris(), ordonneeSouris());
             }
             }
             break;
 
         case Souris: // Si la souris est deplacee
-            // if(etatBoutonSouris()==1){
-                
-            // }
+            {
+                etat=verif_survol_souris(etat);
+            }
             break;
         case Inactivite: // Quand aucun message n'est disponible
             break;
