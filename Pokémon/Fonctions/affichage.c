@@ -5,9 +5,9 @@
 static DonneesImageRGB *accueil = NULL;
 static DonneesImageRGB *menu = NULL;
 static DonneesImageRGB *choix_pk = NULL;
-static DonneesImageRGB *image3 = NULL;
-static DonneesImageRGB *image4 = NULL;
-static DonneesImageRGB *image5 = NULL;
+static DonneesImageRGB *variante_menu_1 = NULL;
+static DonneesImageRGB *variante_menu_2 = NULL;
+static DonneesImageRGB *variante_menu_3 = NULL;
 static DonneesImageRGB *choix_perso = NULL;
 static DonneesImageRGB *persoFace1 = NULL;
 static DonneesImageRGB *persoFace2 = NULL;
@@ -23,6 +23,7 @@ static DonneesImageRGB *salle5 = NULL;
 static DonneesImageRGB *salle6 = NULL;
 static DonneesImageRGB *salle7 = NULL;
 static DonneesImageRGB *salle8 = NULL;
+static DonneesImageRGB *combat = NULL;
 
 
 // Création des fonctions
@@ -31,9 +32,9 @@ void initImage(){
 	accueil = lisBMPRGB("bmp/Menus/accueil.bmp");					
 	menu = lisBMPRGB("bmp/Menus/menu.bmp");
 	choix_pk = lisBMPRGB("bmp/Menus/choix_pk.bmp");
-	image3 = lisBMPRGB("bmp/Menus/menu_variante_1.bmp");
-	image4 = lisBMPRGB("bmp/Menus/menu_variante_2.bmp");
-	image5 = lisBMPRGB("bmp/Menus/menu_variante_3.bmp");
+	variante_menu_1 = lisBMPRGB("bmp/Menus/menu_variante_1.bmp");
+	variante_menu_2 = lisBMPRGB("bmp/Menus/menu_variante_2.bmp");
+	variante_menu_3 = lisBMPRGB("bmp/Menus/menu_variante_3.bmp");
 	choix_perso = lisBMPRGB("bmp/Menus/choix_perso.bmp");
 	persoFace1 = lisBMPRGB("bmp/Perso/perso1/face_fixe.bmp");
 	persoFace2 = lisBMPRGB("bmp/Perso/perso2/face_fixe.bmp");
@@ -49,6 +50,7 @@ void initImage(){
     salle6 = lisBMPRGB("bmp/Etages/salle6.bmp");
     salle7 = lisBMPRGB("bmp/Etages/salle7.bmp");
 	salle8 = lisBMPRGB("bmp/Etages/salle8.bmp");
+	combat = lisBMPRGB("bmp/Menus/combat.bmp");
 
 }
 
@@ -81,26 +83,26 @@ void afficheImg_menus(int etat,int *placex,int *placey, dresseur *perso ){
 		break;
 
 		case 3:
-		if (image3 != NULL) // Si l'image a pu etre lue
+		if (variante_menu_1 != NULL) // Si l'image a pu etre lue
 		{
 			effaceFenetre (0, 0, 0);
-			ecrisImage(0, 0, image3->largeurImage, image3->hauteurImage, image3->donneesRGB); // On affiche l'image
+			ecrisImage(0, 0, variante_menu_1->largeurImage, variante_menu_1->hauteurImage, variante_menu_1->donneesRGB); // On affiche l'image
 		}
 		break;
 
 		case 4:
-		if (image4 != NULL) // Si l'image a pu etre lue
+		if (variante_menu_2 != NULL) // Si l'image a pu etre lue
 		{
 			effaceFenetre (0, 0, 0);
-			ecrisImage(0, 0, image4->largeurImage, image4->hauteurImage, image4->donneesRGB); // On affiche l'image
+			ecrisImage(0, 0, variante_menu_2->largeurImage, variante_menu_2->hauteurImage, variante_menu_2->donneesRGB); // On affiche l'image
 		}
 		break;
 
 		case 5:
-		if (image5 != NULL) // Si l'image a pu etre lue
+		if (variante_menu_3 != NULL) // Si l'image a pu etre lue
 		{
 			effaceFenetre (0, 0, 0);
-			ecrisImage(0, 0, image5->largeurImage, image5->hauteurImage, image5->donneesRGB); // On affiche l'image
+			ecrisImage(0, 0, variante_menu_3->largeurImage, variante_menu_3->hauteurImage, variante_menu_3->donneesRGB); // On affiche l'image
 		}
 		break;
 		case 6:
@@ -303,6 +305,16 @@ void afficheImg_menus(int etat,int *placex,int *placey, dresseur *perso ){
 			}
 		}
 		break;
+		case 15:
+		if(combat != NULL)
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, combat->largeurImage, combat->hauteurImage, combat->donneesRGB);
+		}
+		break;
+		case 16:
+			effaceFenetre (0, 0, 0);
+		break;
 		}
 }
 
@@ -408,9 +420,9 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 		libereDonneesImageRGB(&menu);
 		libereDonneesImageRGB(&choix_pk);
 		libereDonneesImageRGB(&choix_perso);
-		libereDonneesImageRGB(&image3);
-		libereDonneesImageRGB(&image4); 
-		libereDonneesImageRGB(&image5);
+		libereDonneesImageRGB(&variante_menu_1);
+		libereDonneesImageRGB(&variante_menu_2); 
+		libereDonneesImageRGB(&variante_menu_3);
 		termineBoucleEvenements();
 	}
 	
@@ -453,6 +465,21 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 			initDresseur("Perso 2.3",perso,starter);
 		}
 		printf("\nNom : %s\nEtage : %d\nStarter : %s\n",perso->nom,perso->etage,perso->starter.nom);
+	}
+	else if(etat == 15) //menu combat
+	{
+		if(abscisseSouris() >= 96 && abscisseSouris() <= 608 && ordonneeSouris() >= 86 && ordonneeSouris() <= 212)
+		{
+			etat = 16; //bouton attaque 1
+		}
+		if(abscisseSouris() >= 658 && abscisseSouris() <= 1174 && ordonneeSouris() >= 87 && ordonneeSouris() <= 206)
+		{
+			etat = 16;
+		}
+		if(abscisseSouris() >= 1223 && abscisseSouris() <= 1736 && ordonneeSouris() >= 89 && ordonneeSouris() <= 203)
+		{
+			termineBoucleEvenements(); //bouton quitter
+		}
 	}
 
 return etat;

@@ -42,7 +42,8 @@ int ControleDeplacementsHaut(int *placey, int *placex, int etat/*, int combatter
         }
     }
     else if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
-        printf("Combat avec le perso \n");
+        //printf("Combat avec le perso \n");
+        etat = 15;
     }
     /*else if(*placey >= 805 && *placex >= 881 && *placex <= 1000 && combattermine == 0){ //Message d'erreur si combat non effectué
         printf("Erreur combat à terminer d'abord\n"); // ce message est temporaire en attendant que je fasse un message propre mais faut attendre la fonction de clément pour tester
@@ -55,32 +56,35 @@ int ControleDeplacementsHaut(int *placey, int *placex, int etat/*, int combatter
 
 }
 
-void ControleDeplacementsBas(int *placey, int *placex){
+int ControleDeplacementsBas(int *placey, int *placex, int etat){
     if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
-        printf("Combat avec le perso \n");
+        //printf("Combat avec le perso \n");
+        etat = 15;
     }
     else if(*placey >= 258){
         *placey = *placey - VPerso;
     }
-
+return etat;
 }
 
-void ControleDeplacementsGauche(int *placey, int *placex){
+int ControleDeplacementsGauche(int *placey, int *placex, int etat){
     if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
-        printf("Combat avec le perso \n");
+        //printf("Combat avec le perso \n");
+        etat = 15;
     }
     else if(*placex >= 663){
         *placex = *placex - VPerso;
     }
-
+return etat;
 }
 
-void ControleDeplacementsDroite(int *placey, int *placex){
+int ControleDeplacementsDroite(int *placey, int *placex, int etat){
     if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
-        printf("Combat avec le perso \n");
+        //printf("Combat avec le perso \n");
+        etat = 15;
     }
     else if(*placex <= 1206){
         *placex = *placex + VPerso;
     }
-
+return etat;
 }

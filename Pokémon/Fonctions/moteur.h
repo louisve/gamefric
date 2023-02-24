@@ -26,9 +26,9 @@
 //Initialisation de fonctions/structures
 
 int ControleDeplacementsHaut(int *placey, int *placex, int etat/*, int combattermine*/);
-void ControleDeplacementsBas(int *placey, int *placex);
-void ControleDeplacementsDroite(int *placey, int *placex);
-void ControleDeplacementsGauche(int *placey, int *placex);
+int ControleDeplacementsBas(int *placey, int *placex, int etat);
+int ControleDeplacementsDroite(int *placey, int *placex, int etat);
+int ControleDeplacementsGauche(int *placey, int *placex, int etat);
 
 
 
