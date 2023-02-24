@@ -9,45 +9,46 @@ static DonneesImageRGB *image3 = NULL;
 static DonneesImageRGB *image4 = NULL;
 static DonneesImageRGB *image5 = NULL;
 static DonneesImageRGB *choix_perso = NULL;
-static DonneesImageRGB *salle1 = NULL;
 static DonneesImageRGB *persoFace1 = NULL;
 static DonneesImageRGB *persoFace2 = NULL;
 static DonneesImageRGB *persoFace3 = NULL;
 static DonneesImageRGB *persoFace4 = NULL;
 static DonneesImageRGB *persoFace5 = NULL;
 static DonneesImageRGB *persoFace6 = NULL;
-// static DonneesImageRGB *salle2 = NULL;
-// static DonneesImageRGB *salle3 = NULL;
-// static DonneesImageRGB *salle4 = NULL;
-// static DonneesImageRGB *salle5 = NULL;
-// static DonneesImageRGB *salle6 = NULL;
-// static DonneesImageRGB *salle7 = NULL;
-
+static DonneesImageRGB *salle1 = NULL;
+static DonneesImageRGB *salle2 = NULL;
+static DonneesImageRGB *salle3 = NULL;
+static DonneesImageRGB *salle4 = NULL;
+static DonneesImageRGB *salle5 = NULL;
+static DonneesImageRGB *salle6 = NULL;
+static DonneesImageRGB *salle7 = NULL;
+static DonneesImageRGB *salle8 = NULL;
 
 
 // Création des fonctions
 
 void initImage(){
-	accueil = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Menus/accueil.bmp");					
-	menu = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Menus/menu.bmp");
-	choix_pk = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Menus/choix_pk.bmp");
+	accueil = lisBMPRGB("bmp/Menus/accueil.bmp");					
+	menu = lisBMPRGB("bmp/Menus/menu.bmp");
+	choix_pk = lisBMPRGB("bmp/Menus/choix_pk.bmp");
 	image3 = lisBMPRGB("bmp/Menus/menu_variante_1.bmp");
 	image4 = lisBMPRGB("bmp/Menus/menu_variante_2.bmp");
 	image5 = lisBMPRGB("bmp/Menus/menu_variante_3.bmp");
-	choix_perso = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Menus/choix_perso.bmp");
-	salle1 = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Etages/salle1.bmp");
-	persoFace1 = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Perso/perso1/face_fixe.bmp");
-	persoFace2 = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Perso/perso2/face_fixe.bmp");
-	persoFace3 = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Perso/perso3/face_fixe.bmp");
-	persoFace4 = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Perso/perso4/face_fixe.bmp");
-	persoFace5 = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Perso/perso5/face_fixe.bmp");
-	persoFace6 = lisBMPRGB("/home/isen/pokemon/Pokémon/bmp/Perso/perso6/face_fixe.bmp");
-	// salle2 = lisBMPRGB("bmp/Etages/salle2.bmp");
-    // salle3 = lisBMPRGB("bmp/Etages/salle3.bmp");
-    // salle4 = lisBMPRGB("bmp/Etages/salle4.bmp");
-    // salle5 = lisBMPRGB("bmp/Etages/salle5.bmp");
-    // salle6 = lisBMPRGB("bmp/Etages/salle6.bmp");
-    // salle7 = lisBMPRGB("bmp/Etages/salle7.bmp");
+	choix_perso = lisBMPRGB("bmp/Menus/choix_perso.bmp");
+	persoFace1 = lisBMPRGB("bmp/Perso/perso1/face_fixe.bmp");
+	persoFace2 = lisBMPRGB("bmp/Perso/perso2/face_fixe.bmp");
+	persoFace3 = lisBMPRGB("bmp/Perso/perso3/face_fixe.bmp");
+	persoFace4 = lisBMPRGB("bmp/Perso/perso4/face_fixe.bmp");
+	persoFace5 = lisBMPRGB("bmp/Perso/perso5/face_fixe.bmp");
+	persoFace6 = lisBMPRGB("bmp/Perso/perso6/face_fixe.bmp");
+	salle1 = lisBMPRGB("bmp/Etages/salle1.bmp");
+	salle2 = lisBMPRGB("bmp/Etages/salle2.bmp");
+    salle3 = lisBMPRGB("bmp/Etages/salle3.bmp");
+    salle4 = lisBMPRGB("bmp/Etages/salle4.bmp");
+    salle5 = lisBMPRGB("bmp/Etages/salle5.bmp");
+    salle6 = lisBMPRGB("bmp/Etages/salle6.bmp");
+    salle7 = lisBMPRGB("bmp/Etages/salle7.bmp");
+	salle8 = lisBMPRGB("bmp/Etages/salle8.bmp");
 
 }
 
@@ -114,6 +115,174 @@ void afficheImg_menus(int etat,int *placex,int *placey, dresseur *perso ){
 		if (salle1 != NULL) {
 			effaceFenetre (0, 0, 0);
 			ecrisImage(0, 0, salle1->largeurImage, salle1->hauteurImage, salle1->donneesRGB);
+			if(strcmp(perso->nom,"Perso 1.1") == 0){
+				affichePerso(placex, placey, persoFace1);
+			}
+			else if(strcmp(perso->nom,"Perso 1.2") == 0){
+				affichePerso(placex, placey, persoFace2);
+			}
+			else if(strcmp(perso->nom,"Perso 1.3") == 0){
+				affichePerso(placex, placey, persoFace3);
+			}
+			else if(strcmp(perso->nom,"Perso 2.1") == 0){
+				affichePerso(placex, placey, persoFace4);
+			}
+			else if(strcmp(perso->nom,"Perso 2.2") == 0){
+				affichePerso(placex, placey, persoFace5);
+			}
+			else if(strcmp(perso->nom,"Perso 2.3") == 0){
+				affichePerso(placex, placey, persoFace6);
+			}
+		}
+		break;
+		case 8:
+		if (salle2 != NULL) {
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, salle2->largeurImage, salle2->hauteurImage, salle2->donneesRGB);
+			if(strcmp(perso->nom,"Perso 1.1") == 0){
+				affichePerso(placex, placey, persoFace1);
+			}
+			else if(strcmp(perso->nom,"Perso 1.2") == 0){
+				affichePerso(placex, placey, persoFace2);
+			}
+			else if(strcmp(perso->nom,"Perso 1.3") == 0){
+				affichePerso(placex, placey, persoFace3);
+			}
+			else if(strcmp(perso->nom,"Perso 2.1") == 0){
+				affichePerso(placex, placey, persoFace4);
+			}
+			else if(strcmp(perso->nom,"Perso 2.2") == 0){
+				affichePerso(placex, placey, persoFace5);
+			}
+			else if(strcmp(perso->nom,"Perso 2.3") == 0){
+				affichePerso(placex, placey, persoFace6);
+			}
+		}
+		break;
+		case 9:
+		if (salle3 != NULL) {
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, salle3->largeurImage, salle3->hauteurImage, salle3->donneesRGB);
+			if(strcmp(perso->nom,"Perso 1.1") == 0){
+				affichePerso(placex, placey, persoFace1);
+			}
+			else if(strcmp(perso->nom,"Perso 1.2") == 0){
+				affichePerso(placex, placey, persoFace2);
+			}
+			else if(strcmp(perso->nom,"Perso 1.3") == 0){
+				affichePerso(placex, placey, persoFace3);
+			}
+			else if(strcmp(perso->nom,"Perso 2.1") == 0){
+				affichePerso(placex, placey, persoFace4);
+			}
+			else if(strcmp(perso->nom,"Perso 2.2") == 0){
+				affichePerso(placex, placey, persoFace5);
+			}
+			else if(strcmp(perso->nom,"Perso 2.3") == 0){
+				affichePerso(placex, placey, persoFace6);
+			}
+		}
+		break;
+		case 10:
+		if (salle4 != NULL) {
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, salle4->largeurImage, salle4->hauteurImage, salle4->donneesRGB);
+			if(strcmp(perso->nom,"Perso 1.1") == 0){
+				affichePerso(placex, placey, persoFace1);
+			}
+			else if(strcmp(perso->nom,"Perso 1.2") == 0){
+				affichePerso(placex, placey, persoFace2);
+			}
+			else if(strcmp(perso->nom,"Perso 1.3") == 0){
+				affichePerso(placex, placey, persoFace3);
+			}
+			else if(strcmp(perso->nom,"Perso 2.1") == 0){
+				affichePerso(placex, placey, persoFace4);
+			}
+			else if(strcmp(perso->nom,"Perso 2.2") == 0){
+				affichePerso(placex, placey, persoFace5);
+			}
+			else if(strcmp(perso->nom,"Perso 2.3") == 0){
+				affichePerso(placex, placey, persoFace6);
+			}
+		}
+		break;
+		case 11:
+		if (salle5 != NULL) {
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, salle5->largeurImage, salle5->hauteurImage, salle5->donneesRGB);
+			if(strcmp(perso->nom,"Perso 1.1") == 0){
+				affichePerso(placex, placey, persoFace1);
+			}
+			else if(strcmp(perso->nom,"Perso 1.2") == 0){
+				affichePerso(placex, placey, persoFace2);
+			}
+			else if(strcmp(perso->nom,"Perso 1.3") == 0){
+				affichePerso(placex, placey, persoFace3);
+			}
+			else if(strcmp(perso->nom,"Perso 2.1") == 0){
+				affichePerso(placex, placey, persoFace4);
+			}
+			else if(strcmp(perso->nom,"Perso 2.2") == 0){
+				affichePerso(placex, placey, persoFace5);
+			}
+			else if(strcmp(perso->nom,"Perso 2.3") == 0){
+				affichePerso(placex, placey, persoFace6);
+			}
+		}
+		break;
+		case 12:
+		if (salle6 != NULL) {
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, salle6->largeurImage, salle6->hauteurImage, salle6->donneesRGB);
+			if(strcmp(perso->nom,"Perso 1.1") == 0){
+				affichePerso(placex, placey, persoFace1);
+			}
+			else if(strcmp(perso->nom,"Perso 1.2") == 0){
+				affichePerso(placex, placey, persoFace2);
+			}
+			else if(strcmp(perso->nom,"Perso 1.3") == 0){
+				affichePerso(placex, placey, persoFace3);
+			}
+			else if(strcmp(perso->nom,"Perso 2.1") == 0){
+				affichePerso(placex, placey, persoFace4);
+			}
+			else if(strcmp(perso->nom,"Perso 2.2") == 0){
+				affichePerso(placex, placey, persoFace5);
+			}
+			else if(strcmp(perso->nom,"Perso 2.3") == 0){
+				affichePerso(placex, placey, persoFace6);
+			}
+		}
+		break;
+		case 13:
+		if (salle7 != NULL) {
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, salle7->largeurImage, salle7->hauteurImage, salle7->donneesRGB);
+			if(strcmp(perso->nom,"Perso 1.1") == 0){
+				affichePerso(placex, placey, persoFace1);
+			}
+			else if(strcmp(perso->nom,"Perso 1.2") == 0){
+				affichePerso(placex, placey, persoFace2);
+			}
+			else if(strcmp(perso->nom,"Perso 1.3") == 0){
+				affichePerso(placex, placey, persoFace3);
+			}
+			else if(strcmp(perso->nom,"Perso 2.1") == 0){
+				affichePerso(placex, placey, persoFace4);
+			}
+			else if(strcmp(perso->nom,"Perso 2.2") == 0){
+				affichePerso(placex, placey, persoFace5);
+			}
+			else if(strcmp(perso->nom,"Perso 2.3") == 0){
+				affichePerso(placex, placey, persoFace6);
+			}
+		}
+		break;
+		case 14:
+		if (salle8 != NULL) {
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, salle8->largeurImage, salle8->hauteurImage, salle8->donneesRGB);
 			if(strcmp(perso->nom,"Perso 1.1") == 0){
 				affichePerso(placex, placey, persoFace1);
 			}

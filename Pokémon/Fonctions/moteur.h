@@ -2,6 +2,10 @@
 #define MOTEUR_H
 
 #define VPerso 4
+#define largeurPerso 50
+#define hauteurPerso 60
+
+
 
 //Include des librairies
 
@@ -21,7 +25,7 @@
 
 //Initialisation de fonctions/structures
 
-void ControleDeplacementsHaut(int *placey, int *placex);
+int ControleDeplacementsHaut(int *placey, int *placex, int etat/*, int combattermine*/);
 void ControleDeplacementsBas(int *placey, int *placex);
 void ControleDeplacementsDroite(int *placey, int *placex);
 void ControleDeplacementsGauche(int *placey, int *placex);

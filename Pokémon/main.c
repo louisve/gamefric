@@ -112,7 +112,7 @@ void gestionEvenement(EvenementGfx evenement)
          switch(toucheClavier())
             {
                 case 13: //Pour se déplacer vers le haut grâce à la flèche du haut
-                    ControleDeplacementsHaut(placey, placex);
+                    etat = ControleDeplacementsHaut(placey, placex, etat /*, combattermine*/);
                     break;
                 case 14: //Pour se déplacer vers le bas grâce à la flèche du bas
                     ControleDeplacementsBas(placey, placex);
