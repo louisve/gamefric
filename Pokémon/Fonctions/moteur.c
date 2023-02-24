@@ -41,10 +41,9 @@ int ControleDeplacementsHaut(int *placey, int *placex, int etat/*, int combatter
             printf("fin du jeu !\n");
         }
     }
-    // else if(*placey >= 540 && *placex <= 900 && *placex >= 893 && *placey <= 545){ //vérification des coordonnées du perso
-    //     printf("Combat avec le perso \n");
-    // }
-
+    else if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
+        printf("Combat avec le perso \n");
+    }
     /*else if(*placey >= 805 && *placex >= 881 && *placex <= 1000 && combattermine == 0){ //Message d'erreur si combat non effectué
         printf("Erreur combat à terminer d'abord\n"); // ce message est temporaire en attendant que je fasse un message propre mais faut attendre la fonction de clément pour tester
     }*/
@@ -57,7 +56,7 @@ int ControleDeplacementsHaut(int *placey, int *placex, int etat/*, int combatter
 }
 
 void ControleDeplacementsBas(int *placey, int *placex){
-    if(*placey >= 540 && *placex <= 977 && *placex >= 893 && *placey <= 977){ //vérification des coordonnées du perso
+    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
         printf("Combat avec le perso \n");
     }
     else if(*placey >= 258){
@@ -67,7 +66,7 @@ void ControleDeplacementsBas(int *placey, int *placex){
 }
 
 void ControleDeplacementsGauche(int *placey, int *placex){
-    if(*placey >= 540 && *placex <= 977 && *placex >= 893 && *placey <= 977){ //vérification des coordonnées du perso
+    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
         printf("Combat avec le perso \n");
     }
     else if(*placex >= 663){
@@ -77,7 +76,7 @@ void ControleDeplacementsGauche(int *placey, int *placex){
 }
 
 void ControleDeplacementsDroite(int *placey, int *placex){
-    if(*placey >= 540 && *placex <= 977 && *placex >= 893 && *placey <= 977){ //vérification des coordonnées du perso
+    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
         printf("Combat avec le perso \n");
     }
     else if(*placex <= 1206){
