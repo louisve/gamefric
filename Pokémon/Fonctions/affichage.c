@@ -283,7 +283,7 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 			etat = 7;
 			initDresseur("Perso 2.3",perso,starter);
 		}
-		printf("\nNom : %s\nEtage : %d\nStarter : %s\n",perso->nom,perso->etage,perso->equipe[0].nom);
+		printf("\nNom : %s\nEtage : %d\nStarter : %s\n",perso->nom,perso->etage,perso->starter.nom);
 	}
 
 return etat;
@@ -370,5 +370,5 @@ void initDresseur(char *name,dresseur *perso, Pokemon *starter){
 
 	strcpy(perso->nom,name);
 	perso->etage = 0;
-	perso->equipe[0] = *starter;
+	perso->starter = *starter;
 }

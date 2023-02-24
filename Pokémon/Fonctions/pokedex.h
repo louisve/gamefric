@@ -50,7 +50,7 @@ typedef struct POKEMON {
 
 typedef struct DRESSEUR{
     char nom[20];
-    Pokemon equipe[3];
+    Pokemon starter;
     int etage;
 
 }dresseur;
