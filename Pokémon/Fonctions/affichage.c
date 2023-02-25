@@ -50,7 +50,7 @@ void initImage(){
     salle6 = lisBMPRGB("bmp/Etages/salle6.bmp");
     salle7 = lisBMPRGB("bmp/Etages/salle7.bmp");
 	salle8 = lisBMPRGB("bmp/Etages/salle8.bmp");
-	combat = lisBMPRGB("bmp/Menus/combat.bmp");
+	combat = lisBMPRGB("bmp/Menus/combat/combat.bmp");
 
 }
 
