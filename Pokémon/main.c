@@ -7,7 +7,7 @@
 #include "Fonctions/pokedex.h"
 #include "Fonctions/utils.h"
 
-// Largeur et hauteur par defaut d'une image correspondant a nos criteres
+// definition des constantes correspondant à nos criteres.
 #define LargeurFenetre 1920
 #define HauteurFenetre 1080
 #define largeurPerso 50
@@ -19,6 +19,7 @@ int main(int argc, char **argv)
 
     // On ouvre la fenetre de notre application
     prepareFenetreGraphique("Pokemon : L'Ascension des Champions", LargeurFenetre, HauteurFenetre);
+
     modePleinEcran();
 
     /* Lance la boucle qui aiguille les evenements sur la fonction gestionEvenement ci-apres,
@@ -33,7 +34,7 @@ void gestionEvenement(EvenementGfx evenement)
 {
     static int etat = 0; // on commence à état = 0 (ecran-titre)
     static bool pleinEcran = true; // Pour savoir si on est en mode plein ecran ou pas
-    activeGestionDeplacementPassifSouris();
+    activeGestionDeplacementPassifSouris(); //Pour suivre la souris en continu.
     //Position initial du perso doivent être initialiser ici pour être utilisé dans les autres fichiers
     static int x = 960 - largeurPerso/2;
     static int y = 285 - hauteurPerso/2;
@@ -53,12 +54,12 @@ void gestionEvenement(EvenementGfx evenement)
             pokedex = malloc(NUM_POKEMON*sizeof(Pokemon));
             pokedex = readPokedex();
             pstarter = malloc(sizeof(Pokemon));
-            demandeTemporisation(20);
+            demandeTemporisation(20); //tempo toutes les 20ms.
             }
             break;
         case Temporisation:
             {
-                rafraichisFenetre();
+                rafraichisFenetre(); //Lance le case [Affichage] en boucle.
             }
             break;
         case Affichage:
@@ -75,7 +76,7 @@ void gestionEvenement(EvenementGfx evenement)
             {
                 case 'Q': /* Pour sortir quelque peu proprement du programme */
                 case 'q':
-                    termineBoucleEvenements();
+                    etat = 42; // Renvoie au case'42' qui libere la structure image et termine la boucle evenement.
                     break;
                 case 'F':
                 case 'f':
@@ -102,9 +103,18 @@ void gestionEvenement(EvenementGfx evenement)
                     // Configure le systeme pour ne plus generer de message Temporisation
                     demandeTemporisation(-1);
                     break;
-                case 13:
-                    etat=gereClicBoutons(etat,pokedex,pstarter,pperso);    
+                case 13: //code ascii de la touche "entrée".
+                    if(etat == 0)
+                    {
+                        etat = gereClicBoutons(etat,pokedex,pstarter,pperso);
+                    }    
                     break;
+                case 27: //code ascii de la touche "echap".
+                    if(etat != 0 && etat != 1 && etat != 3 && etat != 4 && etat != 5 ) // Si on est pas sur l'acceuil ou le menu principal->
+                    {
+                        etat = 38; //-> Alors on peut passer à l'état 38 (écran pause) si la touche échap est préssé.
+                    }
+                break;
             }
             break;
 
@@ -129,7 +139,7 @@ void gestionEvenement(EvenementGfx evenement)
         case BoutonSouris:{
             if (etatBoutonSouris() == GaucheAppuye)
             {
-                etat=gereClicBoutons(etat,pokedex,pstarter,pperso);
+                etat = gereClicBoutons(etat,pokedex,pstarter,pperso);
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {
@@ -140,7 +150,7 @@ void gestionEvenement(EvenementGfx evenement)
 
         case Souris: // Si la souris est deplacee
             {
-                etat=verif_survol_souris(etat);
+                etat = verif_survol_souris(etat);
             }
             break;
         case Inactivite: // Quand aucun message n'est disponible
