@@ -12,13 +12,20 @@
 
 //include des fichiers
 
-#include "affichage.h"
-#include "sauvegarde.h"
-#include "moteur.h"
 #include "pokedex.h"
 
 //Initialisation de fonctions/structures
 
+
+float attaquer(attaque attaqueUtilisee, dresseur *pokemonAttaquant, dresseur *pokemonVictime);
+
+float FaiblessesResistance(attaque attaqueUtilisee, dresseur *pokemonVictime);
+
+// int caseTabAtk(char attaqueUtilisee);
+
+int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour);
+
+int verifVictoire(dresseur *perso, dresseur *tour);
 
 
 #endif

@@ -49,6 +49,7 @@ static DonneesImageRGB *menu_pause = NULL;
 static DonneesImageRGB *pause_quitter = NULL;
 static DonneesImageRGB *pause_reprendre = NULL;
 static DonneesImageRGB *pause_sauvegarder = NULL;
+static int verif_victoire = 0;
 
 // Création des fonctions
 
@@ -598,7 +599,7 @@ switch(etat){
  	et en fonction de l'élément survolé lors du clic par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
  	du switch(evenement) dès qu'il y a un appui sur le bouton gauche de la souris. */
 
-int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso){
+int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk){
 	
 	if (etat == 0) // Si on est sur l'écran titre :
 	{
@@ -607,62 +608,62 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 	else if(etat == 17) // si on clic sur l'un des pokemon on init sa structure et on change d'état (on passe au choix dresseur).
 	{
 		//Bulbizar
-			initPk("Bulbizarre",pokedex,starter);
+			initPk("Bulbizarre",pokedex,starter,tabAtk);
 			etat = 6;
 	}
 	else if(etat == 21) //salameche
 	{
-		initPk("Salamèche",pokedex,starter);
+		initPk("Salamèche",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 25) //carapuce
 	{
-		initPk("Carapuce",pokedex,starter);
+		initPk("Carapuce",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 18) //germignon
 	{
-		initPk("Germignon",pokedex,starter);
+		initPk("Germignon",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 28) //moustillon
 	{
-		initPk("Moustillon",pokedex,starter);
+		initPk("Moustillon",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 22) //hericendre
 	{
-		initPk("Héricendre",pokedex,starter);
+		initPk("Héricendre",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 26) //kaiminus
 	{
-		initPk("Kaiminus",pokedex,starter);
+		initPk("Kaiminus",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 19) //tortipouss
 	{
-		initPk("Tortipouss",pokedex,starter);
+		initPk("Tortipouss",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 23) //ouisticram
 	{
-		initPk("Ouisticram",pokedex,starter);
+		initPk("Ouisticram",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 27) //tiplouf
 	{
-		initPk("Tiplouf",pokedex,starter);
+		initPk("Tiplouf",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 20) //vipelierre
 	{
-		initPk("Vipélierre",pokedex,starter);
+		initPk("Vipélierre",pokedex,starter,tabAtk);
 		etat = 6;
 	}
 	else if(etat == 24) //gruikui
 	{
-		initPk("Gruikui",pokedex,starter);
+		initPk("Gruikui",pokedex,starter,tabAtk);
 		etat = 6;	
 	}
 	else if (etat == 3) // Si on est dans le menu de base sur le bouton "lancer une partie" : ->
@@ -710,11 +711,34 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 	}
 	else if(etat == 35) //menu combat 1 
 	{
-		etat = 16; //menu combat bouton attaque 1
+		verif_victoire = Baston(perso->starter.att[0], perso, tour);
+		if (verif_victoire == 0){
+			etat = 15; //menu combat bouton attaque 2
+		}
+		else if (verif_victoire == 1){
+			//Vous avez gagné 
+			printf("Vous avez gagné\n");
+		}
+		else if (verif_victoire == 2){
+			//Vous avez perdu
+			printf("Vous avez perdu\n");
+		}
 	}
 	else if(etat == 36) //menu combat 2
 	{
-		etat = 16; //menu combat bouton attaque 2
+		verif_victoire = Baston(perso->starter.att[1], perso, tour);
+		printf("%d\n",verif_victoire);
+		if (verif_victoire == 0){
+			etat = 15; //menu combat bouton attaque 2
+		}
+		else if (verif_victoire == 1){
+			//Vous avez gagné 
+			printf("Vous avez gagné\n");
+		}
+		else if (verif_victoire == 2){
+			//Vous avez perdu
+			printf("Vous avez perdu\n");
+		}
 	}
 	else if(etat == 37) //menu combat 3
 	{
@@ -732,7 +756,7 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 	{
 		etat = 42; //et qu'on clic sur quitter on renvoie au case'42' qui libere la structure image et termine la boucle evenement.
 	}
-return etat;
+	return etat;
 }
 
 /* Fonction  servant à définir si la souris survole un des éléments du menu, si oui, on affiche l'image variante
@@ -1089,28 +1113,3 @@ void affichePerso(int *placex, int *placey, DonneesImageRGB *persoFace){
 	
 }
 
-void initPk(char *name,Pokemon *pokedex,Pokemon *starter){
-	int i = 0;
-	while(strcmp(name,pokedex[i].nom) != 0){
-		i ++;
-	}
-	strcpy(starter->nom,pokedex[i].nom);
-	strcpy(starter->type,pokedex[i].type);
-	
-	starter->niveau = pokedex[i].niveau;
-	starter->stade = pokedex[i].stade;
-	starter->niveau1 = pokedex[i].niveau1;
-	starter->coef1 = pokedex[i].coef1;
-	starter->coef2 = pokedex[i].coef2;
-	starter->pv = pokedex[i].pv;
-	starter->att[0] = pokedex[i].att[0];
-	starter->att[1] = pokedex[i].att[1];
-
-}
-
-void initDresseur(char *name,dresseur *perso, Pokemon *starter){
-
-	strcpy(perso->nom,name);
-	perso->etage = 0;
-	perso->starter = *starter;
-}

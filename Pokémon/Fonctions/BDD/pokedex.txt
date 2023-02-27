@@ -1,7 +1,7 @@
 
 Nom : Bulbizarre
 Type : Plante
-Niveau : 1
+Niveau : 2
 PV max : 11
 PV actuels : 11
 Attaque : 4

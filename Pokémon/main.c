@@ -13,6 +13,7 @@
 #define largeurPerso 50
 #define hauteurPerso 60
 
+
 int main(int argc, char **argv)
 {
     initialiseGfx(argc, argv); //Initialisation de l'acceleration graphique si elle existe
@@ -41,10 +42,14 @@ void gestionEvenement(EvenementGfx evenement)
     static int *placex = &x;
     static int *placey = &y;
     static Pokemon *pokedex;
+    static attaque *tabAtk;
+    static dresseur *tour;
     static Pokemon starter;
     static Pokemon *pstarter = &starter;
     static dresseur perso;
     static dresseur *pperso = &perso;
+    static int salle_actuelle = 0;
+    
 
     switch (evenement)
     {
@@ -53,6 +58,9 @@ void gestionEvenement(EvenementGfx evenement)
             initImage();
             pokedex = malloc(NUM_POKEMON*sizeof(Pokemon));
             pokedex = readPokedex();
+            tabAtk = malloc(NUM_ATTAQUE*sizeof(attaque));
+            tabAtk = readAttaque();
+            tour = initTour(pokedex,tabAtk);
             pstarter = malloc(sizeof(Pokemon));
             demandeTemporisation(20); //tempo toutes les 20ms.
             }
@@ -106,7 +114,7 @@ void gestionEvenement(EvenementGfx evenement)
                 case 13: //code ascii de la touche "entrée".
                     if(etat == 0)
                     {
-                        etat = gereClicBoutons(etat,pokedex,pstarter,pperso);
+                        etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk);
                     }    
                     break;
                 case 27: //code ascii de la touche "echap".
@@ -139,7 +147,7 @@ void gestionEvenement(EvenementGfx evenement)
         case BoutonSouris:{
             if (etatBoutonSouris() == GaucheAppuye)
             {
-                etat = gereClicBoutons(etat,pokedex,pstarter,pperso);
+                etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk);
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {
