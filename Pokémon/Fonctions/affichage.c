@@ -38,6 +38,9 @@ static DonneesImageRGB *pause_sauvegarder = NULL;
 static DonneesImageRGB *combat = NULL;
 static DonneesImageRGB *victoire_combat = NULL;
 static DonneesImageRGB *defaite_combat = NULL;
+static DonneesImageRGB *victoire_combat_survol = NULL;
+static DonneesImageRGB *defaite_combat_rejouer = NULL;
+static DonneesImageRGB *defaite_combat_quitter = NULL;
 
 //Images personnage face
 static DonneesImageRGB *persoFace1 = NULL;
@@ -208,8 +211,11 @@ void initImage(){
 	pause_reprendre = lisBMPRGB("bmp/Menus/pause/pause_reprendre.bmp");
 	pause_sauvegarder = lisBMPRGB("bmp/Menus/pause/pause_sauvegarder.bmp");
 	combat = lisBMPRGB("bmp/Menus/combat/combat.bmp");
-	victoire_combat = lisBMPRGB("bmp/Menus/victoire_combat.bmp");
-	defaite_combat = lisBMPRGB("bmp/Menus/defaite_combat.bmp");
+	victoire_combat = lisBMPRGB("bmp/Menus/combat/victoire_combat.bmp");
+	defaite_combat = lisBMPRGB("bmp/Menus/combat/defaite_combat.bmp");
+	victoire_combat_survol = lisBMPRGB("bmp/Menus/combat/victoire_combat_survol.bmp");
+	defaite_combat_rejouer = lisBMPRGB("bmp/Menus/combat/defaite_combat_rejouer.bmp");
+	defaite_combat_quitter = lisBMPRGB("bmp/Menus/combat/defaite_combat_quitter.bmp");
 
 	//Init images persos face
 	persoFace1 = lisBMPRGB("bmp/Perso/perso1/face_fixe.bmp");
@@ -664,7 +670,6 @@ switch(etat){
 			ecrisImage(0, 0, victoire_combat->largeurImage, victoire_combat->hauteurImage, victoire_combat->donneesRGB);
 		}
 		*placey = 700;
-		etat = 7;
 		
 	break;
 
@@ -672,9 +677,6 @@ switch(etat){
 		if(defaite_combat != NULL){
 			ecrisImage(0, 0, defaite_combat->largeurImage, defaite_combat->hauteurImage, defaite_combat->donneesRGB);
 		}
-
-		*placey = 700;
-		etat = 7;
 	break;
 	case 44: //case pour tout les boutons quitter.
 	//-> On libère les données images proprement puis on termine la boucle evenement.
@@ -713,6 +715,11 @@ switch(etat){
 		libereDonneesImageRGB(&pause_quitter);
 		libereDonneesImageRGB(&pause_reprendre);
 		libereDonneesImageRGB(&pause_sauvegarder);
+		libereDonneesImageRGB(&victoire_combat);
+		libereDonneesImageRGB(&defaite_combat);
+		libereDonneesImageRGB(&victoire_combat_survol);
+		libereDonneesImageRGB(&defaite_combat_rejouer);
+		libereDonneesImageRGB(&defaite_combat_quitter);
 
 		//Libération des persos
 		libereDonneesImageRGB(&persoFace1);
@@ -822,6 +829,29 @@ switch(etat){
 
 		
 		termineBoucleEvenements(); 
+	//Survol bouton de victoire
+	case 45:
+		if (victoire_combat_survol != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, victoire_combat_survol->largeurImage, victoire_combat_survol->hauteurImage, victoire_combat_survol->donneesRGB); // On affiche l'image
+		}
+	break;
+	//Survol bouton rejouer de defaite
+	case 46:
+		if (defaite_combat_rejouer != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, defaite_combat_rejouer->largeurImage, defaite_combat_rejouer->hauteurImage, defaite_combat_rejouer->donneesRGB); // On affiche l'image
+		}
+	break;
+	//Survol bouton quitter de defaite
+	case 47:
+		if (defaite_combat_quitter != NULL) // Si l'image a pu etre lue
+		{
+			effaceFenetre (0, 0, 0);
+			ecrisImage(0, 0, defaite_combat_quitter->largeurImage, defaite_combat_quitter->hauteurImage, defaite_combat_quitter->donneesRGB); // On affiche l'image
+		}
 	break;
 	}
 
@@ -832,7 +862,7 @@ return salle_actuelle;
  	et en fonction de l'élément survolé lors du clic par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
  	du switch(evenement) dès qu'il y a un appui sur le bouton gauche de la souris. */
 
-int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle, int verif_victoire){
+int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle,int verif_victoire){
 	
 	if (etat == 0) // Si on est sur l'écran titre :
 	{
@@ -948,91 +978,39 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 		if (verif_victoire == 0){
 			etat = 15; //menu combat bouton attaque 2
 		}
+		//Victoire
 		else if (verif_victoire == 1){
-			//Vous avez gagné 
 			etat = 42;
-			printf("Vous avez gagné\n");
 		}
+		//Defaite
 		else if (verif_victoire == 2){
-			//Vous avez perdu
 			etat = 43;
-			printf("Vous avez perdu\n");
 		}
 	}
 	else if(etat == 36) //menu combat 2
 	{
 		verif_victoire = Baston(perso->starter.att[1], perso, tour);
-		printf("%d\n",verif_victoire);
 		if (verif_victoire == 0){
 			etat = 15; //menu combat bouton attaque 2
 		}
+		//Victoire
 		else if (verif_victoire == 1){
-			//Vous avez gagné 
 			etat = 42;
-			printf("Vous avez gagné\n");
 		}
+		//Defaite
 		else if (verif_victoire == 2){
-			//Vous avez perdu
 			etat = 43;
-			printf("Vous avez perdu\n");
 		}
 	}
 	else if(etat == 37) //menu combat 3 : quitter renvoie dans la salle actuelle
 	{
-		if(salle_actuelle == 1){
-			etat = 7;
-		}
-		else if(salle_actuelle == 2){
-			etat = 8;
-		}
-		else if(salle_actuelle == 3){
-			etat = 9;
-		}
-		else if(salle_actuelle == 4){
-			etat = 10;
-		}
-		else if(salle_actuelle == 5){
-			etat = 11;
-		}
-		else if(salle_actuelle == 6){
-			etat = 12;
-		}
-		else if(salle_actuelle == 7){
-			etat = 13;
-		}
-		else{
-			etat = 14;
-		}
+		*placey = 500;
+		etat = checkSalle(salle_actuelle,etat);
+
 	}
 	else if(etat == 39) // Si on est sur le menu pause ->
 	{
-		if(salle_actuelle == 1){
-			etat = 7;
-		}
-		else if(salle_actuelle == 2){
-			etat = 8;
-		}
-		else if(salle_actuelle == 3){
-			etat = 9;
-		}
-		else if(salle_actuelle == 4){
-			etat = 10;
-		}
-		else if(salle_actuelle == 5){
-			etat = 11;
-		}
-		else if(salle_actuelle == 6){
-			etat = 12;
-		}
-		else if(salle_actuelle == 7){
-			etat = 13;
-		}
-		else{
-			etat = 14;
-		}
-
-		printf("reprendre"); //->et qu'on clic sur reprendre (!!!Pour l'instant printf)
-		
+		etat = checkSalle(salle_actuelle,etat);//->et qu'on clic sur reprendre		
 	}
 	else if(etat == 40) // Si on est sur le menu pause ->
 	{
@@ -1042,6 +1020,26 @@ int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso
 	{
 		etat = 44; //et qu'on clic sur quitter on renvoie au case'42' qui libere la structure image et termine la boucle evenement.
 	}
+
+	//Retour a la salle apres victoire
+	else if(etat == 45){
+		*placey = 700;
+		etat = checkSalle(salle_actuelle,etat);
+	}
+
+	//Rejouer le combat
+	else if(etat == 46){
+		etat = 15;
+		//starter->pv = pv max;
+	}
+
+	//Quitter le combat (a rajouter : sauvegarde)
+	else if(etat == 47){
+		*placey = 500;
+		etat = checkSalle(salle_actuelle,etat);
+		//starter->pv = pv max;
+	}
+	
 	return etat;
 }
 
@@ -1210,6 +1208,28 @@ int verif_survol_souris(int etat){
 		if(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 172 && ordonneeSouris() <= 375)
 		{
 			etat = 41; //bouton Quitter
+		}
+	}
+
+	//Retour salle après victoire
+	else if(etat == 42){
+		if((abscisseSouris() >= 640 && abscisseSouris() <= 1288 && ordonneeSouris() >= 82 && ordonneeSouris() <= 240)) 
+		{
+			etat = 45;
+		}
+	}
+
+	else if(etat == 43){
+		//Rejouer le combat
+		if((abscisseSouris() >= 600 && abscisseSouris() <= 1230 && ordonneeSouris() >= 82 && ordonneeSouris() <= 237)) 
+		{
+			etat = 46;
+		}
+
+		//Quitter le combat (a rajouter : sauvegarde)
+		if((abscisseSouris() >= 1244 && abscisseSouris() <= 1884 && ordonneeSouris() >= 82 && ordonneeSouris() <= 237)) 
+		{
+			etat = 47;
 		}
 	}
 
@@ -1383,6 +1403,30 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	//Retour salle après victoire combat
+	else if(etat == 45){
+		if(!(abscisseSouris() >= 640 && abscisseSouris() <= 1288 && ordonneeSouris() >= 82 && ordonneeSouris() <= 240)) 
+		{
+			etat = 42;
+		}
+	}
+
+	//Rejouer combat
+	else if(etat == 46){
+		if(!(abscisseSouris() >= 600 && abscisseSouris() <= 1230 && ordonneeSouris() >= 82 && ordonneeSouris() <= 237)) 
+		{
+			etat = 43;
+		}
+	}
+	//Quitter le combat (a rajouter : sauvegarde)
+	else if(etat == 47){
+		if(!(abscisseSouris() >= 1244 && abscisseSouris() <= 1884 && ordonneeSouris() >= 82 && ordonneeSouris() <= 237)) 
+		{
+			etat = 43;
+		}
+	}
+
 return etat;
 }
 
@@ -1745,4 +1789,33 @@ void affichageCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 		}
 
 	}
+}
+
+//Check dans quelle salle on est
+int checkSalle(int salle_actuelle, int etat){
+	if(salle_actuelle == 1){
+			etat = 7;
+		}
+		else if(salle_actuelle == 2){
+			etat = 8;
+		}
+		else if(salle_actuelle == 3){
+			etat = 9;
+		}
+		else if(salle_actuelle == 4){
+			etat = 10;
+		}
+		else if(salle_actuelle == 5){
+			etat = 11;
+		}
+		else if(salle_actuelle == 6){
+			etat = 12;
+		}
+		else if(salle_actuelle == 7){
+			etat = 13;
+		}
+		else{
+			etat = 14;
+		}
+	return etat;
 }

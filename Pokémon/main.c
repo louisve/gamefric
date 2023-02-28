@@ -117,7 +117,7 @@ void gestionEvenement(EvenementGfx evenement)
                 case 13: //code ascii de la touche "entrée".
                     if(etat == 0)
                     {
-                        etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, verif_victoire);
+                        etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, verif_victoire);
                     }    
                     break;
                 case 27: //code ascii de la touche "echap".
@@ -177,7 +177,7 @@ void gestionEvenement(EvenementGfx evenement)
         case BoutonSouris:{
             if (etatBoutonSouris() == GaucheAppuye)
             {
-                etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, verif_victoire);
+                etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, verif_victoire);
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {

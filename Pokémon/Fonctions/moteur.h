@@ -6,7 +6,6 @@
 #define hauteurPerso 60
 
 
-
 //Include des librairies
 
 #include <stdio.h>

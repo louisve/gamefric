@@ -40,23 +40,16 @@ float FaiblessesResistance(attaque attaqueUtilisee, dresseur *pokemonVictime){
     }
     else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime->starter.type, "Eau") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime->starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime->starter.type, "Feu") == 0)){
         faibl = 0.5;
-        printf("L'attaque n'est pas très efficace.\n");
     }
     else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime->starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime->starter.type, "Feu") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime->starter.type, "Eau") == 0)){
         faibl = 2;
-        printf("L'attaque est super efficace.\n");
     }
     return faibl;
 }
 
 int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour){
 
-    printf("Ton pokemon a attaque\n");
-
     tour->starter.pv -= attaquer(attaqueUtilisee, perso, tour);
-
-    printf("Votre attaque a fait %.0f dégâts.\n\n",attaquer(attaqueUtilisee, perso, tour));
-
     int verif_victoire = verifVictoire(perso, tour);
 
     if (verif_victoire == 1){
@@ -69,13 +62,7 @@ int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour){
 
     attaqueUtilisee = tour->starter.att[rand()%(2)];
     attaqueUtilisee = tour->starter.att[1];
-
-    printf("Le pokemon adversaire a utilisé %s\n",attaqueUtilisee.nom);
-
     perso->starter.pv -= attaquer(attaqueUtilisee, tour, perso);
-
-    printf("L'attaque adverse a fait %.0f dégâts.\n\n",attaquer(attaqueUtilisee, tour, perso));
-
     sleep(2);
 
     verif_victoire = verifVictoire(perso, tour);
@@ -85,8 +72,6 @@ int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour){
 
 int verifVictoire(dresseur *perso, dresseur *tour){
     int verif_victoire = 0;
-    printf("Pokemon adverse pv : %0.f\n",tour->starter.pv);
-    printf("Pokemon Dresseur pv : %0.f\n",perso->starter.pv);
     if (tour->starter.pv <= 0){
         verif_victoire = 1;
     }
