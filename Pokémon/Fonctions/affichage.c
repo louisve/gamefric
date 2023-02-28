@@ -169,8 +169,6 @@ static DonneesImageRGB *ouisticram_evo2_dos = NULL;
 static DonneesImageRGB *tiplouf_evo2 = NULL;
 static DonneesImageRGB *tiplouf_evo2_dos = NULL;
 
-static int verif_victoire = 0;
-
 // Création des fonctions
 
 /*Fonction d'affectation des images à la structure image. */
@@ -834,7 +832,7 @@ return salle_actuelle;
  	et en fonction de l'élément survolé lors du clic par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
  	du switch(evenement) dès qu'il y a un appui sur le bouton gauche de la souris. */
 
-int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle){
+int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle, int verif_victoire){
 	
 	if (etat == 0) // Si on est sur l'écran titre :
 	{

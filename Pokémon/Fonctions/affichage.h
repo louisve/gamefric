@@ -24,7 +24,7 @@
 
 void initImage(); 
 int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp);
-int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle);
+int gereClicBoutons(int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle, int verif_victoire);
 int verif_survol_souris(int etat);
 void affichePerso(int *placex, int *placey, int *etatdp, DonneesImageRGB *persoFace, DonneesImageRGB *persoDos, DonneesImageRGB *persoCoteDroit, DonneesImageRGB *persoCoteGauche);
 void affichePersoChoisis(int *placex, int *placey, int *etatdp, dresseur *perso);

@@ -51,6 +51,7 @@ void gestionEvenement(EvenementGfx evenement)
     static int salle_actuelle = 0;
     static int dp = 0;
     static int *etatdp = &dp;
+    static int verif_victoire = 0;
     
 
     switch (evenement)
@@ -116,7 +117,7 @@ void gestionEvenement(EvenementGfx evenement)
                 case 13: //code ascii de la touche "entrée".
                     if(etat == 0)
                     {
-                        etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle);
+                        etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, verif_victoire);
                     }    
                     break;
                 case 27: //code ascii de la touche "echap".
@@ -159,7 +160,7 @@ void gestionEvenement(EvenementGfx evenement)
          switch(toucheClavier())
             {
                 case 13: //Pour se déplacer vers le haut grâce à la flèche du haut
-                    etat = ControleDeplacementsHaut(placey, placex, etat, etatdp /*, combattermine*/);
+                    etat = ControleDeplacementsHaut(placey, placex, etat, etatdp, verif_victoire);
                     break;
                 case 14: //Pour se déplacer vers le bas grâce à la flèche du bas
                     etat = ControleDeplacementsBas(placey, placex, etat, etatdp);
@@ -176,7 +177,7 @@ void gestionEvenement(EvenementGfx evenement)
         case BoutonSouris:{
             if (etatBoutonSouris() == GaucheAppuye)
             {
-                etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle);
+                etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, verif_victoire);
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {
