@@ -74,7 +74,7 @@ void gestionEvenement(EvenementGfx evenement)
             {
             // On part d'un fond d'ecran noir
             effaceFenetre (0, 0, 0);
-            afficheImg_menus(etat,placex,placey,pperso);
+            salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour);
             }
             break;
 
@@ -84,7 +84,7 @@ void gestionEvenement(EvenementGfx evenement)
             {
                 case 'Q': /* Pour sortir quelque peu proprement du programme */
                 case 'q':
-                    etat = 42; // Renvoie au case'42' qui libere la structure image et termine la boucle evenement.
+                    etat = 44; // Renvoie au case'42' qui libere la structure image et termine la boucle evenement.
                     break;
                 case 'F':
                 case 'f':
@@ -114,13 +114,40 @@ void gestionEvenement(EvenementGfx evenement)
                 case 13: //code ascii de la touche "entrée".
                     if(etat == 0)
                     {
-                        etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk);
+                        etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle);
                     }    
                     break;
                 case 27: //code ascii de la touche "echap".
                     if(etat != 0 && etat != 1 && etat != 3 && etat != 4 && etat != 5 ) // Si on est pas sur l'acceuil ou le menu principal->
                     {
                         etat = 38; //-> Alors on peut passer à l'état 38 (écran pause) si la touche échap est préssé.
+                    }
+                break;
+
+                case 't':
+                    if(salle_actuelle == 1){
+                        etat = 7;
+                    }
+                    else if(salle_actuelle == 2){
+                        etat = 8;
+                    }
+                    else if(salle_actuelle == 3){
+                        etat = 9;
+                    }
+                    else if(salle_actuelle == 4){
+                        etat = 10;
+                    }
+                    else if(salle_actuelle == 5){
+                        etat = 11;
+                    }
+                    else if(salle_actuelle == 6){
+                        etat = 12;
+                    }
+                    else if(salle_actuelle == 7){
+                        etat = 13;
+                    }
+                    else{
+                        etat = 14;
                     }
                 break;
             }
@@ -147,7 +174,7 @@ void gestionEvenement(EvenementGfx evenement)
         case BoutonSouris:{
             if (etatBoutonSouris() == GaucheAppuye)
             {
-                etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk);
+                etat = gereClicBoutons(etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle);
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {
