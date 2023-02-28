@@ -25,10 +25,10 @@
 
 //Initialisation de fonctions/structures
 
-int ControleDeplacementsHaut(int *placey, int *placex, int etat/*, int combattermine*/);
-int ControleDeplacementsBas(int *placey, int *placex, int etat);
-int ControleDeplacementsDroite(int *placey, int *placex, int etat);
-int ControleDeplacementsGauche(int *placey, int *placex, int etat);
+int ControleDeplacementsHaut(int *placey, int *placex, int etat, int *etatdp/*, int combattermine*/);
+int ControleDeplacementsBas(int *placey, int *placex, int etat, int *etatdp);
+int ControleDeplacementsDroite(int *placey, int *placex, int etat, int *etatdp);
+int ControleDeplacementsGauche(int *placey, int *placex, int etat, int *etatdp);
 
 
 

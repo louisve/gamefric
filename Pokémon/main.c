@@ -49,6 +49,8 @@ void gestionEvenement(EvenementGfx evenement)
     static dresseur perso;
     static dresseur *pperso = &perso;
     static int salle_actuelle = 0;
+    static int dp = 0;
+    static int *etatdp = &dp;
     
 
     switch (evenement)
@@ -74,7 +76,7 @@ void gestionEvenement(EvenementGfx evenement)
             {
             // On part d'un fond d'ecran noir
             effaceFenetre (0, 0, 0);
-            salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour);
+            salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour, etatdp);
             }
             break;
 
@@ -157,16 +159,16 @@ void gestionEvenement(EvenementGfx evenement)
          switch(toucheClavier())
             {
                 case 13: //Pour se déplacer vers le haut grâce à la flèche du haut
-                    etat = ControleDeplacementsHaut(placey, placex, etat /*, combattermine*/);
+                    etat = ControleDeplacementsHaut(placey, placex, etat, etatdp /*, combattermine*/);
                     break;
                 case 14: //Pour se déplacer vers le bas grâce à la flèche du bas
-                    etat = ControleDeplacementsBas(placey, placex, etat);
+                    etat = ControleDeplacementsBas(placey, placex, etat, etatdp);
                     break;
                 case 15: //Pour se déplacer vers la gauche grâce à la flèche de gauche
-                    etat = ControleDeplacementsGauche(placey, placex, etat);
+                    etat = ControleDeplacementsGauche(placey, placex, etat, etatdp);
                     break;
                 case 16: //Pour se déplacer vers la droite grâce à la flèche de droite
-                    etat = ControleDeplacementsDroite(placey, placex, etat);
+                    etat = ControleDeplacementsDroite(placey, placex, etat, etatdp);
                     break;
             }
             break;

@@ -39,13 +39,37 @@ static DonneesImageRGB *combat = NULL;
 static DonneesImageRGB *victoire_combat = NULL;
 static DonneesImageRGB *defaite_combat = NULL;
 
-//Images personnage
+//Images personnage face
 static DonneesImageRGB *persoFace1 = NULL;
 static DonneesImageRGB *persoFace2 = NULL;
 static DonneesImageRGB *persoFace3 = NULL;
 static DonneesImageRGB *persoFace4 = NULL;
 static DonneesImageRGB *persoFace5 = NULL;
 static DonneesImageRGB *persoFace6 = NULL;
+
+//Image Personnage dos
+static DonneesImageRGB *persoDos1 = NULL;
+static DonneesImageRGB *persoDos2 = NULL;
+static DonneesImageRGB *persoDos3 = NULL;
+static DonneesImageRGB *persoDos4 = NULL;
+static DonneesImageRGB *persoDos5 = NULL;
+static DonneesImageRGB *persoDos6 = NULL;
+
+//Image Personnage côté droit
+static DonneesImageRGB *persoCoteDroit1 = NULL;
+static DonneesImageRGB *persoCoteDroit2 = NULL;
+static DonneesImageRGB *persoCoteDroit3 = NULL;
+static DonneesImageRGB *persoCoteDroit4 = NULL;
+static DonneesImageRGB *persoCoteDroit5 = NULL;
+static DonneesImageRGB *persoCoteDroit6 = NULL;
+
+//Image Personnage côté gauche
+static DonneesImageRGB *persoCoteGauche1 = NULL;
+static DonneesImageRGB *persoCoteGauche2 = NULL;
+static DonneesImageRGB *persoCoteGauche3 = NULL;
+static DonneesImageRGB *persoCoteGauche4 = NULL;
+static DonneesImageRGB *persoCoteGauche5 = NULL;
+static DonneesImageRGB *persoCoteGauche6 = NULL;
 
 //Images salles/niveau
 static DonneesImageRGB *salle1 = NULL;
@@ -93,6 +117,7 @@ static DonneesImageRGB *ouisticram_dos = NULL;
 static DonneesImageRGB *tiplouf = NULL;
 static DonneesImageRGB *tiplouf_dos = NULL;
 
+//Images Pokemons évo 1
 static DonneesImageRGB *bulbizarre_evo1 = NULL;
 static DonneesImageRGB *bulbizarre_evo1_dos = NULL;
 static DonneesImageRGB *salameche_evo1 = NULL;
@@ -118,6 +143,7 @@ static DonneesImageRGB *ouisticram_evo1_dos = NULL;
 static DonneesImageRGB *tiplouf_evo1 = NULL;
 static DonneesImageRGB *tiplouf_evo1_dos = NULL;
 
+//Images Pokemons évo 2
 static DonneesImageRGB *bulbizarre_evo2 = NULL;
 static DonneesImageRGB *bulbizarre_evo2_dos = NULL;
 static DonneesImageRGB *salameche_evo2 = NULL;
@@ -187,13 +213,37 @@ void initImage(){
 	victoire_combat = lisBMPRGB("bmp/Menus/victoire_combat.bmp");
 	defaite_combat = lisBMPRGB("bmp/Menus/defaite_combat.bmp");
 
-	//Init images persos
+	//Init images persos face
 	persoFace1 = lisBMPRGB("bmp/Perso/perso1/face_fixe.bmp");
 	persoFace2 = lisBMPRGB("bmp/Perso/perso2/face_fixe.bmp");
 	persoFace3 = lisBMPRGB("bmp/Perso/perso3/face_fixe.bmp");
 	persoFace4 = lisBMPRGB("bmp/Perso/perso4/face_fixe.bmp");
 	persoFace5 = lisBMPRGB("bmp/Perso/perso5/face_fixe.bmp");
 	persoFace6 = lisBMPRGB("bmp/Perso/perso6/face_fixe.bmp");
+
+	//Init images persos Dos
+	persoDos1 = lisBMPRGB("bmp/Perso/perso1/dos_fixe.bmp");
+	persoDos2 = lisBMPRGB("bmp/Perso/perso2/dos_fixe.bmp");
+	persoDos3 = lisBMPRGB("bmp/Perso/perso3/dos_fixe.bmp");
+	persoDos4 = lisBMPRGB("bmp/Perso/perso4/dos_fixe.bmp");
+	persoDos5 = lisBMPRGB("bmp/Perso/perso5/dos_fixe.bmp");
+	persoDos6 = lisBMPRGB("bmp/Perso/perso6/dos_fixe.bmp");
+
+	//Init images persos côté droit
+	persoCoteDroit1 = lisBMPRGB("bmp/Perso/perso1/profil2_fixe.bmp");
+	persoCoteDroit2 = lisBMPRGB("bmp/Perso/perso2/profil2_fixe.bmp");
+	persoCoteDroit3 = lisBMPRGB("bmp/Perso/perso3/profil2_fixe.bmp");
+	persoCoteDroit4 = lisBMPRGB("bmp/Perso/perso4/profil2_fixe.bmp");
+	persoCoteDroit5 = lisBMPRGB("bmp/Perso/perso5/profil2_fixe.bmp");
+	persoCoteDroit6 = lisBMPRGB("bmp/Perso/perso6/profil2_fixe.bmp");
+
+	//Init images persos côté gauche
+	persoCoteGauche1 = lisBMPRGB("bmp/Perso/perso1/profil_fixe.bmp");
+	persoCoteGauche2 = lisBMPRGB("bmp/Perso/perso2/profil_fixe.bmp");
+	persoCoteGauche3 = lisBMPRGB("bmp/Perso/perso3/profil_fixe.bmp");
+	persoCoteGauche4 = lisBMPRGB("bmp/Perso/perso4/profil_fixe.bmp");
+	persoCoteGauche5 = lisBMPRGB("bmp/Perso/perso5/profil_fixe.bmp");
+	persoCoteGauche6 = lisBMPRGB("bmp/Perso/perso6/profil_fixe.bmp");
 
 	//init images salles
 	salle1 = lisBMPRGB("bmp/Etages/salle1.bmp");
@@ -296,7 +346,7 @@ void initImage(){
 /* Fonction qui affiche l'image du menu adéquat en fonction de l'état, cette fonction sera appelé en boucle dans le 
 	case [Affichage:] du switch(evenement) afin de créer une interractivité avec l'utilisateur.  */
 
-int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour ){
+int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp){
 
 switch(etat){
 	case 0:
@@ -358,24 +408,8 @@ switch(etat){
 	if (salle1 != NULL) {
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle1->largeurImage, salle1->hauteurImage, salle1->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
-		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
-		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
-		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
-		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
-		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
-		}
+		affichePersoChoisis(placex, placey, etatdp, perso);
+		
 	}
 	salle_actuelle = 1;
 	break;
@@ -383,24 +417,7 @@ switch(etat){
 	if (salle2 != NULL) {
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle2->largeurImage, salle2->hauteurImage, salle2->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
-		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
-		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
-		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
-		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
-		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
-		}
+		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 2;
 	break;
@@ -408,24 +425,7 @@ switch(etat){
 	if (salle3 != NULL) {
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle3->largeurImage, salle3->hauteurImage, salle3->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
-		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
-		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
-		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
-		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
-		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
-		}
+		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 3;
 	break;
@@ -433,24 +433,7 @@ switch(etat){
 	if (salle4 != NULL) {
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle4->largeurImage, salle4->hauteurImage, salle4->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
-		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
-		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
-		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
-		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
-		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
-		}
+		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 4;
 	break;
@@ -458,24 +441,7 @@ switch(etat){
 	if (salle5 != NULL) {
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle5->largeurImage, salle5->hauteurImage, salle5->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
-		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
-		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
-		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
-		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
-		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
-		}
+		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 5;
 	break;
@@ -483,24 +449,7 @@ switch(etat){
 	if (salle6 != NULL) {
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle6->largeurImage, salle6->hauteurImage, salle6->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
-		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
-		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
-		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
-		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
-		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
-		}
+		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 6;
 	break;
@@ -508,24 +457,7 @@ switch(etat){
 	if (salle7 != NULL) {
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle7->largeurImage, salle7->hauteurImage, salle7->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
-		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
-		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
-		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
-		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
-		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
-		}
+		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 7;
 	break;
@@ -533,24 +465,7 @@ switch(etat){
 	if (salle8 != NULL) {
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle8->largeurImage, salle8->hauteurImage, salle8->donneesRGB);
-		if(strcmp(perso->nom,"Perso 1.1") == 0){
-			affichePerso(placex, placey, persoFace1);
-		}
-		else if(strcmp(perso->nom,"Perso 1.2") == 0){
-			affichePerso(placex, placey, persoFace2);
-		}
-		else if(strcmp(perso->nom,"Perso 1.3") == 0){
-			affichePerso(placex, placey, persoFace3);
-		}
-		else if(strcmp(perso->nom,"Perso 2.1") == 0){
-			affichePerso(placex, placey, persoFace4);
-		}
-		else if(strcmp(perso->nom,"Perso 2.2") == 0){
-			affichePerso(placex, placey, persoFace5);
-		}
-		else if(strcmp(perso->nom,"Perso 2.3") == 0){
-			affichePerso(placex, placey, persoFace6);
-		}
+		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 8;
 	break;
@@ -1477,11 +1392,42 @@ return etat;
 plus tard le perso sera peut-etre afficher dans une autre fonction
 */
 
-void affichePerso(int *placex, int *placey, DonneesImageRGB *persoFace){
+void affichePerso(int *placex, int *placey, int *etatdp, DonneesImageRGB *persoFace, DonneesImageRGB *persoDos, DonneesImageRGB *persoCoteDroit, DonneesImageRGB *persoCoteGauche){
 	
-	if(persoFace != NULL){
+	if(persoFace != NULL && *etatdp == 2){
 		ecrisImage(*placex, *placey, persoFace->largeurImage, persoFace->hauteurImage, persoFace->donneesRGB);
 	}
+	else if(persoDos != NULL && (*etatdp == 0 || *etatdp == 1)){
+		ecrisImage(*placex, *placey, persoDos->largeurImage, persoDos->hauteurImage, persoDos->donneesRGB);
+	}
+	else if(persoCoteDroit != NULL && *etatdp == 4){
+		ecrisImage(*placex, *placey, persoCoteDroit->largeurImage, persoCoteDroit->hauteurImage, persoCoteDroit->donneesRGB);
+	}
+	else if(persoCoteGauche != NULL && *etatdp == 3){
+		ecrisImage(*placex, *placey, persoCoteGauche->largeurImage, persoCoteGauche->hauteurImage, persoCoteGauche->donneesRGB);
+	}
+}
+
+void affichePersoChoisis(int *placex, int *placey, int *etatdp, dresseur *perso){
+
+	if(strcmp(perso->nom,"Perso 1.1") == 0){
+			affichePerso(placex, placey, etatdp, persoFace1, persoDos1, persoCoteDroit1, persoCoteGauche1);
+		}
+		else if(strcmp(perso->nom,"Perso 1.2") == 0){
+			affichePerso(placex, placey, etatdp, persoFace2, persoDos2, persoCoteDroit2, persoCoteGauche2);
+		}
+		else if(strcmp(perso->nom,"Perso 1.3") == 0){
+			affichePerso(placex, placey, etatdp, persoFace3, persoDos3, persoCoteDroit3, persoCoteGauche3);
+		}
+		else if(strcmp(perso->nom,"Perso 2.1") == 0){
+			affichePerso(placex, placey, etatdp, persoFace4, persoDos4, persoCoteDroit4, persoCoteGauche4);
+		}
+		else if(strcmp(perso->nom,"Perso 2.2") == 0){
+			affichePerso(placex, placey, etatdp, persoFace5, persoDos5, persoCoteDroit5, persoCoteGauche5);
+		}
+		else if(strcmp(perso->nom,"Perso 2.3") == 0){
+			affichePerso(placex, placey, etatdp, persoFace6, persoDos6, persoCoteDroit6, persoCoteGauche6);
+		}
 }
 
 //Interface de combat
