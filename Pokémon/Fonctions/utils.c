@@ -66,9 +66,11 @@ int verifVictoire(dresseur *perso, dresseur *tour){
     int verif_victoire = 0;
     if (tour->starter.pv <= 0){
         verif_victoire = 1;
+        tour->starter.pv = 0;
     }
     else if (perso->starter.pv <= 0){
         verif_victoire = 2;
+        perso->starter.pv = 0;
     }
     return verif_victoire;
 }

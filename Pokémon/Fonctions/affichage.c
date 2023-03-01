@@ -1106,6 +1106,8 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	{	
 		int etat_combat = 0;
 		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		effaceFenetre(0,0,0);
+		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 		etat_combat++;
 
 		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
@@ -1157,6 +1159,8 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if(etat == 37)
 	{
 		*placey = 500;
+		perso->starter.pv = calculPvMax(perso);
+		tour->starter.pv = calculPvMax(tour);
 		etat = checkSalle(salle_actuelle,etat);
 
 	}
@@ -1188,15 +1192,17 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 
 	// Si on est sur l'écran de défaite et qu'on clique sur "Rejouer le combat" : on re initialise les pv et on affiche l'interface de combat
 	else if(etat == 46){
+		perso->starter.pv = calculPvMax(perso);
+		tour->starter.pv = calculPvMax(tour);
 		etat = 15;
-		//starter->pv = pv max;
 	}
 
 	// Si on est sur l'écran de défaite et qu'on clique sur "quitter" : on re initialise les pv, recule le personnage et on affiche la salle actuelle
 	else if(etat == 47){
 		*placey = 500;
+		perso->starter.pv = calculPvMax(perso);
+		tour->starter.pv = calculPvMax(tour);
 		etat = checkSalle(salle_actuelle,etat);
-		//starter->pv = pv max;
 	}
 	
 	return etat;

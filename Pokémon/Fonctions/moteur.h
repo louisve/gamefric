@@ -5,7 +5,6 @@
 #define largeurPerso 50
 #define hauteurPerso 60
 
-
 //Include des librairies
 
 #include <stdio.h>

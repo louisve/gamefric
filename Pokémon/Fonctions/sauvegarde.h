@@ -18,7 +18,6 @@
 
 //Initialisation de fonctions/structures
 
-
 // void sauvegarde_niveau(etage *level);
 // void recup_sauvegarde_niveau(etage *level);
 // void sauvegarde_dresseur(dresseur *perso);

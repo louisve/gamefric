@@ -12,7 +12,6 @@
 
 //include des fichiers
 
-
 //Initialisation de fonctions/structures
 
 
