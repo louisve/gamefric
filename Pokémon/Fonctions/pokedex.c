@@ -66,6 +66,7 @@ void initDresseur(char *name,dresseur *perso, Pokemon *starter){
 	strcpy(perso->nom,name);
 	perso->etage = 0;
 	perso->starter = *starter;
+    perso->etage = 1;
 }
 
 

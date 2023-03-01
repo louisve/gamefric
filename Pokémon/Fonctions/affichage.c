@@ -426,6 +426,7 @@ switch(etat){
 		
 	}
 	salle_actuelle = 1;
+	perso->etage = salle_actuelle;
 	break;
 
 	// Affiche la 2ème salle
@@ -436,6 +437,7 @@ switch(etat){
 		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 2;
+	perso->etage = salle_actuelle;
 	break;
 
 	// Affiche la 3ème salle
@@ -446,6 +448,7 @@ switch(etat){
 		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 3;
+	perso->etage = salle_actuelle;
 	break;
 
 	// Affiche la 4ème salle
@@ -456,6 +459,7 @@ switch(etat){
 		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 4;
+	perso->etage = salle_actuelle;
 	break;
 
 	// Affiche la 5ème salle
@@ -466,6 +470,7 @@ switch(etat){
 		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 5;
+	perso->etage = salle_actuelle;
 	break;
 
 	// Affiche la 6ème salle
@@ -476,6 +481,7 @@ switch(etat){
 		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 6;
+	perso->etage = salle_actuelle;
 	break;
 
 	// Affiche la 7ème salle
@@ -486,6 +492,7 @@ switch(etat){
 		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 7;
+	perso->etage = salle_actuelle;
 	break;
 
 	// Affiche la 8ème salle
@@ -496,6 +503,7 @@ switch(etat){
 		affichePersoChoisis(placex, placey, etatdp, perso);
 	}
 	salle_actuelle = 8;
+	perso->etage = salle_actuelle;
 	break;
 
 	// Affiche l'interface de combat
@@ -948,7 +956,7 @@ return salle_actuelle;
  	et en fonction de l'élément survolé lors du clique par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
  	du switch(evenement) dès qu'il y a un appui sur le bouton gauche de la souris. */
 
-int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle,int *verif_victoire){
+int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle){
 	
 	// Si on est sur l'écran d'acceuil et qu'on appuie sur entrée : on affiche le menu 1
 	if (etat == 0)
@@ -1044,13 +1052,45 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if (etat == 3)
 	{
 		etat = 2;
+		remove("save_partie.dat");
 	}
 
 	// Si on est dans le premier menu et qu'on clique sur "charger une partie" : on affiche le choix du pokemon
 		// A CHANGER ! AJOUTER LA SAUVEGARDE 
 	else if (etat == 4)
 	{
-		etat = 2; 
+		int fichier = recup_sauvegarde_dresseur(perso);
+		
+		if(fichier == 1){
+			etat = 2;
+		}
+
+		else{
+			if(perso->etage == 1){
+				etat = 7;
+			}
+			else if(perso->etage == 2){
+				etat = 8;
+			}
+			else if(perso->etage == 3){
+				etat = 9;
+			} 
+			else if(perso->etage == 4){
+				etat = 10;
+			} 
+			else if(perso->etage == 5){
+				etat = 11;
+			} 
+			else if(perso->etage == 6){
+				etat = 12;
+			}  
+			else if(perso->etage == 7){
+				etat = 13;
+			} 
+			else if(perso->etage == 8){
+				etat = 14;
+			}
+		}
 	}
 
 	// Si on est dans le premier menu et qu'on clique sur "quitter" : on va dans le case quitter (44)
@@ -1105,26 +1145,26 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if(etat == 35)
 	{	
 		int etat_combat = 0;
-		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		perso->win = Baston(perso->starter.att[0], perso, tour, etat_combat);
 		effaceFenetre(0,0,0);
 		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 		etat_combat++;
 
-		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		perso->win = Baston(perso->starter.att[0], perso, tour, etat_combat);
 		etat_combat--;
 
 		// Si le combat n'est pas fini : on affiche l'interface de combat
-		if (*verif_victoire == 0){
+		if (perso->win == 0){
 			etat = 15;
 		}
 
 		//Si il y a victoire :  on affiche l'écran de victoire
-		else if (*verif_victoire == 1){
+		else if (perso->win == 1){
 			etat = 42;
 		}
 
 		//Si il y a défaite :  on affiche l'écran de défaite
-		else if (*verif_victoire == 2){
+		else if (perso->win == 2){
 			etat = 43;
 		}
 	}
@@ -1133,24 +1173,24 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if(etat == 36)
 	{	
 		int etat_combat = 0;
-		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		perso->win = Baston(perso->starter.att[0], perso, tour, etat_combat);
 		etat_combat++;
 
-		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		perso->win = Baston(perso->starter.att[0], perso, tour, etat_combat);
 		etat_combat--;
 
 		// Si le combat n'est pas fini : on affiche l'interface de combat
-		if (*verif_victoire == 0){
+		if (perso->win == 0){
 			etat = 15;
 		}
 
 		// Si il y a victoire :  on affiche l'écran de victoire
-		else if (*verif_victoire == 1){
+		else if (perso->win == 1){
 			etat = 42;
 		}
 
 		// Si il y a défaite :  on affiche l'écran de défaite
-		else if (*verif_victoire == 2){
+		else if (perso->win == 2){
 			etat = 43;
 		}
 	}
@@ -1175,7 +1215,7 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 		//SAUVEGARDE A AJOUTER
 	else if(etat == 40)
 	{
-		printf("sauvegarder");
+		sauvegarde_dresseur(perso);
 	}
 
 	// Si on est sur le menu pause et qu'on clique sur "quitter" : on renvoie au case quitter (44)

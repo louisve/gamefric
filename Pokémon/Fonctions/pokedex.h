@@ -51,7 +51,7 @@ typedef struct DRESSEUR{
     char nom[20];
     Pokemon starter;
     int etage;
-
+    int win;
 }dresseur;
 
 attaque* readAttaque();
