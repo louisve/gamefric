@@ -1145,13 +1145,17 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if(etat == 35)
 	{	
 		int etat_combat = 0;
-		perso->win = Baston(perso->starter.att[0], perso, tour, etat_combat);
-		effaceFenetre(0,0,0);
-		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		// perso->win = s
+		Baston(perso->starter.att[0], perso, tour, etat_combat, salle_actuelle);
+		// effaceFenetre(0,0,0);
+		// interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 		etat_combat++;
 
-		perso->win = Baston(perso->starter.att[0], perso, tour, etat_combat);
-		etat_combat--;
+		if(perso->win == 0){
+			// perso->win = 
+			Baston(perso->starter.att[0], perso, tour, etat_combat, salle_actuelle);
+			etat_combat--;
+		}
 
 		// Si le combat n'est pas fini : on affiche l'interface de combat
 		if (perso->win == 0){
@@ -1161,6 +1165,7 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 		//Si il y a victoire :  on affiche l'écran de victoire
 		else if (perso->win == 1){
 			etat = 42;
+			perso->starter.niveau += 5;
 		}
 
 		//Si il y a défaite :  on affiche l'écran de défaite
@@ -1173,11 +1178,15 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if(etat == 36)
 	{	
 		int etat_combat = 0;
-		perso->win = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		// perso->win = 
+		Baston(perso->starter.att[1], perso, tour, etat_combat, salle_actuelle);
 		etat_combat++;
 
-		perso->win = Baston(perso->starter.att[0], perso, tour, etat_combat);
-		etat_combat--;
+		if(perso->win == 0){
+			// perso->win = 
+			Baston(perso->starter.att[1], perso, tour, etat_combat, salle_actuelle);
+			etat_combat--;
+		}
 
 		// Si le combat n'est pas fini : on affiche l'interface de combat
 		if (perso->win == 0){
@@ -1187,6 +1196,7 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 		// Si il y a victoire :  on affiche l'écran de victoire
 		else if (perso->win == 1){
 			etat = 42;
+			perso->starter.niveau += 5;
 		}
 
 		// Si il y a défaite :  on affiche l'écran de défaite
@@ -1199,8 +1209,9 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if(etat == 37)
 	{
 		*placey = 500;
-		perso->starter.pv = calculPvMax(perso);
-		tour->starter.pv = calculPvMax(tour);
+		perso->starter.pv = calculPvMax(*perso);
+		tour[salle_actuelle - 1].starter.pv = calculPvMax(tour[salle_actuelle - 1]);
+		perso->win = 0;
 		etat = checkSalle(salle_actuelle,etat);
 
 	}
@@ -1232,16 +1243,18 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 
 	// Si on est sur l'écran de défaite et qu'on clique sur "Rejouer le combat" : on re initialise les pv et on affiche l'interface de combat
 	else if(etat == 46){
-		perso->starter.pv = calculPvMax(perso);
-		tour->starter.pv = calculPvMax(tour);
+		perso->starter.pv = calculPvMax(*perso);
+		tour[salle_actuelle - 1].starter.pv = calculPvMax(tour[salle_actuelle - 1]);
+		perso->win = 0;
 		etat = 15;
 	}
 
 	// Si on est sur l'écran de défaite et qu'on clique sur "quitter" : on re initialise les pv, recule le personnage et on affiche la salle actuelle
 	else if(etat == 47){
 		*placey = 500;
-		perso->starter.pv = calculPvMax(perso);
-		tour->starter.pv = calculPvMax(tour);
+		perso->starter.pv = calculPvMax(*perso);
+		tour[salle_actuelle - 1].starter.pv = calculPvMax(tour[salle_actuelle - 1]);
+		perso->win = 0;
 		etat = checkSalle(salle_actuelle,etat);
 	}
 	
@@ -2097,7 +2110,8 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 		}
 
 	}
-	affichePv(perso, tour);
+	affichePv(*perso);
+	affichePv(tour[salle_actuelle - 1]);
 }
 
 //Verifie dans quelle salle on est pour renvoyer dans le case associé à la salle
@@ -2129,49 +2143,65 @@ int checkSalle(int salle_actuelle, int etat){
 	return etat;
 }
 
-void affichePv(dresseur *perso, dresseur *tour){
 
-	//affichage pv dresseur
+void affichePv(dresseur perso){
+
+	int x1, x2, y1, y2, taille;
+	if (strcmp(perso.statut, "Boss") == 0){
+		x1 = x1_pv_adverse;
+		x2 = x2_pv_adverse;
+		y1 = y1_pv_adverse;
+		y2 = y2_pv_adverse;
+		taille = taille_texte_adverse;
+	}
+	else{
+		x1 = x1_pv;
+		x2 = x2_pv;
+		y1 = y1_pv;
+		y2 = y2_pv;
+		taille = taille_texte;
+	}
+
+	couleurCourante(255,255,255);
+	rectangle(x1, y1, x2, y2);
 
 	//Jauge
-	if((perso->starter.pv / calculPvMax(perso)*100) >= 50){
+	if((perso.starter.pv / calculPvMax(perso)*100) >= 50){
 		couleurCourante(0,255,0);
 	}
-	else if ((perso->starter.pv / calculPvMax(perso)*100) < 50 && (perso->starter.pv / calculPvMax(perso)*100) >= 25){
+	else if ((perso.starter.pv / calculPvMax(perso)*100) < 50 && (perso.starter.pv / calculPvMax(perso)*100) >= 25){
 		couleurCourante(255,160,0);
 	}
 	else{
 		couleurCourante(255,0,0);
 	}
-	rectangle(x1_pv, y1_pv, x1_pv + ((perso->starter.pv * (x2_pv - x1_pv)) / calculPvMax(perso)), y2_pv);
+	rectangle(x1, y1, x1 + ((perso.starter.pv * (x2 - x1)) / calculPvMax(perso)), y2);
 	
-	//Contour
-	couleurCourante(0,0,0);
-	epaisseurDeTrait(epaisseur_trait);
-	ligne(x1_pv - epaisseur_trait, y1_pv - epaisseur_trait/2, x2_pv + epaisseur_trait, y1_pv - epaisseur_trait/2); // ligne du bas
-	ligne(x1_pv - epaisseur_trait/2, y1_pv - epaisseur_trait/2, x1_pv - epaisseur_trait/2, y2_pv + epaisseur_trait/2); // ligne a gauche
-	ligne(x2_pv + epaisseur_trait/2, y1_pv - epaisseur_trait/2, x2_pv + epaisseur_trait/2, y2_pv + epaisseur_trait/2); //ligne a droite
-	ligne(x1_pv - epaisseur_trait, y2_pv + epaisseur_trait/2, x2_pv + epaisseur_trait, y2_pv + epaisseur_trait/2); //ligne du haut
 
-	//affichage pv adverse
-
-	//Jauge
-	if((tour->starter.pv / calculPvMax(tour)*100) >= 50){
-		couleurCourante(0,255,0);
-	}
-	else if ((tour->starter.pv / calculPvMax(tour)*100) < 50 && (tour->starter.pv / calculPvMax(tour)*100) >= 25){
-		couleurCourante(255,160,0);
-	}
-	else{
-		couleurCourante(255,0,0);
-	}
-	rectangle(x1_pv_adverse, y1_pv_adverse, x1_pv_adverse + ((tour->starter.pv * (x2_pv_adverse - x1_pv_adverse)) / calculPvMax(tour)), y2_pv_adverse);
-	
-	//Contour
 	couleurCourante(0,0,0);
+	//Contour
 	epaisseurDeTrait(epaisseur_trait);
-	ligne(x1_pv_adverse - epaisseur_trait, y1_pv_adverse - epaisseur_trait/2, x2_pv_adverse + epaisseur_trait, y1_pv_adverse - epaisseur_trait/2); // ligne du bas
-	ligne(x1_pv_adverse - epaisseur_trait/2, y1_pv_adverse - epaisseur_trait/2, x1_pv_adverse - epaisseur_trait/2, y2_pv_adverse + epaisseur_trait/2); // ligne a gauche
-	ligne(x2_pv_adverse + epaisseur_trait/2, y1_pv_adverse - epaisseur_trait/2, x2_pv_adverse + epaisseur_trait/2, y2_pv_adverse + epaisseur_trait/2); //ligne a droite
-	ligne(x1_pv_adverse - epaisseur_trait, y2_pv_adverse + epaisseur_trait/2, x2_pv_adverse + epaisseur_trait, y2_pv_adverse + epaisseur_trait/2); //ligne du haut
+	ligne(x1 - epaisseur_trait, y1 - epaisseur_trait/2, x2 + epaisseur_trait, y1 - epaisseur_trait/2); // ligne du bas
+	ligne(x1 - epaisseur_trait/2, y1 - epaisseur_trait/2, x1 - epaisseur_trait/2, y2 + epaisseur_trait/2); // ligne a gauche
+	ligne(x2 + epaisseur_trait/2, y1 - epaisseur_trait/2, x2 + epaisseur_trait/2, y2 + epaisseur_trait/2); //ligne a droite
+	ligne(x1 - epaisseur_trait, y2 + epaisseur_trait/2, x2 + epaisseur_trait, y2 + epaisseur_trait/2); //ligne du haut
+
+	//Affiche texte PV
+	epaisseurDeTrait(taille/5);
+	afficheChaine("PV", taille, x2 + taille/2, y1 + (y2-y1-taille)/2);
+
+	//Affiche Niveau Pokemon
+	epaisseurDeTrait(taille/7);
+	char niveau[10], tmp[10];
+	int marge = 90;
+	sprintf(tmp, "%0.f", perso.starter.niveau);
+	strcat(niveau, "Niv.");
+	strcat(niveau, tmp);
+	if(perso.starter.niveau >= 10){
+		marge += 20;
+	}
+	afficheChaine(niveau, taille-5, x2 - marge, y2 + taille/2);
+
+	//Affiche Nom Pokemon
+	afficheChaine(perso.starter.nom, taille, x1 + taille/4, y2 + taille/2);
 }

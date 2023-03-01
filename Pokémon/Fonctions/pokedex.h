@@ -51,6 +51,7 @@ typedef struct DRESSEUR{
     char nom[20];
     Pokemon starter;
     int etage;
+    char statut[10];
     int win;
 }dresseur;
 

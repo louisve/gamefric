@@ -8,11 +8,11 @@
 //Initialisation de fonctions/structures
 
 
-float attaquer(attaque attaqueUtilisee, dresseur *pokemonAttaquant, dresseur *pokemonVictime);
-float FaiblessesResistance(attaque attaqueUtilisee, dresseur *pokemonVictime);
-int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_combat);
-int verifVictoire(dresseur *perso, dresseur *tour);
-int calculPvMax(dresseur *pokemon);
+float attaquer(attaque attaqueUtilisee, dresseur pokemonAttaquant, dresseur pokemonVictime);
+float FaiblessesResistance(attaque attaqueUtilisee, dresseur pokemonVictime);
+void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_combat, int salle_actuelle);
+void verifVictoire(dresseur *perso, dresseur *tour, int salle_actuelle);
+int calculPvMax(dresseur pokemon);
 
 
 #endif

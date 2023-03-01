@@ -1,28 +1,28 @@
 #include "utils.h"
 
 
-float attaquer(attaque attaqueUtilisee, dresseur *pokemonAttaquant, dresseur *pokemonVictime){
+float attaquer(attaque attaqueUtilisee, dresseur pokemonAttaquant, dresseur pokemonVictime){
 
     
-    float atkAttaquant = pokemonAttaquant->starter.niveau1.atk + (pokemonAttaquant->starter.rapport.atk * (pokemonAttaquant->starter.niveau-1));
+    float atkAttaquant = pokemonAttaquant.starter.niveau1.atk + (pokemonAttaquant.starter.rapport.atk * (pokemonAttaquant.starter.niveau-1));
 
-    if (pokemonAttaquant->starter.stade == 2){
-        atkAttaquant *= pokemonAttaquant->starter.coef1.atk;
+    if (pokemonAttaquant.starter.stade == 2){
+        atkAttaquant *= pokemonAttaquant.starter.coef1.atk;
     }
-    if (pokemonAttaquant->starter.stade == 3){
-        atkAttaquant *= pokemonAttaquant->starter.coef2.atk;
-    }
-
-    float defVictime = pokemonVictime->starter.niveau1.def + pokemonVictime->starter.rapport.def * pokemonVictime->starter.niveau;
-
-    if (pokemonVictime->starter.stade == 2){
-        defVictime *= pokemonVictime->starter.coef1.def;
-    }
-    if (pokemonAttaquant->starter.stade == 3){
-        defVictime *= pokemonVictime->starter.coef2.def;
+    if (pokemonAttaquant.starter.stade == 3){
+        atkAttaquant *= pokemonAttaquant.starter.coef2.atk;
     }
 
-    int dpsAttaque = ((((((pokemonAttaquant->starter.niveau*2/5)+2)*attaqueUtilisee.degats * atkAttaquant /50)/defVictime)+2)*1.5);
+    float defVictime = pokemonVictime.starter.niveau1.def + pokemonVictime.starter.rapport.def * pokemonVictime.starter.niveau;
+
+    if (pokemonVictime.starter.stade == 2){
+        defVictime *= pokemonVictime.starter.coef1.def;
+    }
+    if (pokemonAttaquant.starter.stade == 3){
+        defVictime *= pokemonVictime.starter.coef2.def;
+    }
+
+    int dpsAttaque = ((((((pokemonAttaquant.starter.niveau*2/5)+2)*attaqueUtilisee.degats * atkAttaquant /50)/defVictime)+2)*1.5);
 
     dpsAttaque = dpsAttaque * FaiblessesResistance(attaqueUtilisee, pokemonVictime);
 
@@ -32,58 +32,59 @@ float attaquer(attaque attaqueUtilisee, dresseur *pokemonAttaquant, dresseur *po
 }
 
 
-float FaiblessesResistance(attaque attaqueUtilisee, dresseur *pokemonVictime){
+float FaiblessesResistance(attaque attaqueUtilisee, dresseur pokemonVictime){
     // Faiblesses et résistance
     float faibl = 0;
-    if (strcmp(attaqueUtilisee.type, pokemonVictime->starter.type) == 0 || strcmp(attaqueUtilisee.type, "Normal") == 0){
+    if (strcmp(attaqueUtilisee.type, pokemonVictime.starter.type) == 0 || strcmp(attaqueUtilisee.type, "Normal") == 0){
         faibl = 1;
     }
-    else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime->starter.type, "Eau") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime->starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime->starter.type, "Feu") == 0)){
+    else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime.starter.type, "Eau") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime.starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime.starter.type, "Feu") == 0)){
         faibl = 0.5;
     }
-    else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime->starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime->starter.type, "Feu") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime->starter.type, "Eau") == 0)){
-        faibl = 2;
+    else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime.starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime.starter.type, "Feu") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime.starter.type, "Eau") == 0)){
+        faibl = 1.5;
     }
     return faibl;
 }
 
 
-int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_combat){
+void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_combat, int salle_actuelle){
     if(etat_combat == 0){
-        tour->starter.pv -= attaquer(attaqueUtilisee, perso, tour);
+        tour[salle_actuelle - 1].starter.pv -= attaquer(attaqueUtilisee, *perso, tour[salle_actuelle - 1]);
+        // printf("Vous avez infligé %f dégats grâce à l'attaque %s.\n",attaquer(attaqueUtilisee, *perso, tour[salle_actuelle - 1]),attaqueUtilisee.nom);
+        // printf("Il reste %f PV à votre adversaire de niveau %f.\n",tour[salle_actuelle-1].starter.pv, tour[salle_actuelle-1].starter.niveau);
     }
     else if(etat_combat == 1){
         srand(time(NULL));
-        attaqueUtilisee = tour->starter.att[rand()%(2)];
-        perso->starter.pv -= attaquer(attaqueUtilisee, tour, perso);
+        attaqueUtilisee = tour[salle_actuelle - 1].starter.att[rand()%(2)];
+        perso->starter.pv -= attaquer(attaqueUtilisee, tour[salle_actuelle - 1], *perso);
     }
     sleep(1);
-    return verifVictoire(perso, tour);
+    verifVictoire(perso, tour, salle_actuelle);
 }
 
 
-int verifVictoire(dresseur *perso, dresseur *tour){
-    int verif_victoire = 0;
-    if (tour->starter.pv <= 0){
-        verif_victoire = 1;
-        tour->starter.pv = 0;
+void verifVictoire(dresseur *perso, dresseur *tour, int salle_actuelle){
+    
+    if (tour[salle_actuelle - 1].starter.pv <= 0){
+        perso->win = 1;
+        tour[salle_actuelle - 1].starter.pv = 0;
     }
     else if (perso->starter.pv <= 0){
-        verif_victoire = 2;
+        perso->win = 2;
         perso->starter.pv = 0;
     }
-    return verif_victoire;
 }
 
 
-int calculPvMax(dresseur *pokemon){
-    float pv = pokemon->starter.niveau1.pv + pokemon->starter.rapport.pv * pokemon->starter.niveau;
+int calculPvMax(dresseur pokemon){
+    float pv = pokemon.starter.niveau1.pv + pokemon.starter.rapport.pv * pokemon.starter.niveau;
 
-    if (pokemon->starter.stade == 1){
-        pv *= pokemon->starter.coef1.pv;
+    if (pokemon.starter.stade == 1){
+        pv *= pokemon.starter.coef1.pv;
     }
-    if (pokemon->starter.stade == 2){
-        pv *= pokemon->starter.coef2.pv;
+    if (pokemon.starter.stade == 2){
+        pv *= pokemon.starter.coef2.pv;
     }
     return round(pv);
 }

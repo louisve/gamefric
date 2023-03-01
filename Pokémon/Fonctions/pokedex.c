@@ -5,7 +5,7 @@ attaque* readAttaque(){
     attaque *tabAtk;
     tabAtk = malloc(NUM_ATTAQUE*sizeof(attaque));
     FILE* f;
-    f = fopen("/home/isen/pokemon/Pokémon/Fonctions/BDD/attaque.txt","r");
+    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/attaque.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_ATTAQUE; ++i)
         {
@@ -20,7 +20,7 @@ Pokemon* readPokedex(){
     Pokemon *tab;
     tab = malloc(NUM_POKEMON*sizeof(Pokemon));
     FILE* f;
-    f = fopen("/home/isen/pokemon/Pokémon/Fonctions/BDD/pokedex.txt","r");
+    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/pokedex.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_POKEMON; ++i)
         {
@@ -66,6 +66,7 @@ void initDresseur(char *name,dresseur *perso, Pokemon *starter){
 	strcpy(perso->nom,name);
 	perso->etage = 0;
 	perso->starter = *starter;
+    strcmp(perso->statut, "Dresseur");
     perso->etage = 1;
 }
 
@@ -73,7 +74,7 @@ void initDresseur(char *name,dresseur *perso, Pokemon *starter){
 dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     dresseur *tour;
     tour = malloc(8*sizeof(dresseur));
-    
+
     //Etage 1     
     Pokemon *pokemon1;
     pokemon1 = malloc(sizeof(Pokemon));
@@ -82,6 +83,7 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     initPk("Moustillon",pokedex,pokemon1,tabAtk,salle_actuelle);
     initDresseur("Marc",boss1,pokemon1);
     tour[0]= *boss1;
+    salle_actuelle++;
     
     //Etage 2     
     Pokemon *pokemon2;
@@ -91,6 +93,7 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     initPk("Vipelierre",pokedex,pokemon2,tabAtk,salle_actuelle);
     initDresseur("Rachid",boss2,pokemon2);
     tour[1]= *boss2;
+    salle_actuelle++;
     
     //Etage 3     
     Pokemon *pokemon3;
@@ -99,7 +102,8 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     boss3 = malloc(sizeof(dresseur));
     initPk("Salameche",pokedex,pokemon3,tabAtk,salle_actuelle);
     initDresseur("Bastien",boss3,pokemon3);
-    tour[1]= *boss3;
+    tour[2]= *boss3;
+    salle_actuelle++;
     
     //Etage 4     
     Pokemon *pokemon4;
@@ -109,6 +113,7 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     initPk("Ouisticram",pokedex,pokemon4,tabAtk,salle_actuelle);
     initDresseur("Adriane",boss4,pokemon4);
     tour[3]= *boss4;
+    salle_actuelle++;
     
     //Etage 5     
     Pokemon *pokemon5;
@@ -118,6 +123,7 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     initPk("Tiplouf",pokedex,pokemon5,tabAtk,salle_actuelle);
     initDresseur("Blue",boss5,pokemon5);
     tour[4]= *boss5;
+    salle_actuelle++;
     
     //Etage 6     
     Pokemon *pokemon6;
@@ -127,7 +133,8 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     initPk("Germignon",pokedex,pokemon6,tabAtk,salle_actuelle);
     initDresseur("Iris",boss6,pokemon6);
     tour[5]= *boss6;
-    
+    salle_actuelle++;
+
     //Etage 7     
     Pokemon *pokemon7;
     pokemon7 = malloc(sizeof(Pokemon));
@@ -136,7 +143,8 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     initPk("Tortipouss",pokedex,pokemon7,tabAtk,salle_actuelle);
     initDresseur("Morgane",boss7,pokemon7);
     tour[6]= *boss7;
-    
+    salle_actuelle++;
+
     //Etage 8     
     Pokemon *pokemon8;
     pokemon8 = malloc(sizeof(Pokemon));
@@ -145,5 +153,23 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     initPk("Kaiminus",pokedex,pokemon8,tabAtk,salle_actuelle);
     initDresseur("Pierre",boss8,pokemon8);
     tour[7]= *boss8;
+
+    for(int i = 0; i < 8; i++){
+        strcpy(tour[i].statut,"Boss");
+    }
+
+    // Triche sur les noms
+    strcpy(tour[3].starter.nom, "Chimpenfeu");
+    strcpy(tour[4].starter.nom, "Prinplouf");
+    strcpy(tour[5].starter.nom, "Macronium");
+    strcpy(tour[6].starter.nom, "Torterra");
+    strcpy(tour[7].starter.nom, "Aligatueur");
+
+    tour[3].starter.stade = 1;
+    tour[4].starter.stade = 1;
+    tour[5].starter.stade = 1;
+    tour[6].starter.stade = 2;
+    tour[7].starter.stade = 2;
+
     return tour;
 }
