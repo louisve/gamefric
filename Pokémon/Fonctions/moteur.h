@@ -32,8 +32,4 @@ int ControleDeplacementsGauche(int *placey, int *placex, int etat, int *etatdp);
 
 
 
-
-
-
-
 #endif

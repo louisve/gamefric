@@ -5,7 +5,7 @@ attaque* readAttaque(){
     attaque *tabAtk;
     tabAtk = malloc(NUM_ATTAQUE*sizeof(attaque));
     FILE* f;
-    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/attaque.txt","r");
+    f = fopen("/home/isen/pokemon/Pokémon/Fonctions/BDD/attaque.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_ATTAQUE; ++i)
         {
@@ -20,7 +20,7 @@ Pokemon* readPokedex(){
     Pokemon *tab;
     tab = malloc(NUM_POKEMON*sizeof(Pokemon));
     FILE* f;
-    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/pokedex.txt","r");
+    f = fopen("/home/isen/pokemon/Pokémon/Fonctions/BDD/pokedex.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_POKEMON; ++i)
         {

@@ -1,41 +1,41 @@
 
 Nom : Bulbizarre
 Type : Plante
-Niveau : 1
+Niveau : 2
 PV max : 11
 PV actuels : 11
 Attaque : 4
-Defense : 5
+Défense : 5
 Attaque1 : Charge
 Attaque2 : Fouet-Lianes
 Rapport PV evo0 : 1.909091
 Rapport Attaque evo0 : 0.888889
-Rapport Defense evo0 : 1.090909
+Rapport Défense evo0 : 1.090909
 Coef PV evo1 : 1.15
 Coef Attaque evo1 : 1.260870
-Coef Defense evo1 : 1.274336
+Coef Défense evo1 : 1.274336
 Coef PV evo2 : 1.35
 Coef Attaque evo2 : 1.652174
-Coef Defense evo2 : 1.663717
+Coef Défense evo2 : 1.663717
 
-Nom : Salameche
+Nom : Salamèche
 Type : Feu
 Niveau : 1
 PV max : 11
 PV actuels : 11
 Attaque : 4
-Defense : 5
+Défense : 5
 Attaque1 : Griffe
-Attaque2 : Flammeche
+Attaque2 : Flammèche
 Rapport PV evo0 : 1.787878
 Rapport Attaque evo0 : 0.949494
-Rapport Defense evo0 : 0.959595
+Rapport Défense evo0 : 0.959595
 Coef PV evo1 : 1.202128
 Coef Attaque evo1 : 1.214286
-Coef Defense evo1 : 1.33
+Coef Défense evo1 : 1.33
 Coef PV evo2 : 1.414894
 Coef Attaque evo2 : 1.581633
-Coef Defense evo2 : 1.77
+Coef Défense evo2 : 1.77
 
 Nom : Carapuce
 Type : Eau
@@ -43,18 +43,18 @@ Niveau : 1
 PV max : 11
 PV actuels : 11
 Attaque : 4
-Defense : 6
+Défense : 6
 Attaque1 : Charge
-Attaque2 : Pistolet-a-O
+Attaque2 : Pistolet-à-O
 Rapport PV evo0 : 1.888889
 Rapport Attaque evo0 : 0.868687
-Rapport Defense evo0 : 1.434343
+Rapport Défense evo0 : 1.434343
 Coef PV evo1 : 1.151515
 Coef Attaque evo1 : 1.3
-Coef Defense evo1 : 1.222973
+Coef Défense evo1 : 1.222973
 Coef PV evo2 : 1.353535
 Coef Attaque evo2 : 1.7
-Coef Defense evo2 : 1.520270
+Coef Défense evo2 : 1.520270
 
 Nom : Germignon
 Type : Plante
@@ -62,37 +62,37 @@ Niveau : 1
 PV max : 11
 PV actuels : 11
 Attaque : 4
-Defense : 6
+Défense : 6
 Attaque1 : Charge
 Attaque2 : Fouet-Lianes
 Rapport PV evo0 : 1.909091
 Rapport Attaque evo0 : 0.888889
-Rapport Defense evo0 : 1.434343
+Rapport Défense evo0 : 1.434343
 Coef PV evo1 : 1.15
 Coef Attaque evo1 : 1.260870
-Coef Defense evo1 : 1.222973
+Coef Défense evo1 : 1.222973
 Coef PV evo2 : 1.35
 Coef Attaque evo2 : 1.652174
-Coef Defense evo2 : 1.520270
+Coef Défense evo2 : 1.520270
 
-Nom : Hericendre
+Nom : Héricendre
 Type : Feu
 Niveau : 1
 PV max : 11
 PV actuels : 11
 Attaque : 5
-Defense : 5
+Défense : 5
 Attaque1 : Charge
-Attaque2 : Flammeche
+Attaque2 : Flammèche
 Rapport PV evo0 : 1.787879
 Rapport Attaque evo0 : 0.939394
-Rapport Defense evo0 : 0.959596
+Rapport Défense evo0 : 0.959596
 Coef PV evo1 : 1.202128
 Coef Attaque evo1 : 1.214286
-Coef Defense evo1 : 1.33
+Coef Défense evo1 : 1.33
 Coef PV evo2 : 1.414894
 Coef Attaque evo2 : 1.581633
-Coef Defense evo2 : 1.77
+Coef Défense evo2 : 1.77
 
 Nom : Kaiminus
 Type : Eau
@@ -100,18 +100,18 @@ Niveau : 1
 PV max : 12
 PV actuels : 12
 Attaque : 5
-Defense : 6
+Défense : 6
 Attaque1 : Griffe
-Attaque2 : Pistolet-a-O
+Attaque2 : Pistolet-à-O
 Rapport PV evo0 : 2.0
 Rapport Attaque evo0 : 1.171717
-Rapport Defense evo0 : 1.414141
+Rapport Défense evo0 : 1.414141
 Coef PV evo1 : 1.142857
 Coef Attaque evo1 : 1.223140
-Coef Defense evo1 : 1.239726
+Coef Défense evo1 : 1.239726
 Coef PV evo2 : 1.333333
 Coef Attaque evo2 : 1.595041
-Coef Defense evo2 : 1.541096
+Coef Défense evo2 : 1.541096
 
 Nom : Tortipouss
 Type : Plante
@@ -119,18 +119,18 @@ Niveau : 1
 PV max : 12
 PV actuels : 12
 Attaque : 5
-Defense : 6
+Défense : 6
 Attaque1 : Charge
 Attaque2 : Fouet-Lianes
 Rapport PV evo0 : 2.101010
 Rapport Attaque evo0 : 1.222222
-Rapport Defense evo0 : 1.414141
+Rapport Défense evo0 : 1.414141
 Coef PV evo1 : 1.181818
 Coef Attaque evo1 : 1.301587
-Coef Defense evo1 : 1.315068
+Coef Défense evo1 : 1.315068
 Coef PV evo2 : 1.363636
 Coef Attaque evo2 : 1.587302
-Coef Defense evo2 : 1.616438
+Coef Défense evo2 : 1.616438
 
 Nom : Ouisticram
 Type : Feu
@@ -138,18 +138,18 @@ Niveau : 1
 PV max : 11
 PV actuels : 11
 Attaque : 5
-Defense : 5
+Défense : 5
 Attaque1 : Charge
-Attaque2 : Flammeche
+Attaque2 : Flammèche
 Rapport PV evo0 : 1.888889
 Rapport Attaque evo0 : 1.040404
-Rapport Defense evo0 : 0.979798
+Rapport Défense evo0 : 0.979798
 Coef PV evo1 : 1.202020
 Coef Attaque evo1 : 1.333333
-Coef Defense evo1 : 1.166667
+Coef Défense evo1 : 1.166667
 Coef PV evo2 : 1.323232
 Coef Attaque evo2 : 1.768519
-Coef Defense evo2 : 1.578431
+Coef Défense evo2 : 1.578431
 
 Nom : Tiplouf
 Type : Eau
@@ -157,37 +157,37 @@ Niveau : 1
 PV max : 12
 PV actuels : 12
 Attaque : 5
-Defense : 6
+Défense : 6
 Attaque1 : Charge
-Attaque2 : Pistolet-a-O
+Attaque2 : Pistolet-à-O
 Rapport PV evo0 : 2.060606
 Rapport Attaque evo0 : 0.919192
-Rapport Defense evo0 : 1.171717
+Rapport Défense evo0 : 1.171717
 Coef PV evo1 : 1.101852
 Coef Attaque evo1 : 1.281250
-Coef Defense evo1 : 1.270492
+Coef Défense evo1 : 1.270492
 Coef PV evo2 : 1.287037
 Coef Attaque evo2 : 1.656250
-Coef Defense evo2 : 1.631148
+Coef Défense evo2 : 1.631148
 
-Nom : Vipelierre
+Nom : Vipélierre
 Type : Plante
 Niveau : 1
 PV max : 11
 PV actuels : 11
 Attaque : 4
-Defense : 6
+Défense : 6
 Attaque1 : Charge
 Attaque2 : Fouet-Lianes
 Rapport PV evo0 : 1.909091
 Rapport Attaque evo0 : 0.818182
-Rapport Defense evo0 : 1.171717
+Rapport Défense evo0 : 1.171717
 Coef PV evo1 : 1.15
 Coef Attaque evo1 : 1.317647
-Coef Defense evo1 : 1.393443
+Coef Défense evo1 : 1.393443
 Coef PV evo2 : 1.3
 Coef Attaque evo2 : 1.635294
-Coef Defense evo2 : 1.754098
+Coef Défense evo2 : 1.754098
 
 Nom : Gruikui
 Type : Feu
@@ -195,18 +195,18 @@ Niveau : 1
 PV max : 12
 PV actuels : 12
 Attaque : 5
-Defense : 5
+Défense : 5
 Attaque1 : Charge
-Attaque2 : Flammeche
+Attaque2 : Flammèche
 Rapport PV evo0 : 2.303030
 Rapport Attaque evo0 : 1.131313
-Rapport Defense evo0 : 1.0
+Rapport Défense evo0 : 1.0
 Coef PV evo1 : 1.208333
 Coef Attaque evo1 : 1.461538
-Coef Defense evo1 : 1.211538
+Coef Défense evo1 : 1.211538
 Coef PV evo2 : 1.375
 Coef Attaque evo2 : 1.923077
-Coef Defense evo2 : 1.423077
+Coef Défense evo2 : 1.423077
 
 Nom : Moustillon
 Type : Eau
@@ -214,15 +214,15 @@ Niveau : 1
 PV max : 12
 PV actuels : 12
 Attaque : 5
-Defense : 5
+Défense : 5
 Attaque1 : Charge
-Attaque2 : Pistolet-a-O
+Attaque2 : Pistolet-à-O
 Rapport PV evo0 : 2.101010
 Rapport Attaque evo0 : 0.989899
-Rapport Defense evo0 : 1.0
+Rapport Défense evo0 : 1.0
 Coef PV evo1 : 1.181818
 Coef Attaque evo1 : 1.349515
-Coef Defense evo1 : 1.317308
+Coef Défense evo1 : 1.317308
 Coef PV evo2 : 1.363636
 Coef Attaque evo2 : 1.786408
-Coef Defense evo2 : 1.846154
+Coef Défense evo2 : 1.846154
