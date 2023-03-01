@@ -1,20 +1,20 @@
 
 Nom : Charge
-Degats : 40
+Dégats : 40
 Type : Normal
 
 Nom : Fouet-Lianes
-Degats : 45
+Dégats : 45
 Type : Plante
 
 Nom : Griffe
-Degats : 40
+Dégats : 40
 Type : Normal
 
-Nom : Flammeche
-Degats : 40
+Nom : Flammèche
+Dégats : 40
 Type : Feu
 
-Nom : Pistolet-a-O
-Degats : 40
+Nom : Pistolet-à-O
+Dégats : 40
 Type : Eau

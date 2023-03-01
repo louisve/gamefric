@@ -353,61 +353,71 @@ void initImage(){
 int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp){
 
 switch(etat){
+
+	// Affiche l'écran d'acceuil
 	case 0:
-	if (accueil != NULL) // Si l'image a pu etre lue
+	if (accueil != NULL)
 	{
-		// On affiche l'image
+		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, accueil->largeurImage, accueil->hauteurImage, accueil->donneesRGB);
 	}
 	break;
 
+	// Affiche le premier menu (lancer,charger,quitter)
 	case 1:
-	if (menu != NULL) // Si l'image a pu etre lue
+	if (menu != NULL)
 	{
 		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, menu->largeurImage, menu->hauteurImage, menu->donneesRGB); // On affiche l'image
+		ecrisImage(0, 0, menu->largeurImage, menu->hauteurImage, menu->donneesRGB);
 	}
 	break;
 
+	// Affiche le menu de choix du starter
 	case 2:
-	if (choix_pk != NULL) // Si l'image a pu etre lue
+	if (choix_pk != NULL)
 	{
 		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, choix_pk->largeurImage, choix_pk->hauteurImage, choix_pk->donneesRGB); // On affiche l'image
+		ecrisImage(0, 0, choix_pk->largeurImage, choix_pk->hauteurImage, choix_pk->donneesRGB);
 	}
 	break;
 
+	// Affiche l'image en survol du premier menu, bouton 1 (lancer)
 	case 3:
-	if (variante_menu_1 != NULL) // Si l'image a pu etre lue
+	if (variante_menu_1 != NULL)
 	{
 		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, variante_menu_1->largeurImage, variante_menu_1->hauteurImage, variante_menu_1->donneesRGB); // On affiche l'image
+		ecrisImage(0, 0, variante_menu_1->largeurImage, variante_menu_1->hauteurImage, variante_menu_1->donneesRGB);
 	}
 	break;
 
+	// Affiche l'image en survol du premier menu, bouton 2 (charger)
 	case 4:
-	if (variante_menu_2 != NULL) // Si l'image a pu etre lue
+	if (variante_menu_2 != NULL)
 	{
 		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, variante_menu_2->largeurImage, variante_menu_2->hauteurImage, variante_menu_2->donneesRGB); // On affiche l'image
+		ecrisImage(0, 0, variante_menu_2->largeurImage, variante_menu_2->hauteurImage, variante_menu_2->donneesRGB);
 	}
 	break;
 
+	// Affiche l'image en survol du premier menu, bouton 3 (quitter)
 	case 5:
-	if (variante_menu_3 != NULL) // Si l'image a pu etre lue
+	if (variante_menu_3 != NULL)
 	{
 		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, variante_menu_3->largeurImage, variante_menu_3->hauteurImage, variante_menu_3->donneesRGB); // On affiche l'image
-	}
-	break;
-	case 6:
-	if (choix_perso != NULL) // Si l'image a pu etre lue
-	{
-		effaceFenetre (0, 0, 0);
-		ecrisImage(0, 0, choix_perso->largeurImage, choix_perso->hauteurImage, choix_perso->donneesRGB); // On affiche l'image
+		ecrisImage(0, 0, variante_menu_3->largeurImage, variante_menu_3->hauteurImage, variante_menu_3->donneesRGB);
 	}
 	break;
 
+	// Affiche le menu de choix du personnage
+	case 6:
+	if (choix_perso != NULL)
+	{
+		effaceFenetre (0, 0, 0);
+		ecrisImage(0, 0, choix_perso->largeurImage, choix_perso->hauteurImage, choix_perso->donneesRGB);
+	}
+	break;
+
+	// Affiche la 1ère salle
 	case 7:
 	if (salle1 != NULL) {
 		effaceFenetre (0, 0, 0);
@@ -417,6 +427,8 @@ switch(etat){
 	}
 	salle_actuelle = 1;
 	break;
+
+	// Affiche la 2ème salle
 	case 8:
 	if (salle2 != NULL) {
 		effaceFenetre (0, 0, 0);
@@ -425,6 +437,8 @@ switch(etat){
 	}
 	salle_actuelle = 2;
 	break;
+
+	// Affiche la 3ème salle
 	case 9:
 	if (salle3 != NULL) {
 		effaceFenetre (0, 0, 0);
@@ -433,6 +447,8 @@ switch(etat){
 	}
 	salle_actuelle = 3;
 	break;
+
+	// Affiche la 4ème salle
 	case 10:
 	if (salle4 != NULL) {
 		effaceFenetre (0, 0, 0);
@@ -441,6 +457,8 @@ switch(etat){
 	}
 	salle_actuelle = 4;
 	break;
+
+	// Affiche la 5ème salle
 	case 11:
 	if (salle5 != NULL) {
 		effaceFenetre (0, 0, 0);
@@ -449,6 +467,8 @@ switch(etat){
 	}
 	salle_actuelle = 5;
 	break;
+
+	// Affiche la 6ème salle
 	case 12:
 	if (salle6 != NULL) {
 		effaceFenetre (0, 0, 0);
@@ -457,6 +477,8 @@ switch(etat){
 	}
 	salle_actuelle = 6;
 	break;
+
+	// Affiche la 7ème salle
 	case 13:
 	if (salle7 != NULL) {
 		effaceFenetre (0, 0, 0);
@@ -465,6 +487,8 @@ switch(etat){
 	}
 	salle_actuelle = 7;
 	break;
+
+	// Affiche la 8ème salle
 	case 14:
 	if (salle8 != NULL) {
 		effaceFenetre (0, 0, 0);
@@ -473,17 +497,23 @@ switch(etat){
 	}
 	salle_actuelle = 8;
 	break;
+
+	// Affiche l'interface de combat
 	case 15:
 	if(combat != NULL)
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat->largeurImage, combat->hauteurImage, combat->donneesRGB);
-		affichageCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
+
+	// Case de test -> surrement à effacer
 	case 16:
 		effaceFenetre (0, 0, 0);
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 1.1)
 	case 17:
 	if(choix_pk_1_1 != NULL)
 	{
@@ -491,6 +521,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_1_1->largeurImage, choix_pk_1_1->hauteurImage, choix_pk_1_1->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 1.2)
 	case 18:
 	if(choix_pk_1_2 != NULL)
 	{
@@ -498,6 +530,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_1_2->largeurImage, choix_pk_1_2->hauteurImage, choix_pk_1_2->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 1.3)
 	case 19:
 	if(choix_pk_1_3 != NULL)
 	{
@@ -505,6 +539,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_1_3->largeurImage, choix_pk_1_3->hauteurImage, choix_pk_1_3->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 1.4)
 	case 20:
 	if(choix_pk_1_4 != NULL)
 	{
@@ -512,6 +548,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_1_4->largeurImage, choix_pk_1_4->hauteurImage, choix_pk_1_4->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 2.1)
 	case 21:
 	if(choix_pk_2_1 != NULL)
 	{
@@ -519,6 +557,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_2_1->largeurImage, choix_pk_2_1->hauteurImage, choix_pk_2_1->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 2.2)
 	case 22:
 	if(choix_pk_2_2 != NULL)
 	{
@@ -526,6 +566,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_2_2->largeurImage, choix_pk_2_2->hauteurImage, choix_pk_2_2->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 2.3)
 	case 23:
 	if(choix_pk_2_3 != NULL)
 	{
@@ -533,6 +575,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_2_3->largeurImage, choix_pk_2_3->hauteurImage, choix_pk_2_3->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 2.4)
 	case 24:
 	if(choix_pk_2_4 != NULL)
 	{
@@ -540,6 +584,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_2_4->largeurImage, choix_pk_2_4->hauteurImage, choix_pk_2_4->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 3.1)
 	case 25:
 	if(choix_pk_3_1 != NULL)
 	{
@@ -547,6 +593,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_3_1->largeurImage, choix_pk_3_1->hauteurImage, choix_pk_3_1->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 3.2)
 	case 26:
 	if(choix_pk_3_2 != NULL)
 	{
@@ -554,6 +602,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_3_2->largeurImage, choix_pk_3_2->hauteurImage, choix_pk_3_2->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 3.3)
 	case 27:
 	if(choix_pk_3_3 != NULL)
 	{
@@ -561,6 +611,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_3_3->largeurImage, choix_pk_3_3->hauteurImage, choix_pk_3_3->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du starter (pk 3.4)
 	case 28:
 	if(choix_pk_3_4 != NULL)
 	{
@@ -568,6 +620,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_pk_3_4->largeurImage, choix_pk_3_4->hauteurImage, choix_pk_3_4->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du personnage (perso 1.1)
 	case 29:
 	if(choix_perso_1_1 != NULL)
 	{
@@ -575,6 +629,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_perso_1_1->largeurImage, choix_perso_1_1->hauteurImage, choix_perso_1_1->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du personnage (perso 1.2)
 	case 30:
 	if(choix_perso_1_2 != NULL)
 	{
@@ -582,6 +638,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_perso_1_2->largeurImage, choix_perso_1_2->hauteurImage, choix_perso_1_2->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du personnage (perso 1.3)
 	case 31:
 	if(choix_perso_1_3 != NULL)
 	{
@@ -589,6 +647,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_perso_1_3->largeurImage, choix_perso_1_3->hauteurImage, choix_perso_1_3->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du personnage (perso 2.1)
 	case 32:
 	if(choix_perso_2_1 != NULL)
 	{
@@ -596,6 +656,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_perso_2_1->largeurImage, choix_perso_2_1->hauteurImage, choix_perso_2_1->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du personnage (perso 2.2)
 	case 33:
 	if(choix_perso_2_2 != NULL)
 	{
@@ -603,6 +665,8 @@ switch(etat){
 		ecrisImage(0, 0, choix_perso_2_2->largeurImage, choix_perso_2_2->hauteurImage, choix_perso_2_2->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de choix du personnage (perso 2.3)
 	case 34:
 	if(choix_perso_2_3 != NULL)
 	{
@@ -610,33 +674,41 @@ switch(etat){
 		ecrisImage(0, 0, choix_perso_2_3->largeurImage, choix_perso_2_3->hauteurImage, choix_perso_2_3->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol de l'interface de combat (attaque 1)
 	case 35:
 	if(combat_att1 != NULL)
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_att1->largeurImage, combat_att1->hauteurImage, combat_att1->donneesRGB);
-		affichageCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 
 	}
 	break;
+
+	// Affiche l'image en survol de l'interface de combat (attaque 2)
 	case 36:
 	if(combat_att2 != NULL)
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_att2->largeurImage, combat_att2->hauteurImage, combat_att2->donneesRGB);
-		affichageCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 
 	}
 	break;
+
+	// Affiche l'image en survol de l'interface de combat (quitter)
 	case 37:
 	if(combat_quitter != NULL)
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_quitter->largeurImage, combat_quitter->hauteurImage, combat_quitter->donneesRGB);
-		affichageCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 
 	}
 	break;
+
+	// Affiche le menu de pause
 	case 38:
 	if(menu_pause != NULL)
 	{
@@ -644,6 +716,8 @@ switch(etat){
 		ecrisImage(0, 0, menu_pause->largeurImage, menu_pause->hauteurImage, menu_pause->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de pause (reprendre)
 	case 39:
 	if(pause_reprendre != NULL)
 	{
@@ -651,6 +725,8 @@ switch(etat){
 		ecrisImage(0, 0, pause_reprendre->largeurImage, pause_reprendre->hauteurImage, pause_reprendre->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de pause (sauvegarder)
 	case 40:
 	if(pause_sauvegarder != NULL)
 	{
@@ -658,6 +734,8 @@ switch(etat){
 		ecrisImage(0, 0, pause_sauvegarder->largeurImage, pause_sauvegarder->hauteurImage, pause_sauvegarder->donneesRGB);
 	}
 	break;
+
+	// Affiche l'image en survol du menu de pause (quitter)
 	case 41:
 	if(pause_quitter != NULL)
 	{
@@ -665,6 +743,8 @@ switch(etat){
 		ecrisImage(0, 0, pause_quitter->largeurImage, pause_quitter->hauteurImage, pause_quitter->donneesRGB);
 	}
 	break;
+
+	// Affiche l'écran de victoire d'un combat
 	case 42:
 		if(victoire_combat != NULL){
 			ecrisImage(0, 0, victoire_combat->largeurImage, victoire_combat->hauteurImage, victoire_combat->donneesRGB);
@@ -673,13 +753,16 @@ switch(etat){
 		
 	break;
 
+	// Affiche l'écran de défaite d'un combat
 	case 43:
 		if(defaite_combat != NULL){
 			ecrisImage(0, 0, defaite_combat->largeurImage, defaite_combat->hauteurImage, defaite_combat->donneesRGB);
 		}
 	break;
-	case 44: //case pour tout les boutons quitter.
+
+	//Case pour tout les boutons quitter.
 	//-> On libère les données images proprement puis on termine la boucle evenement.
+	case 44:
 		
 		//Liberation des menus
 		libereDonneesImageRGB(&accueil); 
@@ -829,7 +912,8 @@ switch(etat){
 
 		
 		termineBoucleEvenements(); 
-	//Survol bouton de victoire
+	
+	// Survol bouton de victoire
 	case 45:
 		if (victoire_combat_survol != NULL) // Si l'image a pu etre lue
 		{
@@ -837,7 +921,8 @@ switch(etat){
 			ecrisImage(0, 0, victoire_combat_survol->largeurImage, victoire_combat_survol->hauteurImage, victoire_combat_survol->donneesRGB); // On affiche l'image
 		}
 	break;
-	//Survol bouton rejouer de defaite
+	
+	// Survol bouton rejouer de defaite
 	case 46:
 		if (defaite_combat_rejouer != NULL) // Si l'image a pu etre lue
 		{
@@ -845,7 +930,8 @@ switch(etat){
 			ecrisImage(0, 0, defaite_combat_rejouer->largeurImage, defaite_combat_rejouer->hauteurImage, defaite_combat_rejouer->donneesRGB); // On affiche l'image
 		}
 	break;
-	//Survol bouton quitter de defaite
+	
+	// Survol bouton quitter de defaite
 	case 47:
 		if (defaite_combat_quitter != NULL) // Si l'image a pu etre lue
 		{
@@ -858,192 +944,255 @@ switch(etat){
 return salle_actuelle;
 }
 
- /* Fonction permettant la gestion des clics de la souris en fonction du menu sur lequel on se trouve
- 	et en fonction de l'élément survolé lors du clic par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
+ /* Fonction permettant la gestion des cliques de la souris en fonction du menu sur lequel on se trouve
+ 	et en fonction de l'élément survolé lors du clique par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
  	du switch(evenement) dès qu'il y a un appui sur le bouton gauche de la souris. */
 
 int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle,int *verif_victoire){
 	
-	if (etat == 0) // Si on est sur l'écran titre :
+	// Si on est sur l'écran d'acceuil et qu'on appuie sur entrée : on affiche le menu 1
+	if (etat == 0)
 	{
-		etat = 1; // et qu'on clic ou qu'on appui sur entrée, on passe au menu.
+		etat = 1;
 	}
-	else if(etat == 17) // si on clic sur l'un des pokemon on init sa structure et on change d'état (on passe au choix dresseur).
+
+	// Si on est dans le choix pk et qu'on clique sur Bulbizarre, on initie starter à Bulbizarre puis on passe au choix du perso
+	else if(etat == 17)
 	{
-		//Bulbizar
 		initPk("Bulbizarre",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 21) //salameche
+
+	// Si on est dans le choix pk et qu'on clique sur Salamèche, on initie starter à Salamèche puis on passe au choix du perso
+	else if(etat == 21)
 	{
 		initPk("Salameche",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 25) //carapuce
+
+	// Si on est dans le choix pk et qu'on clique sur Carapuce, on initie starter à Carapuce puis on passe au choix du perso
+	else if(etat == 25)
 	{
 		initPk("Carapuce",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 18) //germignon
+
+	// Si on est dans le choix pk et qu'on clique sur Germignon, on initie starter à Germignon puis on passe au choix du perso
+	else if(etat == 18)
 	{
 		initPk("Germignon",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 28) //moustillon
+
+	// Si on est dans le choix pk et qu'on clique sur Moustillon, on initie starter à Moustillon puis on passe au choix du perso
+	else if(etat == 28)
 	{
 		initPk("Moustillon",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 22) //hericendre
+
+	// Si on est dans le choix pk et qu'on clique sur Héricendre, on initie starter à Héricendre puis on passe au choix du perso
+	else if(etat == 22)
 	{
 		initPk("Hericendre",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 26) //kaiminus
+
+	// Si on est dans le choix pk et qu'on clique sur Kaiminus, on initie starter à Kaiminus puis on passe au choix du perso
+	else if(etat == 26)
 	{
 		initPk("Kaiminus",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 19) //tortipouss
+
+	// Si on est dans le choix pk et qu'on clique sur Tortipouss, on initie starter à Tortipouss puis on passe au choix du perso
+	else if(etat == 19)
 	{
 		initPk("Tortipouss",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 23) //ouisticram
+
+	// Si on est dans le choix pk et qu'on clique sur Ouisticram, on initie starter à Ouisticram puis on passe au choix du perso
+	else if(etat == 23)
 	{
 		initPk("Ouisticram",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 27) //tiplouf
+
+	// Si on est dans le choix pk et qu'on clique sur Tiplouf, on initie starter à Tiplouf puis on passe au choix du perso
+	else if(etat == 27)
 	{
 		initPk("Tiplouf",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 20) //vipelierre
+
+	// Si on est dans le choix pk et qu'on clique sur Vipélierre, on initie starter à Vipélierre puis on passe au choix du perso
+	else if(etat == 20)
 	{
 		initPk("Vipelierre",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
-	else if(etat == 24) //gruikui
+
+	// Si on est dans le choix pk et qu'on clique sur Gruikui, on initie starter à Gruikui puis on passe au choix du perso
+	else if(etat == 24)
 	{
 		initPk("Gruikui",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;	
 	}
-	else if (etat == 3) // Si on est dans le menu de base sur le bouton "lancer une partie" : ->
+
+	// Si on est dans le premier menu et qu'on clique sur "lancer une partie" : on affiche le choix du pokemon
+	else if (etat == 3)
 	{
-		etat = 2;	//-> et qu'on clic, on affiche l'image de l'état 2.
+		etat = 2;
 	}
-	else if (etat == 4) // Si on est dans le menu de base sur le bouton "charger une partie" : ->
+
+	// Si on est dans le premier menu et qu'on clique sur "charger une partie" : on affiche le choix du pokemon
+		// A CHANGER ! AJOUTER LA SAUVEGARDE 
+	else if (etat == 4)
 	{
-		etat = 2; //-> et qu'on clic, on affiche l'image de l'état 2.
+		etat = 2; 
 	}
-	else if (etat == 5) // Si on est dans le menu de base sur le bouton "quitter" : ->
+
+	// Si on est dans le premier menu et qu'on clique sur "quitter" : on va dans le case quitter (44)
+	else if (etat == 5)
 	{
-		etat = 44; // renvoie au case '42' pour libéré les données images.
+		etat = 44;
 	}
-	else if(etat == 29) // si on clic sur l'un des dresseurs on init sa structure et on change d'état (on affiche la salle 1).
+
+	// Si on est dans le choix perso et qu'on clique sur perso 1.1, on initie perso à perso 1.1 puis on affiche la salle 1
+	else if(etat == 29)
 	{
-		//perso 1.1
 		initDresseur("Perso 1.1",perso,starter);
 		etat = 7;
 	}
-	else if(etat == 30) //perso 1.2
+
+	// Si on est dans le choix perso et qu'on clique sur perso 1.2, on initie perso à perso 1.2 puis on affiche la salle 1
+	else if(etat == 30)
 	{
 		etat = 7;
 		initDresseur("Perso 1.2",perso,starter);
 	}
-	else if(etat == 31) //perso 1.3
+
+	// Si on est dans le choix perso et qu'on clique sur perso 1.3, on initie perso à perso 1.3 puis on affiche la salle 1
+	else if(etat == 31)
 	{	
 		etat = 7;
 		initDresseur("Perso 1.3",perso,starter);
 	}
-	else if(etat == 32) //perso 2.1
+
+	// Si on est dans le choix perso et qu'on clique sur perso 2.1, on initie perso à perso 2.1 puis on affiche la salle 1
+	else if(etat == 32) 
 	{
 		etat = 7;
 		initDresseur("Perso 2.1",perso,starter);
 	}
-	else if(etat == 33) //perso 2.2
+
+	// Si on est dans le choix perso et qu'on clique sur perso 2.2, on initie perso à perso 2.2 puis on affiche la salle 1
+	else if(etat == 33) 
 	{
 		etat = 7;
 		initDresseur("Perso 2.2",perso,starter);
 	}
-	else if(etat == 34) //perso 2.3
+
+	// Si on est dans le choix perso et qu'on clique sur perso 2.3, on initie perso à perso 2.3 puis on affiche la salle 1
+	else if(etat == 34) 
 	{
 		etat = 7;
 		initDresseur("Perso 2.3",perso,starter);
 	}
-	else if(etat == 35) //menu combat 1 
-	{
+
+	// Si on est dans l'interface de combat, sur le bouton attaque 1
+	else if(etat == 35)
+	{	
 		int etat_combat = 0;
 		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
 		etat_combat++;
 
 		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
 		etat_combat--;
-		//Victoire
+
+		// Si le combat n'est pas fini : on affiche l'interface de combat
 		if (*verif_victoire == 0){
-			etat = 15; //menu combat bouton attaque 2
+			etat = 15;
 		}
-		// Défaite
+
+		//Si il y a victoire :  on affiche l'écran de victoire
 		else if (*verif_victoire == 1){
 			etat = 42;
 		}
-		else if (*verif_victoire == 2){ // Combat perdu
+
+		//Si il y a défaite :  on affiche l'écran de défaite
+		else if (*verif_victoire == 2){
 			etat = 43;
 		}
 	}
-	else if(etat == 36) //menu combat 2
-	{
+
+	// Si on est dans l'interface de combat, sur le bouton attaque 2
+	else if(etat == 36)
+	{	
 		int etat_combat = 0;
 		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
 		etat_combat++;
 
 		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
 		etat_combat--;
-		//Victoire
+
+		// Si le combat n'est pas fini : on affiche l'interface de combat
 		if (*verif_victoire == 0){
-			etat = 15; //menu combat bouton attaque 2
+			etat = 15;
 		}
-		// Défaite
+
+		// Si il y a victoire :  on affiche l'écran de victoire
 		else if (*verif_victoire == 1){
 			etat = 42;
 		}
-		else if (*verif_victoire == 2){ // Combat perdu
+
+		// Si il y a défaite :  on affiche l'écran de défaite
+		else if (*verif_victoire == 2){
 			etat = 43;
 		}
 	}
-	else if(etat == 37) //menu combat 3 : quitter renvoie dans la salle actuelle
+
+	// Si on est dans l'interface de combat, sur le bouton quitter : on fait reculer la position du personnage et on affiche la salle actuelle
+	else if(etat == 37)
 	{
 		*placey = 500;
 		etat = checkSalle(salle_actuelle,etat);
 
 	}
-	else if(etat == 39) // Si on est sur le menu pause ->
+
+	// Si on est sur le menu pause et qu'on clique sur "reprendre" : on affiche la salle actuelle
+	else if(etat == 39)
 	{
-		etat = checkSalle(salle_actuelle,etat);//->et qu'on clic sur reprendre		
-	}
-	else if(etat == 40) // Si on est sur le menu pause ->
-	{
-		printf("sauvegarder"); //->et qu'on clic sur sauvegarder (!!!Pour l'instant printf)
-	}
-	else if(etat == 41) // Si on est sur le menu pause ->
-	{
-		etat = 44; //et qu'on clic sur quitter on renvoie au case'42' qui libere la structure image et termine la boucle evenement.
+		etat = checkSalle(salle_actuelle,etat);	
 	}
 
-	//Retour a la salle apres victoire
+	// Si on est sur le menu pause et qu'on clique sur "sauvegarder" : on sauvegarder
+		//SAUVEGARDE A AJOUTER
+	else if(etat == 40)
+	{
+		printf("sauvegarder");
+	}
+
+	// Si on est sur le menu pause et qu'on clique sur "quitter" : on renvoie au case quitter (44)
+	else if(etat == 41)
+	{
+		etat = 44;
+	}
+
+	// Si on est sur l'écran de victoire et qu'on clique sur le bouton : on avance le personnage et affiche la salle actuelle
 	else if(etat == 45){
 		*placey = 700;
 		etat = checkSalle(salle_actuelle,etat);
 	}
 
-	//Rejouer le combat
+	// Si on est sur l'écran de défaite et qu'on clique sur "Rejouer le combat" : on re initialise les pv et on affiche l'interface de combat
 	else if(etat == 46){
 		etat = 15;
 		//starter->pv = pv max;
 	}
 
-	//Quitter le combat (a rajouter : sauvegarde)
+	// Si on est sur l'écran de défaite et qu'on clique sur "quitter" : on re initialise les pv, recule le personnage et on affiche la salle actuelle
 	else if(etat == 47){
 		*placey = 500;
 		etat = checkSalle(salle_actuelle,etat);
@@ -1058,170 +1207,217 @@ au survol de la souris. Cette fonction sera appelé dans le case [souris] du swi
 Il a fallu pour ce faire apppeler la fonction "activeGestionDeplacementPassifSouris()" pour suivre la souris en continu. */
 
 int verif_survol_souris(int etat){
+
+	// Si on est sur le 1er menu
 	if (etat==1)
 	{
+		// Et qu'on survol le bouton "charger une partie" : on affiche l'image associée
 		if(abscisseSouris() >= 486 && abscisseSouris() <= 1437 && ordonneeSouris() >= 439 && ordonneeSouris() <= 640)
 		{ 
-			etat = 4; // si coordonnées souris = bouton " charger une partie " alors etat = 4 (on affiche l'image variante2).
+			etat = 4;
 		}
+
+		// Et qu'on survol le bouton "lancer une partie" : on affiche l'image associée
 		else if(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 705 && ordonneeSouris() <= 903)
 		{
-			etat = 3; // si coordonnées souris = bouton " lancer une partie " alors etat = 3 (on affiche l'image variante1).
+			etat = 3;
 		}
+
+		// Et qu'on survol le bouton "quitter" : on affiche l'image associée
 		else if(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 172 && ordonneeSouris() <= 375)
 		{
-			etat = 5; // si coordonnées souris = bouton " quitter " alors etat = 5 (on affiche l'image variante3).
+			etat = 5;
 		}
 	}
-	else if(etat==4) // si on est sur l'image variante2 du menu de base ->
+
+	// Si on est sur l'image de survol du bouton 1 menu 1 (lancer une partie) mais qu'on ne survole plus le bouton, on affiche le menu de base
+	else if(etat==4)
 	{
 		if(!(abscisseSouris() >= 486 && abscisseSouris() <= 1437 && ordonneeSouris() >= 439 && ordonneeSouris() <= 640))
 		{
-			etat = 1; //-> et que nous ne sommes pas sur le bouton "charger une partie", retour à l'image de l'état 1.
+			etat = 1;
 		}
 	}
-	else if(etat==3) // si on est sur l'image variante1 du menu de base ->
+
+	// Si on est sur l'image de survol du bouton 2 menu 1 (charger une partie) mais qu'on ne survole plus le bouton, on affiche le menu de base
+	else if(etat==3)
 	{
 		if(!(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 705 && ordonneeSouris() <= 903))
 		{
-			etat = 1; //-> et que nous ne sommes pas sur le bouton "lancer une partie", retour à l'image de l'état 1.
+			etat = 1;
 		}
 	}
-	else if(etat==5) // si on est sur l'image variante3 du menu de base ->
+
+	// Si on est sur l'image de survol du bouton 3 menu 1 (quitter) mais qu'on ne survole plus le bouton, on affiche le menu de base
+	else if(etat==5)
 	{
 		if(!(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 172 && ordonneeSouris() <= 375))
 		{
-			etat = 1; //-> et que nous ne sommes pas sur le bouton "quitter", retour à l'image de l'état 1.
+			etat = 1;
 		}
 	}
-	else if(etat == 2) //menu choix pokemons.
+
+	// Si on est sur le menu du choix du starter
+	else if(etat == 2)
 	{
-		//Bulbizar
+		// Et qu'on survole Bulbizarre : on affiche l'image associée
 		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
 		{
 			etat = 17;
 		}
-		//salameche
+
+		// Et qu'on survole Salamèche : on affiche l'image associée
 		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
 		{
 			etat = 21;
 		}
-		//carapuce
+
+		// Et qu'on survole Carapuce : on affiche l'image associée
 		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
 		{
 			etat = 25;
 		}
-		//germignon
+
+		// Et qu'on survole Germignon : on affiche l'image associée
 		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
 		{
 			etat = 18;
 		}
-		//hericendre
+
+		// Et qu'on survole Héricendre : on affiche l'image associée
 		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
 		{
 			etat = 22;
 		}
-		//kaiminus
+
+		// Et qu'on survole Kaiminus : on affiche l'image associée
 		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
 		{
 			etat = 26;
 		}
-		//tortipouss
+
+		// Et qu'on survole Tortipouss : on affiche l'image associée
 		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
 		{
 			etat = 19;
 		}
-		//ouisticram
+
+		// Et qu'on survole Ouisticram : on affiche l'image associée
 		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
 		{
 			etat = 23;
 		}
-		//tiplouf
+
+		// Et qu'on survole Tiplouf : on affiche l'image associée
 		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
 		{
 			etat = 27;
 		}
-		//vipelierre
+
+		// Et qu'on survole Vipélierre : on affiche l'image associée
 		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
 		{
 			etat = 20;
 		}
-		//gruikui
+
+		// Et qu'on survole Gruikui : on affiche l'image associée
 		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
 		{
 			etat = 24;
 		};
-		//moustillon
+
+		// Et qu'on survole Moustillon : on affiche l'image associée
 		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
 		{
 			etat = 28;
 		}
 	}
-	else if(etat == 6) //menu choix perso.
+
+	// Si on est sur le menu du choix de personnage
+	else if(etat == 6)
 	{
-		//perso 1.1
+		// Et qu'on survole perso 1.1 : on affiche l'image associée
 		if(abscisseSouris() >= 842 && abscisseSouris() <= 1000 && ordonneeSouris() >= 419 && ordonneeSouris() <= 605) 
 		{
 			etat = 29;
 		}
-		//perso 1.2
+
+		// Et qu'on survole perso 1.2 : on affiche l'image associée
 		if(abscisseSouris() >= 1184 && abscisseSouris() <= 1335 && ordonneeSouris() >= 419 && ordonneeSouris() <= 605) 
 		{
 			etat = 30;
 		}
-		//perso 1.3
+
+		// Et qu'on survole perso 1.3 : on affiche l'image associée
 		if(abscisseSouris() >= 1521 && abscisseSouris() <= 1670 && ordonneeSouris() >= 419 && ordonneeSouris() <= 605) 
 		{
 			etat = 31;
 		}
-		//perso 2.1
+
+		// Et qu'on survole perso 2.1 : on affiche l'image associée
 		if(abscisseSouris() >= 842 && abscisseSouris() <= 1000 && ordonneeSouris() >= 190 && ordonneeSouris() <= 369) 
 		{
 			etat = 32;
 		} 
-		//perso 2.2
+
+		// Et qu'on survole perso 2.2 : on affiche l'image associée
 		if(abscisseSouris() >= 1184 && abscisseSouris() <= 1335 && ordonneeSouris() >= 190 && ordonneeSouris() <= 369) 
 		{
 			etat = 33;
 		}
-		//perso 2.3
+
+		// Et qu'on survole perso 2.3 : on affiche l'image associée
 		if(abscisseSouris() >= 1521 && abscisseSouris() <= 1670 && ordonneeSouris() >= 190 && ordonneeSouris() <= 369) 
 		{
 			etat = 34;
 		}
 	}
-	else if(etat == 15) // menu combat.
+
+	// Si on est sur l'interface de combat 
+	else if(etat == 15)
 	{
+		// Et qu'on survole "attaque 1" :  on affiche l'image associée
 		if(abscisseSouris() >= 96 && abscisseSouris() <= 608 && ordonneeSouris() >= 86 && ordonneeSouris() <= 212)
 		{
-			etat = 35; //bouton attaque 1
+			etat = 35;
 		}
+
+		// Et qu'on survole "attaque 2" :  on affiche l'image associée
 		if(abscisseSouris() >= 658 && abscisseSouris() <= 1174 && ordonneeSouris() >= 87 && ordonneeSouris() <= 206)
 		{
-			etat = 36; //bouton attaque 2
+			etat = 36;
 		}
+
+		// Et qu'on survole "quitter" :  on affiche l'image associée
 		if(abscisseSouris() >= 1223 && abscisseSouris() <= 1736 && ordonneeSouris() >= 89 && ordonneeSouris() <= 203)
 		{
-			etat = 37; //bouton quitter
-		}
-	}
-	else if(etat == 38) //Menu Pause
-	{
-		if(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 705 && ordonneeSouris() <= 903)
-		{
-			etat = 39; //bouton Reprendre
-		}
-		if(abscisseSouris() >= 486 && abscisseSouris() <= 1437 && ordonneeSouris() >= 439 && ordonneeSouris() <= 640)
-		{
-			etat = 40; //bouton Sauvegarder
-		}
-		if(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 172 && ordonneeSouris() <= 375)
-		{
-			etat = 41; //bouton Quitter
+			etat = 37;
 		}
 	}
 
-	//Retour salle après victoire
+	// Si on est sur le menu en pause (échap)
+	else if(etat == 38)
+	{
+		// Et qu'on survole "reprendre" : on affiche l'image associée
+		if(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 705 && ordonneeSouris() <= 903)
+		{
+			etat = 39;
+		}
+
+		// Et qu'on survole "sauvegarder" : on affiche l'image associée
+		if(abscisseSouris() >= 486 && abscisseSouris() <= 1437 && ordonneeSouris() >= 439 && ordonneeSouris() <= 640)
+		{
+			etat = 40;
+		}
+
+		// Et qu'on survole "quitter" : on affiche l'image associée
+		if(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 172 && ordonneeSouris() <= 375)
+		{
+			etat = 41;
+		}
+	}
+
+	// Si on est sur l'écran de victoire et qu'on survole le bouton : on affiche l'image associée
 	else if(etat == 42){
 		if((abscisseSouris() >= 640 && abscisseSouris() <= 1288 && ordonneeSouris() >= 82 && ordonneeSouris() <= 240)) 
 		{
@@ -1229,14 +1425,16 @@ int verif_survol_souris(int etat){
 		}
 	}
 
+	// Si on est sur l'écran de victoire
 	else if(etat == 43){
-		//Rejouer le combat
+
+		// Et qu'on survole "rejouer le combat" : on affiche l'image associée
 		if((abscisseSouris() >= 600 && abscisseSouris() <= 1230 && ordonneeSouris() >= 82 && ordonneeSouris() <= 237)) 
 		{
 			etat = 46;
 		}
 
-		//Quitter le combat (a rajouter : sauvegarde)
+		// Et qu'on survole "quitter" : on affiche l'image associée
 		if((abscisseSouris() >= 1244 && abscisseSouris() <= 1884 && ordonneeSouris() >= 82 && ordonneeSouris() <= 237)) 
 		{
 			etat = 47;
@@ -1245,6 +1443,7 @@ int verif_survol_souris(int etat){
 
 	/* Tout les else if qui suivent servent à revenir à l'image d'origine si on n'est plus en train de survoler l'élément. */
 
+	// Si on est sur l'image en survol du menu de pause mais qu'on ne survole plus "reprendre", on affiche le menu de base
 	else if(etat == 39)
 	{
 		if(!(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 705 && ordonneeSouris() <= 903))
@@ -1252,6 +1451,8 @@ int verif_survol_souris(int etat){
 			etat = 38;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de pause mais qu'on ne survole plus "sauvegarder", on affiche le menu de base
 	else if(etat == 40)
 	{
 		if(!(abscisseSouris() >= 486 && abscisseSouris() <= 1437 && ordonneeSouris() >= 439 && ordonneeSouris() <= 640))
@@ -1259,6 +1460,8 @@ int verif_survol_souris(int etat){
 			etat = 38;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de pause mais qu'on ne survole plus "quitter", on affiche le menu de base
 	else if(etat == 41)
 	{
 		if(!(abscisseSouris() >= 484 && abscisseSouris() <= 1437 && ordonneeSouris() >= 172 && ordonneeSouris() <= 375))
@@ -1266,6 +1469,8 @@ int verif_survol_souris(int etat){
 			etat = 38;
 		}
 	}
+
+	// Si on est sur l'image en survol de l'interface de combat (attaque 1) mais qu'on ne survole plus le bouton, on affiche l'image de base
 	else if(etat == 35)
 	{
 		if(!(abscisseSouris() >= 96 && abscisseSouris() <= 608 && ordonneeSouris() >= 86 && ordonneeSouris() <= 212))
@@ -1273,6 +1478,8 @@ int verif_survol_souris(int etat){
 			etat = 15;
 		}
 	}
+
+	// Si on est sur l'image en survol de l'interface de combat (attaque 2) mais qu'on ne survole plus le bouton, on affiche l'image de base
 	else if(etat == 36)
 	{
 		if(!(abscisseSouris() >= 658 && abscisseSouris() <= 1174 && ordonneeSouris() >= 87 && ordonneeSouris() <= 206))
@@ -1280,6 +1487,8 @@ int verif_survol_souris(int etat){
 			etat = 15;
 		}
 	}
+
+	// Si on est sur l'image en survol de l'interface de combat (attaque 2) mais qu'on ne survole plus le bouton, on affiche l'image de base
 	else if(etat == 37)
 	{
 		if(!(abscisseSouris() >= 1223 && abscisseSouris() <= 1736 && ordonneeSouris() >= 89 && ordonneeSouris() <= 203))
@@ -1287,6 +1496,8 @@ int verif_survol_souris(int etat){
 			etat = 15;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du personnage (perso 1.1) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 29)
 	{
 		if(!(abscisseSouris() >= 842 && abscisseSouris() <= 1000 && ordonneeSouris() >= 419 && ordonneeSouris() <= 605))
@@ -1294,6 +1505,8 @@ int verif_survol_souris(int etat){
 			etat = 6;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du personnage (perso 1.2) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 30)
 	{
 		if(!(abscisseSouris() >= 1184 && abscisseSouris() <= 1335 && ordonneeSouris() >= 419 && ordonneeSouris() <= 605))
@@ -1301,6 +1514,8 @@ int verif_survol_souris(int etat){
 			etat = 6;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du personnage (perso 1.3) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 31)
 	{
 		if(!(abscisseSouris() >= 1521 && abscisseSouris() <= 1670 && ordonneeSouris() >= 419 && ordonneeSouris() <= 605))
@@ -1308,6 +1523,8 @@ int verif_survol_souris(int etat){
 			etat = 6;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du personnage (perso 2.1) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 32)
 	{
 		if(!(abscisseSouris() >= 842 && abscisseSouris() <= 1000 && ordonneeSouris() >= 190 && ordonneeSouris() <= 369))
@@ -1315,6 +1532,8 @@ int verif_survol_souris(int etat){
 			etat = 6;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du personnage (perso 2.2) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 33)
 	{
 		if(!(abscisseSouris() >= 1184 && abscisseSouris() <= 1335 && ordonneeSouris() >= 190 && ordonneeSouris() <= 369))
@@ -1322,6 +1541,8 @@ int verif_survol_souris(int etat){
 			etat = 6;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du personnage (perso 2.3) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 34)
 	{
 		if(!(abscisseSouris() >= 1521 && abscisseSouris() <= 1670 && ordonneeSouris() >= 190 && ordonneeSouris() <= 369))
@@ -1329,6 +1550,8 @@ int verif_survol_souris(int etat){
 			etat = 6;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 1.1) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 17)
 	{
 		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
@@ -1336,6 +1559,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 1.2) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 18)
 	{
 		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
@@ -1343,6 +1568,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 1.3) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 19)
 	{
 		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
@@ -1350,6 +1577,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 1.4) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 20)
 	{
 		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
@@ -1357,6 +1586,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 2.1) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 21)
 	{
 		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
@@ -1364,6 +1595,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 2.2) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 22)
 	{
 		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
@@ -1371,6 +1604,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 2.3) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 23)
 	{
 		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
@@ -1378,6 +1613,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 2.4) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 24)
 	{
 		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
@@ -1385,6 +1622,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 3.1) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 25)
 	{
 		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
@@ -1392,6 +1631,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 3.2) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 26)
 	{
 		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
@@ -1399,6 +1640,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 3.3) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 27)
 	{
 		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
@@ -1406,6 +1649,8 @@ int verif_survol_souris(int etat){
 			etat = 2;
 		}
 	}
+
+	// Si on est sur l'image en survol du menu de choix du starter (pk 3.4) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 28)
 	{
 		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
@@ -1414,7 +1659,7 @@ int verif_survol_souris(int etat){
 		}
 	}
 
-	//Retour salle après victoire combat
+	//Si on est sur le bouton de l'écran de victoire mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 45){
 		if(!(abscisseSouris() >= 640 && abscisseSouris() <= 1288 && ordonneeSouris() >= 82 && ordonneeSouris() <= 240)) 
 		{
@@ -1422,14 +1667,15 @@ int verif_survol_souris(int etat){
 		}
 	}
 
-	//Rejouer combat
+	//Si on est sur "rejouer" de l'écran de défaite mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 46){
 		if(!(abscisseSouris() >= 600 && abscisseSouris() <= 1230 && ordonneeSouris() >= 82 && ordonneeSouris() <= 237)) 
 		{
 			etat = 43;
 		}
 	}
-	//Quitter le combat (a rajouter : sauvegarde)
+	
+	//Si on est sur "quitter" de l'écran de victoire mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 47){
 		if(!(abscisseSouris() >= 1244 && abscisseSouris() <= 1884 && ordonneeSouris() >= 82 && ordonneeSouris() <= 237)) 
 		{
@@ -1444,6 +1690,7 @@ return etat;
 plus tard le perso sera peut-etre afficher dans une autre fonction
 */
 
+// Afficher un personnage passé en paramètre
 void affichePerso(int *placex, int *placey, int *etatdp, DonneesImageRGB *persoFace, DonneesImageRGB *persoDos, DonneesImageRGB *persoCoteDroit, DonneesImageRGB *persoCoteGauche){
 	
 	if(persoFace != NULL && *etatdp == 2){
@@ -1460,6 +1707,7 @@ void affichePerso(int *placex, int *placey, int *etatdp, DonneesImageRGB *persoF
 	}
 }
 
+// Appelle affichePerso avec le personnage choisit
 void affichePersoChoisis(int *placex, int *placey, int *etatdp, dresseur *perso){
 
 	if(strcmp(perso->nom,"Perso 1.1") == 0){
@@ -1482,8 +1730,10 @@ void affichePersoChoisis(int *placex, int *placey, int *etatdp, dresseur *perso)
 		}
 }
 
-//Interface de combat
-void affichageCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre,DonneesImageRGB *bulbizarre_dos,DonneesImageRGB *salameche,DonneesImageRGB *salameche_dos,DonneesImageRGB *carapuce,DonneesImageRGB *carapuce_dos,DonneesImageRGB *vipeliere,DonneesImageRGB *vipeliere_dos,DonneesImageRGB *gruikui,DonneesImageRGB *gruikui_dos,DonneesImageRGB *moustillon,DonneesImageRGB *moustillon_dos,DonneesImageRGB *germignon,DonneesImageRGB *germignon_dos,DonneesImageRGB *hericendre,DonneesImageRGB *hericendre_dos,DonneesImageRGB *kaiminus,DonneesImageRGB *kaiminus_dos,DonneesImageRGB *tortipouss,DonneesImageRGB *tortipouss_dos,DonneesImageRGB *ouisticram,DonneesImageRGB *ouisticram_dos,DonneesImageRGB *tiplouf,DonneesImageRGB *tiplouf_dos,DonneesImageRGB *bulbizarre_evo1,DonneesImageRGB *bulbizarre_evo1_dos,DonneesImageRGB *salameche_evo1,DonneesImageRGB *salameche_evo1_dos,DonneesImageRGB *carapuce_evo1,DonneesImageRGB *carapuce_evo1_dos,DonneesImageRGB *vipeliere_evo1,DonneesImageRGB *vipeliere_evo1_dos,DonneesImageRGB *gruikui_evo1,DonneesImageRGB *gruikui_evo1_dos,DonneesImageRGB *moustillon_evo1,DonneesImageRGB *moustillon_evo1_dos,DonneesImageRGB *germignon_evo1,DonneesImageRGB *germignon_evo1_dos,DonneesImageRGB *hericendre_evo1,DonneesImageRGB *hericendre_evo1_dos,DonneesImageRGB *kaiminus_evo1,DonneesImageRGB *kaiminus_evo1_dos,DonneesImageRGB *tortipouss_evo1,DonneesImageRGB *tortipouss_evo1_dos,DonneesImageRGB *ouisticram_evo1,DonneesImageRGB *ouisticram_evo1_dos,DonneesImageRGB *tiplouf_evo1,DonneesImageRGB *tiplouf_evo1_dos,DonneesImageRGB *bulbizarre_evo2,DonneesImageRGB *bulbizarre_evo2_dos,DonneesImageRGB *salameche_evo2,DonneesImageRGB *salameche_evo2_dos,DonneesImageRGB *carapuce_evo2,DonneesImageRGB *carapuce_evo2_dos,DonneesImageRGB *vipeliere_evo2,DonneesImageRGB *vipeliere_evo2_dos,DonneesImageRGB *gruikui_evo2,DonneesImageRGB *gruikui_evo2_dos,DonneesImageRGB *moustillon_evo2,DonneesImageRGB *moustillon_evo2_dos,DonneesImageRGB *germignon_evo2,DonneesImageRGB *germignon_evo2_dos,DonneesImageRGB *hericendre_evo2,DonneesImageRGB *hericendre_evo2_dos,DonneesImageRGB *kaiminus_evo2,DonneesImageRGB *kaiminus_evo2_dos,DonneesImageRGB *tortipouss_evo2,DonneesImageRGB *tortipouss_evo2_dos,DonneesImageRGB *ouisticram_evo2,DonneesImageRGB *ouisticram_evo2_dos,DonneesImageRGB *tiplouf_evo2,DonneesImageRGB *tiplouf_evo2_dos,DonneesImageRGB *salle1_marc,DonneesImageRGB *salle2_rachid,DonneesImageRGB *salle3_bastien,DonneesImageRGB *salle4_adriane,DonneesImageRGB *salle5_blue,DonneesImageRGB *salle6_iris,DonneesImageRGB *salle7_morgane,DonneesImageRGB *salle8_pierre, int salle_actuelle){
+//Affiche l'interface de combat avec le pokemon choisit et le boss et son pokemon lié à la salle actuelle
+void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre,DonneesImageRGB *bulbizarre_dos,DonneesImageRGB *salameche,DonneesImageRGB *salameche_dos,DonneesImageRGB *carapuce,DonneesImageRGB *carapuce_dos,DonneesImageRGB *vipeliere,DonneesImageRGB *vipeliere_dos,DonneesImageRGB *gruikui,DonneesImageRGB *gruikui_dos,DonneesImageRGB *moustillon,DonneesImageRGB *moustillon_dos,DonneesImageRGB *germignon,DonneesImageRGB *germignon_dos,DonneesImageRGB *hericendre,DonneesImageRGB *hericendre_dos,DonneesImageRGB *kaiminus,DonneesImageRGB *kaiminus_dos,DonneesImageRGB *tortipouss,DonneesImageRGB *tortipouss_dos,DonneesImageRGB *ouisticram,DonneesImageRGB *ouisticram_dos,DonneesImageRGB *tiplouf,DonneesImageRGB *tiplouf_dos,DonneesImageRGB *bulbizarre_evo1,DonneesImageRGB *bulbizarre_evo1_dos,DonneesImageRGB *salameche_evo1,DonneesImageRGB *salameche_evo1_dos,DonneesImageRGB *carapuce_evo1,DonneesImageRGB *carapuce_evo1_dos,DonneesImageRGB *vipeliere_evo1,DonneesImageRGB *vipeliere_evo1_dos,DonneesImageRGB *gruikui_evo1,DonneesImageRGB *gruikui_evo1_dos,DonneesImageRGB *moustillon_evo1,DonneesImageRGB *moustillon_evo1_dos,DonneesImageRGB *germignon_evo1,DonneesImageRGB *germignon_evo1_dos,DonneesImageRGB *hericendre_evo1,DonneesImageRGB *hericendre_evo1_dos,DonneesImageRGB *kaiminus_evo1,DonneesImageRGB *kaiminus_evo1_dos,DonneesImageRGB *tortipouss_evo1,DonneesImageRGB *tortipouss_evo1_dos,DonneesImageRGB *ouisticram_evo1,DonneesImageRGB *ouisticram_evo1_dos,DonneesImageRGB *tiplouf_evo1,DonneesImageRGB *tiplouf_evo1_dos,DonneesImageRGB *bulbizarre_evo2,DonneesImageRGB *bulbizarre_evo2_dos,DonneesImageRGB *salameche_evo2,DonneesImageRGB *salameche_evo2_dos,DonneesImageRGB *carapuce_evo2,DonneesImageRGB *carapuce_evo2_dos,DonneesImageRGB *vipeliere_evo2,DonneesImageRGB *vipeliere_evo2_dos,DonneesImageRGB *gruikui_evo2,DonneesImageRGB *gruikui_evo2_dos,DonneesImageRGB *moustillon_evo2,DonneesImageRGB *moustillon_evo2_dos,DonneesImageRGB *germignon_evo2,DonneesImageRGB *germignon_evo2_dos,DonneesImageRGB *hericendre_evo2,DonneesImageRGB *hericendre_evo2_dos,DonneesImageRGB *kaiminus_evo2,DonneesImageRGB *kaiminus_evo2_dos,DonneesImageRGB *tortipouss_evo2,DonneesImageRGB *tortipouss_evo2_dos,DonneesImageRGB *ouisticram_evo2,DonneesImageRGB *ouisticram_evo2_dos,DonneesImageRGB *tiplouf_evo2,DonneesImageRGB *tiplouf_evo2_dos,DonneesImageRGB *salle1_marc,DonneesImageRGB *salle2_rachid,DonneesImageRGB *salle3_bastien,DonneesImageRGB *salle4_adriane,DonneesImageRGB *salle5_blue,DonneesImageRGB *salle6_iris,DonneesImageRGB *salle7_morgane,DonneesImageRGB *salle8_pierre, int salle_actuelle){
+	
+	// Affiche le boss et son pokemon associé
 	if(salle_actuelle == 1){
 		if(moustillon != NULL){
 		ecrisImage(1050, 650,  moustillon->largeurImage, moustillon->hauteurImage, moustillon->donneesRGB);
@@ -1559,6 +1809,8 @@ void affichageCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 		}
 	}
 
+
+	// Affiche le pokemon choisit au bon stade (starter,evo1,evo2)
 	if(strcmp(perso->starter.nom,"Bulbizarre")== 0){
 		if(perso->starter.stade == 0){
 			if(bulbizarre_dos != NULL){
@@ -1579,7 +1831,7 @@ void affichageCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 		}
 	}
 
-	else if(strcmp(perso->starter.nom,"Salamèche")== 0){
+	else if(strcmp(perso->starter.nom,"Salameche")== 0){
 		if(perso->starter.stade == 0){
 			if(salameche_dos != NULL){
 				ecrisImage(391, 397, salameche_dos->largeurImage, salameche_dos->hauteurImage, salameche_dos->donneesRGB);
@@ -1619,7 +1871,7 @@ void affichageCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 		}
 
 	}
-	else if(strcmp(perso->starter.nom,"Vipélierre")== 0){
+	else if(strcmp(perso->starter.nom,"Vipelierre")== 0){
 		if(perso->starter.stade == 0){
 			if(vipeliere_dos != NULL){
 				ecrisImage(391, 397, vipeliere_dos->largeurImage, vipeliere_dos->hauteurImage, vipeliere_dos->donneesRGB);
@@ -1797,11 +2049,12 @@ void affichageCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, tiplouf_evo2_dos->largeurImage, tiplouf_evo2_dos->hauteurImage, tiplouf_evo2_dos->donneesRGB);
 			}
 		}
+
 	}
 	affichePv(perso, tour);
 }
 
-//Check dans quelle salle on est
+//Verifie dans quelle salle on est pour renvoyer dans le case associé à la salle
 int checkSalle(int salle_actuelle, int etat){
 	if(salle_actuelle == 1){
 			etat = 7;
@@ -1830,18 +2083,6 @@ int checkSalle(int salle_actuelle, int etat){
 	return etat;
 }
 
-#define x1_pv 1205
-#define y1_pv 422
-#define x2_pv 1763
-#define y2_pv 470
-
-#define epaisseur_trait 4
-
-#define x1_pv_adverse 296
-#define y1_pv_adverse 877
-#define x2_pv_adverse 746
-#define y2_pv_adverse 904
-
 void affichePv(dresseur *perso, dresseur *tour){
 
 	//affichage pv dresseur
@@ -1857,6 +2098,7 @@ void affichePv(dresseur *perso, dresseur *tour){
 		couleurCourante(255,0,0);
 	}
 	rectangle(x1_pv, y1_pv, x1_pv + ((perso->starter.pv * (x2_pv - x1_pv)) / calculPvMax(perso)), y2_pv);
+	
 	//Contour
 	couleurCourante(0,0,0);
 	epaisseurDeTrait(epaisseur_trait);
@@ -1878,6 +2120,7 @@ void affichePv(dresseur *perso, dresseur *tour){
 		couleurCourante(255,0,0);
 	}
 	rectangle(x1_pv_adverse, y1_pv_adverse, x1_pv_adverse + ((tour->starter.pv * (x2_pv_adverse - x1_pv_adverse)) / calculPvMax(tour)), y2_pv_adverse);
+	
 	//Contour
 	couleurCourante(0,0,0);
 	epaisseurDeTrait(epaisseur_trait);

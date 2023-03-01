@@ -14,5 +14,4 @@ int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_co
 int verifVictoire(dresseur *perso, dresseur *tour);
 int calculPvMax(dresseur *pokemon);
 
-
 #endif
