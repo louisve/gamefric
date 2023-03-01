@@ -862,7 +862,7 @@ return salle_actuelle;
  	et en fonction de l'élément survolé lors du clic par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
  	du switch(evenement) dès qu'il y a un appui sur le bouton gauche de la souris. */
 
-int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle,int verif_victoire){
+int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle,int *verif_victoire){
 	
 	if (etat == 0) // Si on est sur l'écran titre :
 	{
@@ -871,62 +871,62 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if(etat == 17) // si on clic sur l'un des pokemon on init sa structure et on change d'état (on passe au choix dresseur).
 	{
 		//Bulbizar
-		initPk("Bulbizarre",pokedex,starter,tabAtk);
+		initPk("Bulbizarre",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 21) //salameche
 	{
-		initPk("Salamèche",pokedex,starter,tabAtk);
+		initPk("Salameche",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 25) //carapuce
 	{
-		initPk("Carapuce",pokedex,starter,tabAtk);
+		initPk("Carapuce",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 18) //germignon
 	{
-		initPk("Germignon",pokedex,starter,tabAtk);
+		initPk("Germignon",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 28) //moustillon
 	{
-		initPk("Moustillon",pokedex,starter,tabAtk);
+		initPk("Moustillon",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 22) //hericendre
 	{
-		initPk("Héricendre",pokedex,starter,tabAtk);
+		initPk("Hericendre",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 26) //kaiminus
 	{
-		initPk("Kaiminus",pokedex,starter,tabAtk);
+		initPk("Kaiminus",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 19) //tortipouss
 	{
-		initPk("Tortipouss",pokedex,starter,tabAtk);
+		initPk("Tortipouss",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 23) //ouisticram
 	{
-		initPk("Ouisticram",pokedex,starter,tabAtk);
+		initPk("Ouisticram",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 27) //tiplouf
 	{
-		initPk("Tiplouf",pokedex,starter,tabAtk);
+		initPk("Tiplouf",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 20) //vipelierre
 	{
-		initPk("Vipélierre",pokedex,starter,tabAtk);
+		initPk("Vipelierre",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;
 	}
 	else if(etat == 24) //gruikui
 	{
-		initPk("Gruikui",pokedex,starter,tabAtk);
+		initPk("Gruikui",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;	
 	}
 	else if (etat == 3) // Si on est dans le menu de base sur le bouton "lancer une partie" : ->
@@ -943,10 +943,10 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	}
 	else if(etat == 29) // si on clic sur l'un des dresseurs on init sa structure et on change d'état (on affiche la salle 1).
 	{
-			//perso 1.1
-				initDresseur("Perso 1.1",perso,starter);
-				etat = 7;
-		}
+		//perso 1.1
+		initDresseur("Perso 1.1",perso,starter);
+		etat = 7;
+	}
 	else if(etat == 30) //perso 1.2
 	{
 		etat = 7;
@@ -974,31 +974,41 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	}
 	else if(etat == 35) //menu combat 1 
 	{
-		verif_victoire = Baston(perso->starter.att[0], perso, tour);
-		if (verif_victoire == 0){
+		int etat_combat = 0;
+		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		etat_combat++;
+
+		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		etat_combat--;
+		//Victoire
+		if (*verif_victoire == 0){
 			etat = 15; //menu combat bouton attaque 2
 		}
-		//Victoire
-		else if (verif_victoire == 1){
+		// Défaite
+		else if (*verif_victoire == 1){
 			etat = 42;
 		}
-		//Defaite
-		else if (verif_victoire == 2){
+		else if (*verif_victoire == 2){ // Combat perdu
 			etat = 43;
 		}
 	}
 	else if(etat == 36) //menu combat 2
 	{
-		verif_victoire = Baston(perso->starter.att[1], perso, tour);
-		if (verif_victoire == 0){
+		int etat_combat = 0;
+		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		etat_combat++;
+
+		*verif_victoire = Baston(perso->starter.att[0], perso, tour, etat_combat);
+		etat_combat--;
+		//Victoire
+		if (*verif_victoire == 0){
 			etat = 15; //menu combat bouton attaque 2
 		}
-		//Victoire
-		else if (verif_victoire == 1){
+		// Défaite
+		else if (*verif_victoire == 1){
 			etat = 42;
 		}
-		//Defaite
-		else if (verif_victoire == 2){
+		else if (*verif_victoire == 2){ // Combat perdu
 			etat = 43;
 		}
 	}
@@ -1787,8 +1797,8 @@ void affichageCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, tiplouf_evo2_dos->largeurImage, tiplouf_evo2_dos->hauteurImage, tiplouf_evo2_dos->donneesRGB);
 			}
 		}
-
 	}
+	affichePv(perso, tour);
 }
 
 //Check dans quelle salle on est
@@ -1818,4 +1828,61 @@ int checkSalle(int salle_actuelle, int etat){
 			etat = 14;
 		}
 	return etat;
+}
+
+#define x1_pv 1205
+#define y1_pv 422
+#define x2_pv 1763
+#define y2_pv 470
+
+#define epaisseur_trait 4
+
+#define x1_pv_adverse 296
+#define y1_pv_adverse 877
+#define x2_pv_adverse 746
+#define y2_pv_adverse 904
+
+void affichePv(dresseur *perso, dresseur *tour){
+
+	//affichage pv dresseur
+
+	//Jauge
+	if((perso->starter.pv / calculPvMax(perso)*100) >= 50){
+		couleurCourante(0,255,0);
+	}
+	else if ((perso->starter.pv / calculPvMax(perso)*100) < 50 && (perso->starter.pv / calculPvMax(perso)*100) >= 25){
+		couleurCourante(255,160,0);
+	}
+	else{
+		couleurCourante(255,0,0);
+	}
+	rectangle(x1_pv, y1_pv, x1_pv + ((perso->starter.pv * (x2_pv - x1_pv)) / calculPvMax(perso)), y2_pv);
+	//Contour
+	couleurCourante(0,0,0);
+	epaisseurDeTrait(epaisseur_trait);
+	ligne(x1_pv - epaisseur_trait, y1_pv - epaisseur_trait/2, x2_pv + epaisseur_trait, y1_pv - epaisseur_trait/2); // ligne du bas
+	ligne(x1_pv - epaisseur_trait/2, y1_pv - epaisseur_trait/2, x1_pv - epaisseur_trait/2, y2_pv + epaisseur_trait/2); // ligne a gauche
+	ligne(x2_pv + epaisseur_trait/2, y1_pv - epaisseur_trait/2, x2_pv + epaisseur_trait/2, y2_pv + epaisseur_trait/2); //ligne a droite
+	ligne(x1_pv - epaisseur_trait, y2_pv + epaisseur_trait/2, x2_pv + epaisseur_trait, y2_pv + epaisseur_trait/2); //ligne du haut
+
+	//affichage pv adverse
+
+	//Jauge
+	if((tour->starter.pv / calculPvMax(tour)*100) >= 50){
+		couleurCourante(0,255,0);
+	}
+	else if ((tour->starter.pv / calculPvMax(tour)*100) < 50 && (tour->starter.pv / calculPvMax(tour)*100) >= 25){
+		couleurCourante(255,160,0);
+	}
+	else{
+		couleurCourante(255,0,0);
+	}
+	rectangle(x1_pv_adverse, y1_pv_adverse, x1_pv_adverse + ((tour->starter.pv * (x2_pv_adverse - x1_pv_adverse)) / calculPvMax(tour)), y2_pv_adverse);
+	//Contour
+	couleurCourante(0,0,0);
+	epaisseurDeTrait(epaisseur_trait);
+	ligne(x1_pv_adverse - epaisseur_trait, y1_pv_adverse - epaisseur_trait/2, x2_pv_adverse + epaisseur_trait, y1_pv_adverse - epaisseur_trait/2); // ligne du bas
+	ligne(x1_pv_adverse - epaisseur_trait/2, y1_pv_adverse - epaisseur_trait/2, x1_pv_adverse - epaisseur_trait/2, y2_pv_adverse + epaisseur_trait/2); // ligne a gauche
+	ligne(x2_pv_adverse + epaisseur_trait/2, y1_pv_adverse - epaisseur_trait/2, x2_pv_adverse + epaisseur_trait/2, y2_pv_adverse + epaisseur_trait/2); //ligne a droite
+	ligne(x1_pv_adverse - epaisseur_trait, y2_pv_adverse + epaisseur_trait/2, x2_pv_adverse + epaisseur_trait, y2_pv_adverse + epaisseur_trait/2); //ligne du haut
 }

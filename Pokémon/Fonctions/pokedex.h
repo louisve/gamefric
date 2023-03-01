@@ -16,9 +16,9 @@
 //Initialisation de fonctions/structures
 
 
-#define NUM_POKEMON 12
-#define NUM_ATTAQUE 5
-
+#define NUM_POKEMON 12 //Nombre de pokemon différents
+#define NUM_ATTAQUE 5 //Nombre total d'attaques différentes
+#define NB_ATK 2 //Nombre attaque qu'a un pokemon
 
 
 typedef struct STATS{
@@ -57,8 +57,8 @@ typedef struct DRESSEUR{
 
 attaque* readAttaque();
 Pokemon* readPokedex();
-void initPk(char *name,Pokemon *pokedex,Pokemon *starter,attaque *tabAtk);
+void initPk(char *name,Pokemon *pokedex,Pokemon *starter,attaque *tabAtk,int salle_actuelle);
 void initDresseur(char *name,dresseur *perso, Pokemon *starter);
-dresseur* initTour(Pokemon *pokedex, attaque *tabAtk);
+dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle);
 
 #endif

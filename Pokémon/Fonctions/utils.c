@@ -47,28 +47,20 @@ float FaiblessesResistance(attaque attaqueUtilisee, dresseur *pokemonVictime){
     return faibl;
 }
 
-int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour){
 
-    tour->starter.pv -= attaquer(attaqueUtilisee, perso, tour);
-    int verif_victoire = verifVictoire(perso, tour);
-
-    if (verif_victoire == 1){
-        return verif_victoire;
+int Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_combat){
+    if(etat_combat == 0){
+        tour->starter.pv -= attaquer(attaqueUtilisee, perso, tour);
     }
-
-    sleep(2);
-
-    srand(time(NULL));
-
-    attaqueUtilisee = tour->starter.att[rand()%(2)];
-    attaqueUtilisee = tour->starter.att[1];
-    perso->starter.pv -= attaquer(attaqueUtilisee, tour, perso);
-    sleep(2);
-
-    verif_victoire = verifVictoire(perso, tour);
-
-    return verif_victoire;
+    else if(etat_combat == 1){
+        srand(time(NULL));
+        attaqueUtilisee = tour->starter.att[rand()%(2)];
+        perso->starter.pv -= attaquer(attaqueUtilisee, tour, perso);
+    }
+    sleep(1);
+    return verifVictoire(perso, tour);
 }
+
 
 int verifVictoire(dresseur *perso, dresseur *tour){
     int verif_victoire = 0;
@@ -79,4 +71,17 @@ int verifVictoire(dresseur *perso, dresseur *tour){
         verif_victoire = 2;
     }
     return verif_victoire;
+}
+
+
+int calculPvMax(dresseur *pokemon){
+    float pv = pokemon->starter.niveau1.pv + pokemon->starter.rapport.pv * pokemon->starter.niveau;
+
+    if (pokemon->starter.stade == 1){
+        pv *= pokemon->starter.coef1.pv;
+    }
+    if (pokemon->starter.stade == 2){
+        pv *= pokemon->starter.coef2.pv;
+    }
+    return round(pv);
 }

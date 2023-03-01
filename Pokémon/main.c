@@ -48,10 +48,11 @@ void gestionEvenement(EvenementGfx evenement)
     static Pokemon *pstarter = &starter;
     static dresseur perso;
     static dresseur *pperso = &perso;
-    static int salle_actuelle = 0;
+    static int salle_actuelle = 1;
     static int dp = 0;
     static int *etatdp = &dp;
-    static int verif_victoire = 0;
+    static int vic = 0;
+    static int *verif_victoire = &vic;
     
 
     switch (evenement)
@@ -63,7 +64,7 @@ void gestionEvenement(EvenementGfx evenement)
             pokedex = readPokedex();
             tabAtk = malloc(NUM_ATTAQUE*sizeof(attaque));
             tabAtk = readAttaque();
-            tour = initTour(pokedex,tabAtk);
+            tour = initTour(pokedex,tabAtk, salle_actuelle);
             pstarter = malloc(sizeof(Pokemon));
             demandeTemporisation(20); //tempo toutes les 20ms.
             }
