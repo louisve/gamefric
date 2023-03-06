@@ -43,8 +43,12 @@ int ControleDeplacementsHaut(int *placey, int *placex, int etat, int *etatdp, dr
         }
         perso->win = 0;
     }
-    else if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
+    else if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672 && perso->win != 1){ //vérification des coordonnées du perso
         etat = 15;
+    }
+    else if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672 && perso->win == 1){ //vérification des coordonnées du perso
+        printf("combat déja effectué\n");
+        *placey = *placey - VPerso;
     }
     // else if(*placey >= 805 && *placex >= 881 && *placex <= 1000 && perso->win == 0){ //Message d'erreur si combat non effectué
     //     printf("Erreur combat à terminer d'abord\n"); // ce message est temporaire en attendant que je fasse un message propre
@@ -58,9 +62,14 @@ int ControleDeplacementsHaut(int *placey, int *placex, int etat, int *etatdp, dr
 
 }
 
-int ControleDeplacementsBas(int *placey, int *placex, int etat, int *etatdp){
-    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
+int ControleDeplacementsBas(int *placey, int *placex, int etat, int *etatdp, dresseur *perso){
+    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672 && perso->win != 1){ //vérification des coordonnées du perso
         etat = 15;
+    }
+    else if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672 && perso->win == 1){ //vérification des coordonnées du perso
+        printf("combat déja effectué\n");
+        *placey = *placey + VPerso;
+    
     }
     else if(*placey >= 258){
         *etatdp = 2;
@@ -69,9 +78,13 @@ int ControleDeplacementsBas(int *placey, int *placex, int etat, int *etatdp){
 return etat;
 }
 
-int ControleDeplacementsGauche(int *placey, int *placex, int etat, int *etatdp){
-    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
+int ControleDeplacementsGauche(int *placey, int *placex, int etat, int *etatdp, dresseur *perso){
+    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672 && perso->win != 1){ //vérification des coordonnées du perso
         etat = 15;
+    }
+    else if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672 && perso->win == 1){ //vérification des coordonnées du perso
+        printf("combat déja effectué\n");
+        *placex = *placex + VPerso;
     }
     else if(*placex >= 663){
         *etatdp = 3;
@@ -80,9 +93,13 @@ int ControleDeplacementsGauche(int *placey, int *placex, int etat, int *etatdp){
 return etat;
 }
 
-int ControleDeplacementsDroite(int *placey, int *placex, int etat, int *etatdp){
-    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672){ //vérification des coordonnées du perso
+int ControleDeplacementsDroite(int *placey, int *placex, int etat, int *etatdp, dresseur *perso){
+    if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672 && perso->win != 1){ //vérification des coordonnées du perso
         etat = 15;
+    }
+    else if(*placey >= 549 && *placex <= 981 && *placex >= 889 && *placey <= 672 && perso->win == 1){ //vérification des coordonnées du perso
+        printf("combat déja effectué\n");
+        *placex = *placex + VPerso;
     }
     else if(*placex <= 1206){
         *etatdp = 4;

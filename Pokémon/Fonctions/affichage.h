@@ -25,6 +25,7 @@
 #define x2_pv 1763
 #define y2_pv 470
 #define taille_texte 40
+#define marge_niveau 90
 
 #define epaisseur_trait 4
 
@@ -33,6 +34,8 @@
 #define x2_pv_adverse 746
 #define y2_pv_adverse 904
 #define taille_texte_adverse 30
+#define marge_niveau_adverse 70
+
 
 //Initialisation de fonctions/structures
 

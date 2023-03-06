@@ -5,7 +5,7 @@ attaque* readAttaque(){
     attaque *tabAtk;
     tabAtk = malloc(NUM_ATTAQUE*sizeof(attaque));
     FILE* f;
-    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/attaque.txt","r");
+    f = fopen("/home/isen/Documents/Pokémon_last_version/Fonctions/BDD/attaque.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_ATTAQUE; ++i)
         {
@@ -20,7 +20,7 @@ Pokemon* readPokedex(){
     Pokemon *tab;
     tab = malloc(NUM_POKEMON*sizeof(Pokemon));
     FILE* f;
-    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/pokedex.txt","r");
+    f = fopen("/home/isen/Documents/Pokémon_last_version/Fonctions/BDD/pokedex.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_POKEMON; ++i)
         {
@@ -44,13 +44,25 @@ void initPk(char *name,Pokemon *pokedex,Pokemon *starter, attaque *tabAtk, int s
 	strcpy(starter->nom,pokedex[i].nom);
 	strcpy(starter->type,pokedex[i].type);
 	starter->niveau = pokedex[i].niveau * 5 * salle_actuelle;
-	starter->stade = 0;
 	starter->niveau1 = pokedex[i].niveau1;
     starter->rapport = pokedex[i].rapport;
 	starter->coef1 = pokedex[i].coef1;
 	starter->coef2 = pokedex[i].coef2;
-	starter->pv = round(starter->niveau1.pv + starter->rapport.pv * starter->niveau);
-	
+
+    //Calcul PV & stade
+    starter->stade = 0;
+    starter->pv = starter->niveau1.pv + starter->rapport.pv * starter->niveau;
+    if (starter->niveau >= 32){
+        starter->stade = 2;
+        starter->pv *= starter->coef2.pv;
+    }
+    else if(starter->niveau >= 16 && starter->niveau < 32){
+        starter->stade = 1;
+        starter->pv *= starter->coef1.pv;
+    }
+    starter->pv = round(starter->pv);
+
+    //Attribution des attaques
     for(int k = 0; k < NB_ATK; k++){
         int j = 0;
         while(j < NUM_ATTAQUE && strcmp(pokedex[i].att[k].nom, tabAtk[j].nom) != 0){
@@ -164,12 +176,6 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     strcpy(tour[5].starter.nom, "Macronium");
     strcpy(tour[6].starter.nom, "Torterra");
     strcpy(tour[7].starter.nom, "Aligatueur");
-
-    tour[3].starter.stade = 1;
-    tour[4].starter.stade = 1;
-    tour[5].starter.stade = 1;
-    tour[6].starter.stade = 2;
-    tour[7].starter.stade = 2;
 
     return tour;
 }

@@ -162,13 +162,13 @@ void gestionEvenement(EvenementGfx evenement)
                     etat = ControleDeplacementsHaut(placey, placex, etat, etatdp, pperso);
                     break;
                 case 14: //Pour se déplacer vers le bas grâce à la flèche du bas
-                    etat = ControleDeplacementsBas(placey, placex, etat, etatdp);
+                    etat = ControleDeplacementsBas(placey, placex, etat, etatdp, pperso);
                     break;
                 case 15: //Pour se déplacer vers la gauche grâce à la flèche de gauche
-                    etat = ControleDeplacementsGauche(placey, placex, etat, etatdp);
+                    etat = ControleDeplacementsGauche(placey, placex, etat, etatdp, pperso);
                     break;
                 case 16: //Pour se déplacer vers la droite grâce à la flèche de droite
-                    etat = ControleDeplacementsDroite(placey, placex, etat, etatdp);
+                    etat = ControleDeplacementsDroite(placey, placex, etat, etatdp, pperso);
                     break;
             }
             break;

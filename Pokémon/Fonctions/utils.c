@@ -49,14 +49,19 @@ float FaiblessesResistance(attaque attaqueUtilisee, dresseur pokemonVictime){
 
 
 void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_combat, int salle_actuelle){
+    //Tour dresseur
     if(etat_combat == 0){
         tour[salle_actuelle - 1].starter.pv -= attaquer(attaqueUtilisee, *perso, tour[salle_actuelle - 1]);
-        // printf("Vous avez infligé %f dégats grâce à l'attaque %s.\n",attaquer(attaqueUtilisee, *perso, tour[salle_actuelle - 1]),attaqueUtilisee.nom);
-        // printf("Il reste %f PV à votre adversaire de niveau %f.\n",tour[salle_actuelle-1].starter.pv, tour[salle_actuelle-1].starter.niveau);
     }
+    //Tour adverse
     else if(etat_combat == 1){
         srand(time(NULL));
-        attaqueUtilisee = tour[salle_actuelle - 1].starter.att[rand()%(2)];
+        if (rand()%(100) < 40){
+            attaqueUtilisee = tour[salle_actuelle - 1].starter.att[0];
+        }
+        else{
+            attaqueUtilisee = tour[salle_actuelle - 1].starter.att[1];
+        }
         perso->starter.pv -= attaquer(attaqueUtilisee, tour[salle_actuelle - 1], *perso);
     }
     sleep(1);

@@ -1166,6 +1166,7 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 		else if (perso->win == 1){
 			etat = 42;
 			perso->starter.niveau += 5;
+			perso->starter.pv = calculPvMax(*perso);
 		}
 
 		//Si il y a défaite :  on affiche l'écran de défaite
@@ -1197,6 +1198,7 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 		else if (perso->win == 1){
 			etat = 42;
 			perso->starter.niveau += 5;
+			perso->starter.pv = calculPvMax(*perso);
 		}
 
 		// Si il y a défaite :  on affiche l'écran de défaite
@@ -2146,13 +2148,14 @@ int checkSalle(int salle_actuelle, int etat){
 
 void affichePv(dresseur perso){
 
-	int x1, x2, y1, y2, taille;
+	int x1, x2, y1, y2, taille, marge;
 	if (strcmp(perso.statut, "Boss") == 0){
 		x1 = x1_pv_adverse;
 		x2 = x2_pv_adverse;
 		y1 = y1_pv_adverse;
 		y2 = y2_pv_adverse;
 		taille = taille_texte_adverse;
+		marge = marge_niveau_adverse;
 	}
 	else{
 		x1 = x1_pv;
@@ -2160,6 +2163,7 @@ void affichePv(dresseur perso){
 		y1 = y1_pv;
 		y2 = y2_pv;
 		taille = taille_texte;
+		marge = marge_niveau;
 	}
 
 	couleurCourante(255,255,255);
@@ -2192,8 +2196,7 @@ void affichePv(dresseur perso){
 
 	//Affiche Niveau Pokemon
 	epaisseurDeTrait(taille/7);
-	char niveau[10], tmp[10];
-	int marge = 90;
+	char niveau[10] = "", tmp[10] = "";
 	sprintf(tmp, "%0.f", perso.starter.niveau);
 	strcat(niveau, "Niv.");
 	strcat(niveau, tmp);
