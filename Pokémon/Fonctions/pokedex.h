@@ -57,6 +57,7 @@ typedef struct DRESSEUR{
 
 attaque* readAttaque();
 Pokemon* readPokedex();
+dresseur* readTour();
 void initPk(char *name,Pokemon *pokedex,Pokemon *starter,attaque *tabAtk,int salle_actuelle);
 void initDresseur(char *name,dresseur *perso, Pokemon *starter);
 dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle);

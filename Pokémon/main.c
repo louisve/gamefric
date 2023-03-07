@@ -44,9 +44,9 @@ void gestionEvenement(EvenementGfx evenement)
     static Pokemon *pokedex;
     static attaque *tabAtk;
     static dresseur *tour;
-    static Pokemon starter;
+    static Pokemon starter = {0};
     static Pokemon *pstarter = &starter;
-    static dresseur perso;
+    static dresseur perso = {0};
     static dresseur *pperso = &perso;
     static int salle_actuelle = 1;
     static int dp = 0;
@@ -58,12 +58,13 @@ void gestionEvenement(EvenementGfx evenement)
         case Initialisation:
             {
             initImage();
-            pokedex = malloc(NUM_POKEMON*sizeof(Pokemon));
+            pokedex = calloc(NUM_POKEMON, sizeof(Pokemon));
             pokedex = readPokedex();
-            tabAtk = malloc(NUM_ATTAQUE*sizeof(attaque));
+            tabAtk = calloc(NUM_ATTAQUE, sizeof(attaque));
             tabAtk = readAttaque();
-            tour = initTour(pokedex,tabAtk, salle_actuelle);
-            pstarter = malloc(sizeof(Pokemon));
+            // tour = initTour(pokedex,tabAtk, salle_actuelle);
+            tour = readTour(pokedex, tabAtk);
+            pstarter = calloc(1, sizeof(Pokemon));
             demandeTemporisation(20); //tempo toutes les 20ms.
             }
             break;

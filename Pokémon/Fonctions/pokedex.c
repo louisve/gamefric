@@ -3,13 +3,16 @@
 
 attaque* readAttaque(){
     attaque *tabAtk;
-    tabAtk = malloc(NUM_ATTAQUE*sizeof(attaque));
+    tabAtk = calloc(NUM_ATTAQUE, sizeof(attaque));
     FILE* f;
-    f = fopen("/home/isen/Documents/Pokémon_last_version/Fonctions/BDD/attaque.txt","r");
+    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/attaque.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_ATTAQUE; ++i)
         {
-            fscanf(f, "\nNom : %s\nDegats : %f\nType : %s",tabAtk[i].nom,&tabAtk[i].degats,tabAtk[i].type); 
+            if( fscanf(f, "\nNom : %s\nDegats : %f\nType : %s"
+            ,tabAtk[i].nom,&tabAtk[i].degats,tabAtk[i].type) != 3){
+                printf("readAttaque(%d)     Impossible\n",i);
+            }
         }
         fclose(f);
     }
@@ -18,13 +21,19 @@ attaque* readAttaque(){
 
 Pokemon* readPokedex(){
     Pokemon *tab;
-    tab = malloc(NUM_POKEMON*sizeof(Pokemon));
+    tab = calloc(NUM_POKEMON, sizeof(Pokemon));
     FILE* f;
-    f = fopen("/home/isen/Documents/Pokémon_last_version/Fonctions/BDD/pokedex.txt","r");
+    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/pokedex.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_POKEMON; ++i)
         {
-            fscanf(f, "\nNom : %s\nType : %s\nNiveau : %f\nPV max : %f\nPV actuels : %f\nAttaque : %f\nDefense : %f\nAttaque1 : %s\nAttaque 2 : %s\nRapport PV evo0 : %f\nRapport Attaque evo0 : %f\nRapport Defense evo0 : %f\nCoef PV evo1 : %f\nCoef Attaque evo1 : %f\nCoef Defense evo1 : %f\nCoef PV evo2 : %f\nCoef Attaque evo2 : %f\nCoef Defense evo2 : %f",tab[i].nom,tab[i].type,&tab[i].niveau,&tab[i].niveau1.pv,&tab[i].pv,&tab[i].niveau1.atk,&tab[i].niveau1.def,tab[i].att[0].nom,tab[i].att[1].nom,&tab[i].rapport.pv,&tab[i].rapport.atk,&tab[i].rapport.def,&tab[i].coef1.pv,&tab[i].coef1.atk,&tab[i].coef1.def,&tab[i].coef2.pv,&tab[i].coef2.atk,&tab[i].coef2.def);
+            if (fscanf(f, "\nNom : %s\nType : %s\nNiveau : %f\nPV max : %f\nPV actuels : %f\nAttaque : %f\nDefense : %f\nAttaque1 : %s\nAttaque 2 : %s\n"
+            "Rapport PV evo0 : %f\nRapport Attaque evo0 : %f\nRapport Defense evo0 : %f\nCoef PV evo1 : %f\nCoef Attaque evo1 : %f\nCoef Defense evo1 : %f\n"
+            "Coef PV evo2 : %f\nCoef Attaque evo2 : %f\nCoef Defense evo2 : %f",tab[i].nom,tab[i].type,&tab[i].niveau,&tab[i].niveau1.pv,&tab[i].pv,
+            &tab[i].niveau1.atk,&tab[i].niveau1.def,tab[i].att[0].nom,tab[i].att[1].nom,&tab[i].rapport.pv,&tab[i].rapport.atk,&tab[i].rapport.def,&tab[i].coef1.pv,
+            &tab[i].coef1.atk,&tab[i].coef1.def,&tab[i].coef2.pv,&tab[i].coef2.atk,&tab[i].coef2.def) != 18){
+                printf("readPokedex(%d)     Impossible\n",i);
+            }
             
         }
     fclose(f);
@@ -32,8 +41,33 @@ Pokemon* readPokedex(){
     return tab;
 }
 
+dresseur* readTour(Pokemon *pokedex, attaque *tabAtk){
+    dresseur *tab;
+    tab = malloc(8*sizeof(dresseur));
+    FILE* f;
+    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/tour.txt","r");
+    if(f != NULL){
+        for (int i = 0; i < 8; ++i)
+        {
+            if (fscanf(f, "\nNom : %s\nEtage : %d\nStatut : %s\nWin : %d\nNom : %s",
+            tab[i].nom,&tab[i].etage,tab[i].statut,&tab[i].win,tab[i].starter.nom) != 5){
+                printf("readTour(%d)     Impossible\n",i);
+            }
+            else{
+                initPk(tab[i].starter.nom, pokedex, &tab[i].starter, tabAtk, tab[i].etage);
+            }
+        }
+    fclose(f);
+    }
+    return tab; 
+}
 
 void initPk(char *name,Pokemon *pokedex,Pokemon *starter, attaque *tabAtk, int salle_actuelle){
+
+    if (name == NULL || pokedex == NULL || starter == NULL || tabAtk == NULL) {
+        printf("ERROR!\n");
+        exit(1);
+    }
 
 	int i = 0;
 	while(i < NUM_POKEMON && strcmp(name,pokedex[i].nom) != 0){
@@ -85,13 +119,13 @@ void initDresseur(char *name,dresseur *perso, Pokemon *starter){
 
 dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     dresseur *tour;
-    tour = malloc(8*sizeof(dresseur));
+    tour = calloc(8, sizeof(dresseur));
 
     //Etage 1     
     Pokemon *pokemon1;
-    pokemon1 = malloc(sizeof(Pokemon));
+    pokemon1 = calloc(1, sizeof(Pokemon));
     dresseur *boss1;
-    boss1 = malloc(sizeof(dresseur));
+    boss1 = calloc(1, sizeof(dresseur));
     initPk("Moustillon",pokedex,pokemon1,tabAtk,salle_actuelle);
     initDresseur("Marc",boss1,pokemon1);
     tour[0]= *boss1;
@@ -99,9 +133,9 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     
     //Etage 2     
     Pokemon *pokemon2;
-    pokemon2 = malloc(sizeof(Pokemon));
+    pokemon2 = calloc(1, sizeof(Pokemon));
     dresseur *boss2;
-    boss2 = malloc(sizeof(dresseur));
+    boss2 = calloc(1, sizeof(dresseur));
     initPk("Vipelierre",pokedex,pokemon2,tabAtk,salle_actuelle);
     initDresseur("Rachid",boss2,pokemon2);
     tour[1]= *boss2;
@@ -109,9 +143,9 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     
     //Etage 3     
     Pokemon *pokemon3;
-    pokemon3 = malloc(sizeof(Pokemon));
+    pokemon3 = calloc(1, sizeof(Pokemon));
     dresseur *boss3;
-    boss3 = malloc(sizeof(dresseur));
+    boss3 = calloc(1, sizeof(dresseur));
     initPk("Salameche",pokedex,pokemon3,tabAtk,salle_actuelle);
     initDresseur("Bastien",boss3,pokemon3);
     tour[2]= *boss3;
@@ -119,9 +153,9 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     
     //Etage 4     
     Pokemon *pokemon4;
-    pokemon4 = malloc(sizeof(Pokemon));
+    pokemon4 = calloc(1, sizeof(Pokemon));
     dresseur *boss4;
-    boss4 = malloc(sizeof(dresseur));
+    boss4 = calloc(1, sizeof(dresseur));
     initPk("Ouisticram",pokedex,pokemon4,tabAtk,salle_actuelle);
     initDresseur("Adriane",boss4,pokemon4);
     tour[3]= *boss4;
@@ -129,9 +163,9 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     
     //Etage 5     
     Pokemon *pokemon5;
-    pokemon5 = malloc(sizeof(Pokemon));
+    pokemon5 = calloc(1, sizeof(Pokemon));
     dresseur *boss5;
-    boss5 = malloc(sizeof(dresseur));
+    boss5 = calloc(1, sizeof(dresseur));
     initPk("Tiplouf",pokedex,pokemon5,tabAtk,salle_actuelle);
     initDresseur("Blue",boss5,pokemon5);
     tour[4]= *boss5;
@@ -139,9 +173,9 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
     
     //Etage 6     
     Pokemon *pokemon6;
-    pokemon6 = malloc(sizeof(Pokemon));
+    pokemon6 = calloc(1, sizeof(Pokemon));
     dresseur *boss6;
-    boss6 = malloc(sizeof(dresseur));
+    boss6 = calloc(1, sizeof(dresseur));
     initPk("Germignon",pokedex,pokemon6,tabAtk,salle_actuelle);
     initDresseur("Iris",boss6,pokemon6);
     tour[5]= *boss6;
@@ -149,9 +183,9 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
 
     //Etage 7     
     Pokemon *pokemon7;
-    pokemon7 = malloc(sizeof(Pokemon));
+    pokemon7 = calloc(1, sizeof(Pokemon));
     dresseur *boss7;
-    boss7 = malloc(sizeof(dresseur));
+    boss7 = calloc(1, sizeof(dresseur));
     initPk("Tortipouss",pokedex,pokemon7,tabAtk,salle_actuelle);
     initDresseur("Morgane",boss7,pokemon7);
     tour[6]= *boss7;
@@ -159,9 +193,9 @@ dresseur* initTour(Pokemon *pokedex, attaque *tabAtk, int salle_actuelle){
 
     //Etage 8     
     Pokemon *pokemon8;
-    pokemon8 = malloc(sizeof(Pokemon));
+    pokemon8 = calloc(1, sizeof(Pokemon));
     dresseur *boss8;
-    boss8 = malloc(sizeof(dresseur));
+    boss8 = calloc(1, sizeof(dresseur));
     initPk("Kaiminus",pokedex,pokemon8,tabAtk,salle_actuelle);
     initDresseur("Pierre",boss8,pokemon8);
     tour[7]= *boss8;

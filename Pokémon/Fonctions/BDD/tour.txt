@@ -1,0 +1,48 @@
+
+Nom : Marc
+Etage : 1
+Statut : Boss
+Win : 0
+Nom : Moustillon
+
+Nom : Rachid
+Etage : 2
+Statut : Boss
+Win : 0
+Nom : Vipelierre
+
+Nom : Bastien
+Etage : 3
+Statut : Boss
+Win : 0
+Nom : Salameche
+
+Nom : Adriane
+Etage : 4
+Statut : Boss
+Win : 0
+Nom : Ouisticram
+
+Nom : Blue
+Etage : 5
+Statut : Boss
+Win : 0
+Nom : Tiplouf
+
+Nom : Iris
+Etage : 6
+Statut : Boss
+Win : 0
+Nom : Germignon
+
+Nom : Morgane
+Etage : 7
+Statut : Boss
+Win : 0
+Nom : Tortipouss
+
+Nom : Pierre
+Etage : 8
+Statut : Boss
+Win : 0
+Nom : Kaiminus

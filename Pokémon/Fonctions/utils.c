@@ -3,7 +3,6 @@
 
 float attaquer(attaque attaqueUtilisee, dresseur pokemonAttaquant, dresseur pokemonVictime){
 
-    
     float atkAttaquant = pokemonAttaquant.starter.niveau1.atk + (pokemonAttaquant.starter.rapport.atk * (pokemonAttaquant.starter.niveau-1));
 
     if (pokemonAttaquant.starter.stade == 2){
@@ -22,11 +21,16 @@ float attaquer(attaque attaqueUtilisee, dresseur pokemonAttaquant, dresseur poke
         defVictime *= pokemonVictime.starter.coef2.def;
     }
 
-    int dpsAttaque = ((((((pokemonAttaquant.starter.niveau*2/5)+2)*attaqueUtilisee.degats * atkAttaquant /50)/defVictime)+2)*1.5);
+    float dpsAttaque = ((((((pokemonAttaquant.starter.niveau*2/5)+2)*attaqueUtilisee.degats * atkAttaquant /50)/defVictime)+2)*1.5);
+    printf("verif  niv : %f\n",pokemonAttaquant.starter.niveau);
+    printf("verif  atk : %f\n",attaqueUtilisee.degats);
+    printf("verif  1 : %f\n",dpsAttaque);
 
     dpsAttaque = dpsAttaque * FaiblessesResistance(attaqueUtilisee, pokemonVictime);
+    printf("verif  2 : %f\n",dpsAttaque);
 
     dpsAttaque = round(dpsAttaque);
+    printf("verif  finale : %f\n",dpsAttaque);
 
     return dpsAttaque;
 }
