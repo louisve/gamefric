@@ -22,15 +22,10 @@ float attaquer(attaque attaqueUtilisee, dresseur pokemonAttaquant, dresseur poke
     }
 
     float dpsAttaque = ((((((pokemonAttaquant.starter.niveau*2/5)+2)*attaqueUtilisee.degats * atkAttaquant /50)/defVictime)+2)*1.5);
-    printf("verif  niv : %f\n",pokemonAttaquant.starter.niveau);
-    printf("verif  atk : %f\n",attaqueUtilisee.degats);
-    printf("verif  1 : %f\n",dpsAttaque);
 
     dpsAttaque = dpsAttaque * FaiblessesResistance(attaqueUtilisee, pokemonVictime);
-    printf("verif  2 : %f\n",dpsAttaque);
 
     dpsAttaque = round(dpsAttaque);
-    printf("verif  finale : %f\n",dpsAttaque);
 
     return dpsAttaque;
 }
@@ -43,7 +38,7 @@ float FaiblessesResistance(attaque attaqueUtilisee, dresseur pokemonVictime){
         faibl = 1;
     }
     else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime.starter.type, "Eau") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime.starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime.starter.type, "Feu") == 0)){
-        faibl = 0.5;
+        faibl = 0.75;
     }
     else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime.starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime.starter.type, "Feu") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime.starter.type, "Eau") == 0)){
         faibl = 1.5;
@@ -68,7 +63,7 @@ void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_c
         }
         perso->starter.pv -= attaquer(attaqueUtilisee, tour[salle_actuelle - 1], *perso);
     }
-    sleep(1);
+    sleep(2);
     verifVictoire(perso, tour, salle_actuelle);
 }
 

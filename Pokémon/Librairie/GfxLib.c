@@ -471,13 +471,16 @@ static int *BVR2ARVB(int largeur, int hauteur, const unsigned char *donnees)
 	ptrPixel = pixels;
 	ptrDonnees = donnees;
 	for
-		(index = largeur*hauteur; index != 0; --index) /* On parcourt tous les
-														pixels de l'image */
+		(index = largeur*hauteur; index != 0; --index) /* On parcourt tous les pixels de l'image */
+		
 	{
 		ptrPixel[0] = ptrDonnees[0];
 		ptrPixel[1] = ptrDonnees[1];
 		ptrPixel[2] = ptrDonnees[2];
-		ptrPixel[3] = 0x0FF;
+		ptrPixel[3] = 255;
+		if(ptrPixel[0] == 0 && ptrPixel[1] == 0 && ptrPixel[2] == 0){
+			ptrPixel[3] = 0;
+		}
 		ptrDonnees += 3; /* On passe a la premiere composante du pixel suivant */
 		ptrPixel += 4; /* On passe au pixel suivant */
 	}
