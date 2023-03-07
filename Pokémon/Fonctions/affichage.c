@@ -43,6 +43,35 @@ static DonneesImageRGB *defaite_combat_rejouer = NULL;
 static DonneesImageRGB *defaite_combat_quitter = NULL;
 static DonneesImageRGB *ecran_fin = NULL;
 
+//Images d'évo1
+static DonneesImageRGB *choix_pk_evo1 = NULL;
+static DonneesImageRGB *choix_pk_evo1_1_1 = NULL;
+static DonneesImageRGB *choix_pk_evo1_1_2 = NULL;
+static DonneesImageRGB *choix_pk_evo1_1_3 = NULL;
+static DonneesImageRGB *choix_pk_evo1_1_4 = NULL;
+static DonneesImageRGB *choix_pk_evo1_2_1 = NULL;
+static DonneesImageRGB *choix_pk_evo1_2_2 = NULL;
+static DonneesImageRGB *choix_pk_evo1_2_3 = NULL;
+static DonneesImageRGB *choix_pk_evo1_2_4 = NULL;
+static DonneesImageRGB *choix_pk_evo1_3_1 = NULL;
+static DonneesImageRGB *choix_pk_evo1_3_2 = NULL;
+static DonneesImageRGB *choix_pk_evo1_3_3 = NULL;
+static DonneesImageRGB *choix_pk_evo1_3_4 = NULL;
+
+//Images d'évo2
+static DonneesImageRGB *choix_pk_evo2 = NULL;
+static DonneesImageRGB *choix_pk_evo2_1_1 = NULL;
+static DonneesImageRGB *choix_pk_evo2_1_2 = NULL;
+static DonneesImageRGB *choix_pk_evo2_1_3 = NULL;
+static DonneesImageRGB *choix_pk_evo2_1_4 = NULL;
+static DonneesImageRGB *choix_pk_evo2_2_1 = NULL;
+static DonneesImageRGB *choix_pk_evo2_2_2 = NULL;
+static DonneesImageRGB *choix_pk_evo2_2_3 = NULL;
+static DonneesImageRGB *choix_pk_evo2_2_4 = NULL;
+static DonneesImageRGB *choix_pk_evo2_3_1 = NULL;
+static DonneesImageRGB *choix_pk_evo2_3_2 = NULL;
+static DonneesImageRGB *choix_pk_evo2_3_3 = NULL;
+static DonneesImageRGB *choix_pk_evo2_3_4 = NULL;
 
 //Images personnage face
 static DonneesImageRGB *persoFace1 = NULL;
@@ -220,6 +249,36 @@ void initImage(){
 	defaite_combat_quitter = lisBMPRGB("bmp/Menus/combat/defaite_combat_quitter.bmp");
 	ecran_fin = lisBMPRGB("bmp/Menus/ecran_fin.bmp");
 
+	//Init des images d'évo1
+	choix_pk_evo1 = lisBMPRGB("bmp/Menus/choix_pk_evo1.bmp");
+	choix_pk_evo1_1_1 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_1.1.bmp");
+	choix_pk_evo1_1_2 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_1.2.bmp");
+	choix_pk_evo1_1_3 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_1.3.bmp");
+	choix_pk_evo1_1_4 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_1.4.bmp");
+	choix_pk_evo1_2_1 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_2.1.bmp");
+	choix_pk_evo1_2_2 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_2.2.bmp");
+	choix_pk_evo1_2_3 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_2.3.bmp");
+	choix_pk_evo1_2_4 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_2.4.bmp");
+	choix_pk_evo1_3_1 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_3.1.bmp");
+	choix_pk_evo1_3_2 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_3.2.bmp");
+	choix_pk_evo1_3_3 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_3.3.bmp");
+	choix_pk_evo1_3_4 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_3.4.bmp");
+
+
+	//Init des images d'évo2
+	choix_pk_evo2 = lisBMPRGB("bmp/Menus/choix_pk_evo2.bmp");
+	choix_pk_evo2_1_1 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_1.1.bmp");
+	choix_pk_evo2_1_2 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_1.2.bmp");
+	choix_pk_evo2_1_3 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_1.3.bmp");
+	choix_pk_evo2_1_4 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_1.4.bmp");
+	choix_pk_evo2_2_1 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_2.1.bmp");
+	choix_pk_evo2_2_2 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_2.2.bmp");
+	choix_pk_evo2_2_3 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_2.3.bmp");
+	choix_pk_evo2_2_4 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_2.4.bmp");
+	choix_pk_evo2_3_1 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_3.1.bmp");
+	choix_pk_evo2_3_2 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_3.2.bmp");
+	choix_pk_evo2_3_3 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_3.3.bmp");
+	choix_pk_evo2_3_4 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_3.4.bmp");
 
 	//Init images persos face
 	persoFace1 = lisBMPRGB("bmp/Perso/perso1/face_fixe.bmp");
@@ -959,7 +1018,110 @@ switch(etat){
 		}
 	break;
 
+	// Image de choix d'évo 1
 	case 48:
+		if(choix_pk_evo1 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1->largeurImage, choix_pk_evo1->hauteurImage, choix_pk_evo1->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 1.1
+	case 49:
+		if(choix_pk_evo1_1_1 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_1_1->largeurImage, choix_pk_evo1_1_1->hauteurImage, choix_pk_evo1_1_1->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 1.2
+	case 50:
+		if(choix_pk_evo1_1_2 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_1_2->largeurImage, choix_pk_evo1_1_2->hauteurImage, choix_pk_evo1_1_2->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 1.3
+	case 51:
+		if(choix_pk_evo1_1_3 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_1_3->largeurImage, choix_pk_evo1_1_3->hauteurImage, choix_pk_evo1_1_3->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 1.4
+	case 52:
+		if(choix_pk_evo1_1_4 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_1_4->largeurImage, choix_pk_evo1_1_4->hauteurImage, choix_pk_evo1_1_4->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 2.1
+	case 53:
+		if(choix_pk_evo1_2_1 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_2_1->largeurImage, choix_pk_evo1_2_1->hauteurImage, choix_pk_evo1_2_1->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 2.2
+	case 54:
+		if(choix_pk_evo1_2_2 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_2_2->largeurImage, choix_pk_evo1_2_2->hauteurImage, choix_pk_evo1_2_2->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 2.3
+	case 55:
+		if(choix_pk_evo1_2_3 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_2_3->largeurImage, choix_pk_evo1_2_3->hauteurImage, choix_pk_evo1_2_3->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 2.4
+	case 56:
+		if(choix_pk_evo1_2_4 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_2_4->largeurImage, choix_pk_evo1_2_4->hauteurImage, choix_pk_evo1_2_4->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 3.1
+	case 57:
+		if(choix_pk_evo1_3_1 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_3_1->largeurImage, choix_pk_evo1_3_1->hauteurImage, choix_pk_evo1_3_1->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 3.2
+	case 58:
+		if(choix_pk_evo1_3_2 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_3_2->largeurImage, choix_pk_evo1_3_2->hauteurImage, choix_pk_evo1_3_2->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 3.3
+	case 59:
+		if(choix_pk_evo1_3_3 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_3_3->largeurImage, choix_pk_evo1_3_3->hauteurImage, choix_pk_evo1_3_3->donneesRGB);
+		}
+	break;
+
+	//Survol evo1 3.4
+	case 60:
+		if(choix_pk_evo1_3_4 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo1_3_4->largeurImage, choix_pk_evo1_3_4->hauteurImage, choix_pk_evo1_3_4->donneesRGB);
+		}
+	break;
+	case 61:
 		if (ecran_fin != NULL) // Si l'image a pu etre lue
 			{
 				effaceFenetre (0, 0, 0);
@@ -967,6 +1129,8 @@ switch(etat){
 			}
 		break;
 	}
+	
+	
 
 return salle_actuelle;
 }
@@ -1065,6 +1229,116 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	{
 		initPk("Gruikui",pokedex,starter,tabAtk, salle_actuelle);
 		etat = 6;	
+	}
+
+	/*Les cas dans 100 lignes en dessous servent à connaitre le clic sur quel evo on a cliqué*/
+
+
+	// Si on est dans le choix pk et qu'on clique sur Bulbizarre, on initie starter à Bulbizarre puis on puis on retourne en salle 3
+	else if(etat == 49)
+	{
+		initPk("Bulbizarre",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Herbizarre");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Salamèche, on initie starter à Salamèche puis on puis on retourne en salle 3
+	else if(etat == 53)
+	{
+		initPk("Salameche",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Reptincel");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Carapuce, on initie starter à Carapuce puis puis on retourne en salle 3
+	else if(etat == 57)
+	{
+		initPk("Carapuce",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Carabaffe");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Germignon, on initie starter à Germignon puis puis on retourne en salle 3
+	else if(etat == 50)
+	{
+		initPk("Germignon",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Macronium");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Moustillon, on initie starter à Moustillon puis on retourne en salle 3
+	else if(etat == 60)
+	{
+		initPk("Moustillon",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Mateloutre");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Héricendre, on initie starter à Héricendre puis on retourne en salle 3
+	else if(etat == 54)
+	{
+		initPk("Hericendre",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Feurisson");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Kaiminus, on initie starter à Kaiminus puis on retourne en salle 3
+	else if(etat == 58)
+	{
+		initPk("Kaiminus",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Crocrodil");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Tortipouss, on initie starter à Tortipouss puis on retourne en salle 3
+	else if(etat == 51)
+	{
+		initPk("Tortipouss",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Boskara");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Ouisticram, on initie starter à Ouisticram puis on retourne en salle 3
+	else if(etat == 55)
+	{
+		initPk("Ouisticram",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Chimpenfeu");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Tiplouf, on initie starter à Tiplouf puis on retourne en salle 3
+	else if(etat == 59)
+	{
+		initPk("Tiplouf",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Prinplouf");
+		etat = 9;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Vipélierre, on initie starter à Vipélierre puis on retourne en salle 3
+	else if(etat == 52)
+	{
+		initPk("Vipelierre",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Lianaja");
+		etat = 9;
+	}
+	// Si on est dans le choix pk et qu'on clique sur Gruikui, on initie starter à Gruikui puis on retourne en salle 3
+	else if(etat == 56)
+	{
+		initPk("Gruikui",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Grotichon");
+		etat = 9;	
 	}
 
 	// Si on est dans le premier menu et qu'on clique sur "lancer une partie" : on affiche le choix du pokemon
@@ -1259,7 +1533,13 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	// Si on est sur l'écran de victoire et qu'on clique sur le bouton : on avance le personnage et affiche la salle actuelle
 	else if(etat == 45){
 		*placey = 700;
-		etat = checkSalle(salle_actuelle,etat);
+		if(salle_actuelle == 3){
+			etat = 48;
+		}
+		else{
+			etat = checkSalle(salle_actuelle,etat);
+		}
+		
 	}
 
 	// Si on est sur l'écran de défaite et qu'on clique sur "Rejouer le combat" : on re initialise les pv et on affiche l'interface de combat
@@ -1521,6 +1801,83 @@ int verif_survol_souris(int etat){
 		}
 	}
 
+	//Si on est sur le menu de choix d'évolution 1
+	else if(etat == 48)
+	{
+		// Et qu'on survole l'évolution 1 de Bulbizarre : on affiche l'image associée
+		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
+		{
+			etat = 49;
+		}
+
+		// Et qu'on survole l'évolution 1 de Salamèche : on affiche l'image associée
+		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
+		{
+			etat = 53;
+		}
+
+		// Et qu'on survole l'évolution 1 de Carapuce : on affiche l'image associée
+		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
+		{
+			etat = 57;
+		}
+
+		// Et qu'on survole l'évolution 1 de Germignon : on affiche l'image associée
+		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
+		{
+			etat = 50;
+		}
+
+		// Et qu'on survole l'évolution 1 de Héricendre : on affiche l'image associée
+		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
+		{
+			etat = 54;
+		}
+
+		// Et qu'on survole l'évolution 1 de Kaiminus : on affiche l'image associée
+		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
+		{
+			etat = 58;
+		}
+
+		// Et qu'on survole l'évolution 1 de Tortipouss : on affiche l'image associée
+		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
+		{
+			etat = 51;
+		}
+
+		// Et qu'on survole l'évolution 1 de Ouisticram : on affiche l'image associée
+		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
+		{
+			etat = 55;
+		}
+
+		// Et qu'on survole l'évolution 1 de Tiplouf : on affiche l'image associée
+		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
+		{
+			etat = 59;
+		}
+
+		// Et qu'on survole l'évolution 1 de Vipélierre : on affiche l'image associée
+		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
+		{
+			etat = 52;
+		}
+
+		// Et qu'on survole l'évolution 1 de Gruikui : on affiche l'image associée
+		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
+		{
+			etat = 56;
+		};
+
+		// Et qu'on survole l'évolution 1 de Moustillon : on affiche l'image associée
+		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
+		{
+			etat = 60;
+		}
+
+	}
+
 	/* Tout les else if qui suivent servent à revenir à l'image d'origine si on n'est plus en train de survoler l'élément. */
 
 	// Si on est sur l'image en survol du menu de pause mais qu'on ne survole plus "reprendre", on affiche le menu de base
@@ -1739,6 +2096,114 @@ int verif_survol_souris(int etat){
 		}
 	}
 
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 1.1) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 49)
+	{
+		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix du d'evo1 (pk 1.2) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 50)
+	{
+		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 1.3) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 51)
+	{
+		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 1.4) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 52)
+	{
+		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 2.1) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 53)
+	{
+		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 2.2) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 54)
+	{
+		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 2.3) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 55)
+	{
+		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 2.4) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 56)
+	{
+		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 3.1) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 57)
+	{
+		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 3.2) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 58)
+	{
+		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 3.3) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 59)
+	{
+		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
+		{
+			etat = 48;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 3.4) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 60)
+	{
+		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
+		{
+			etat = 48;
+		}
+	}
+
 	//Si on est sur le bouton de l'écran de victoire mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 45){
 		if(!(abscisseSouris() >= 640 && abscisseSouris() <= 1288 && ordonneeSouris() >= 82 && ordonneeSouris() <= 240)) 
@@ -1892,284 +2357,200 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 
 	// Affiche le pokemon choisit au bon stade (starter,evo1,evo2)
 	if(strcmp(perso->starter.nom,"Bulbizarre")== 0){
-		if(perso->starter.stade == 0){
-			if(bulbizarre_dos != NULL){
-				ecrisImage(391, 397, bulbizarre_dos->largeurImage, bulbizarre_dos->hauteurImage, bulbizarre_dos->donneesRGB);
-			}
+		if(bulbizarre_dos != NULL){
+			ecrisImage(391, 397, bulbizarre_dos->largeurImage, bulbizarre_dos->hauteurImage, bulbizarre_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(bulbizarre_evo1_dos != NULL){
-				ecrisImage(391, 397, bulbizarre_evo1_dos->largeurImage, bulbizarre_evo1_dos->hauteurImage, bulbizarre_evo1_dos->donneesRGB);
-			}
+		
+	}
+	if(strcmp(perso->starter.nom,"Herbizarre")== 0){
+		if(bulbizarre_evo1_dos != NULL){
+			ecrisImage(391, 397, bulbizarre_evo1_dos->largeurImage, bulbizarre_evo1_dos->hauteurImage, bulbizarre_evo1_dos->donneesRGB);
 		}
-
-		else{
-			if(bulbizarre_evo2_dos != NULL){
-				ecrisImage(391, 397, bulbizarre_evo2_dos->largeurImage, bulbizarre_evo2_dos->hauteurImage, bulbizarre_evo2_dos->donneesRGB);
-			}
+	}
+	if(strcmp(perso->starter.nom,"Florizarre")== 0){
+		if(bulbizarre_evo2_dos != NULL){
+			ecrisImage(391, 397, bulbizarre_evo2_dos->largeurImage, bulbizarre_evo2_dos->hauteurImage, bulbizarre_evo2_dos->donneesRGB);
 		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("FOUET-LIANES",58,690,115);
-
+	}
+	
+	if(strcmp(perso->starter.nom,"Salameche")== 0){
+		if(salameche_dos != NULL){
+			ecrisImage(391, 397, salameche_dos->largeurImage, salameche_dos->hauteurImage, salameche_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Reptincel")== 0){
+		if(salameche_evo1_dos != NULL){
+			ecrisImage(391, 397, salameche_evo1_dos->largeurImage, salameche_evo1_dos->hauteurImage, salameche_evo1_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Dracaufeu")== 0){
+		if(salameche_evo2_dos != NULL){
+			ecrisImage(391, 397, salameche_evo2_dos->largeurImage, salameche_evo2_dos->hauteurImage, salameche_evo2_dos->donneesRGB);
+		}
 	}
 
-	else if(strcmp(perso->starter.nom,"Salameche")== 0){
-		if(perso->starter.stade == 0){
-			if(salameche_dos != NULL){
-				ecrisImage(391, 397, salameche_dos->largeurImage, salameche_dos->hauteurImage, salameche_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Carapuce") == 0){
+		if(carapuce_dos != NULL){
+			ecrisImage(391, 397, carapuce_dos->largeurImage, carapuce_dos->hauteurImage, carapuce_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(salameche_evo1_dos != NULL){
-				ecrisImage(391, 397, salameche_evo1_dos->largeurImage, salameche_evo1_dos->hauteurImage, salameche_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(salameche_evo2_dos != NULL){
-				ecrisImage(391, 397, salameche_evo2_dos->largeurImage, salameche_evo2_dos->hauteurImage, salameche_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("GRIFFE",58,150,115);
-		afficheChaine("FLAMMECHE",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Carapuce")== 0){
-		if(perso->starter.stade == 0){
-			if(carapuce_dos != NULL){
-				ecrisImage(391, 397, carapuce_dos->largeurImage, carapuce_dos->hauteurImage, carapuce_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Carabaffe")== 0){
+		if(carapuce_evo1_dos != NULL){
+			ecrisImage(391, 397, carapuce_evo1_dos->largeurImage, carapuce_evo1_dos->hauteurImage, carapuce_evo1_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(carapuce_evo1_dos != NULL){
-				ecrisImage(391, 397, carapuce_evo1_dos->largeurImage, carapuce_evo1_dos->hauteurImage, carapuce_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(carapuce_evo2_dos != NULL){
-				ecrisImage(391, 397, carapuce_evo2_dos->largeurImage, carapuce_evo2_dos->hauteurImage, carapuce_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("PISTOLET A O",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Vipelierre")== 0){
-		if(perso->starter.stade == 0){
-			if(vipeliere_dos != NULL){
-				ecrisImage(391, 397, vipeliere_dos->largeurImage, vipeliere_dos->hauteurImage, vipeliere_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Tortank")== 0){
+		if(carapuce_evo2_dos != NULL){
+			ecrisImage(391, 397, carapuce_evo2_dos->largeurImage, carapuce_evo2_dos->hauteurImage, carapuce_evo2_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(vipeliere_evo1_dos != NULL){
-				ecrisImage(391, 397, vipeliere_evo1_dos->largeurImage, vipeliere_evo1_dos->hauteurImage, vipeliere_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(vipeliere_evo2_dos != NULL){
-				ecrisImage(391, 397, vipeliere_evo2_dos->largeurImage, vipeliere_evo2_dos->hauteurImage, vipeliere_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("FOUET-LIANES",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Gruikui")== 0){
-		if(perso->starter.stade == 0){
-			if(gruikui_dos != NULL){
-				ecrisImage(391, 397, gruikui_dos->largeurImage, gruikui_dos->hauteurImage, gruikui_dos->donneesRGB);
-			}
-		}
 
-		else if(perso->starter.stade == 1){
-			if(gruikui_evo1_dos != NULL){
-				ecrisImage(391, 397, gruikui_evo1_dos->largeurImage, gruikui_evo1_dos->hauteurImage, gruikui_evo1_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Vipelierre") == 0){
+		if(vipeliere_dos != NULL){
+			ecrisImage(391, 397, vipeliere_dos->largeurImage, vipeliere_dos->hauteurImage, vipeliere_dos->donneesRGB);
 		}
-
-		else{
-			if(gruikui_evo2_dos != NULL){
-				ecrisImage(391, 397, gruikui_evo2_dos->largeurImage, gruikui_evo2_dos->hauteurImage, gruikui_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("FLAMMECHE",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Moustillon")== 0){
-		if(perso->starter.stade == 0){
-			if(moustillon_dos != NULL){
-				ecrisImage(391, 397, moustillon_dos->largeurImage, moustillon_dos->hauteurImage, moustillon_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Lianaja")== 0){
+		if(vipeliere_evo1_dos != NULL){
+			ecrisImage(391, 397, vipeliere_evo1_dos->largeurImage, vipeliere_evo1_dos->hauteurImage, vipeliere_evo1_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(moustillon_evo1_dos != NULL){
-				ecrisImage(391, 397, moustillon_evo1_dos->largeurImage, moustillon_evo1_dos->hauteurImage, moustillon_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(moustillon_evo2_dos != NULL){
-				ecrisImage(391, 397, moustillon_evo2_dos->largeurImage, moustillon_evo2_dos->hauteurImage, moustillon_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("PISTOLET A O",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Germignon")== 0){
-		if(perso->starter.stade == 0){
-			if(germignon_dos != NULL){
-				ecrisImage(391, 397, germignon_dos->largeurImage, germignon_dos->hauteurImage, germignon_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Majaspic")== 0){
+		if(vipeliere_evo2_dos != NULL){
+			ecrisImage(391, 397, vipeliere_evo2_dos->largeurImage, vipeliere_evo2_dos->hauteurImage, vipeliere_evo2_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(germignon_evo1_dos != NULL){
-				ecrisImage(391, 397, germignon_evo1_dos->largeurImage, germignon_evo1_dos->hauteurImage, germignon_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(germignon_evo2_dos != NULL){
-				ecrisImage(391, 397, germignon_evo2_dos->largeurImage, germignon_evo2_dos->hauteurImage, germignon_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("FOUET-LIANES",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Hericendre")== 0){
-		if(perso->starter.stade == 0){
-			if(hericendre_dos != NULL){
-				ecrisImage(391, 397, hericendre_dos->largeurImage, hericendre_dos->hauteurImage, hericendre_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Gruikui") == 0){
+		if(gruikui_dos != NULL){
+			ecrisImage(391, 397, gruikui_dos->largeurImage, gruikui_dos->hauteurImage, gruikui_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(hericendre_evo1_dos != NULL){
-				ecrisImage(391, 397, hericendre_evo1_dos->largeurImage, hericendre_evo1_dos->hauteurImage, hericendre_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(hericendre_evo2_dos != NULL){
-				ecrisImage(391, 397, hericendre_evo2_dos->largeurImage, hericendre_evo2_dos->hauteurImage, hericendre_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("FLAMMECHE",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Kaiminus")== 0){
-		if(perso->starter.stade == 0){
-			if(kaiminus_dos != NULL){
-				ecrisImage(391, 397, kaiminus_dos->largeurImage, kaiminus_dos->hauteurImage, kaiminus_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Grotichon")== 0){
+		if(gruikui_evo1_dos != NULL){
+			ecrisImage(391, 397, gruikui_evo1_dos->largeurImage, gruikui_evo1_dos->hauteurImage, gruikui_evo1_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(kaiminus_evo1_dos != NULL){
-				ecrisImage(391, 397, kaiminus_evo1_dos->largeurImage, kaiminus_evo1_dos->hauteurImage, kaiminus_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(kaiminus_evo2_dos != NULL){
-				ecrisImage(391, 397, kaiminus_evo2_dos->largeurImage, kaiminus_evo2_dos->hauteurImage, kaiminus_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("PISTOLET A O",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Tortipouss")== 0){
-		if(perso->starter.stade == 0){
-			if(tortipouss_dos != NULL){
-				ecrisImage(391, 397, tortipouss_dos->largeurImage, tortipouss_dos->hauteurImage, tortipouss_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Roitiflam")== 0){
+		if(gruikui_evo2_dos != NULL){
+			ecrisImage(391, 397, gruikui_evo2_dos->largeurImage, gruikui_evo2_dos->hauteurImage, gruikui_evo2_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(tortipouss_evo1_dos != NULL){
-				ecrisImage(391, 397, tortipouss_evo1_dos->largeurImage, tortipouss_evo1_dos->hauteurImage, tortipouss_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(tortipouss_evo2_dos != NULL){
-				ecrisImage(391, 397, tortipouss_evo2_dos->largeurImage, tortipouss_evo2_dos->hauteurImage, tortipouss_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("FOUET-LIANES",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Ouisticram")== 0){
-		if(perso->starter.stade == 0){
-			if(ouisticram_dos != NULL){
-				ecrisImage(391, 397, ouisticram_dos->largeurImage, ouisticram_dos->hauteurImage, ouisticram_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Moustillon") == 0){
+		if(moustillon_dos != NULL){
+			ecrisImage(391, 397, moustillon_dos->largeurImage, moustillon_dos->hauteurImage, moustillon_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(ouisticram_evo1_dos != NULL){
-				ecrisImage(391, 397, ouisticram_evo1_dos->largeurImage, ouisticram_evo1_dos->hauteurImage, ouisticram_evo1_dos->donneesRGB);
-			}
-		}
-
-		else{
-			if(ouisticram_evo2_dos != NULL){
-				ecrisImage(391, 397, ouisticram_evo2_dos->largeurImage, ouisticram_evo2_dos->hauteurImage, ouisticram_evo2_dos->donneesRGB);
-			}
-		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("FLAMMECHE",58,690,115);
-
 	}
-	else if(strcmp(perso->starter.nom,"Tiplouf")== 0){
-		if(perso->starter.stade == 0){
-			if(tiplouf_dos != NULL){
-				ecrisImage(391, 397, tiplouf_dos->largeurImage, tiplouf_dos->hauteurImage, tiplouf_dos->donneesRGB);
-			}
+	if(strcmp(perso->starter.nom,"Mateloutre")== 0){
+		if(moustillon_evo1_dos != NULL){
+			ecrisImage(391, 397, moustillon_evo1_dos->largeurImage, moustillon_evo1_dos->hauteurImage, moustillon_evo1_dos->donneesRGB);
 		}
-
-		else if(perso->starter.stade == 1){
-			if(tiplouf_evo1_dos != NULL){
-				ecrisImage(391, 397, tiplouf_evo1_dos->largeurImage, tiplouf_evo1_dos->hauteurImage, tiplouf_evo1_dos->donneesRGB);
-			}
+	}
+	if(strcmp(perso->starter.nom,"Clamiral")== 0){
+		if(moustillon_evo2_dos != NULL){
+			ecrisImage(391, 397, moustillon_evo2_dos->largeurImage, moustillon_evo2_dos->hauteurImage, moustillon_evo2_dos->donneesRGB);
 		}
-
-		else{
-			if(tiplouf_evo2_dos != NULL){
-				ecrisImage(391, 397, tiplouf_evo2_dos->largeurImage, tiplouf_evo2_dos->hauteurImage, tiplouf_evo2_dos->donneesRGB);
-			}
+	}
+	if(strcmp(perso->starter.nom,"Germinion") == 0){
+		if(germignon_dos != NULL){
+			ecrisImage(391, 397, germignon_dos->largeurImage, germignon_dos->hauteurImage, germignon_dos->donneesRGB);
 		}
-		epaisseurDeTrait(6);
-		afficheChaine("CHARGE",58,150,115);
-		afficheChaine("PISTOLET A O",58,690,115);
-
+	}
+	if(strcmp(perso->starter.nom,"Macronium")== 0){
+		if(germignon_evo1_dos != NULL){
+			ecrisImage(391, 397, germignon_evo1_dos->largeurImage, germignon_evo1_dos->hauteurImage, germignon_evo1_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Meganium")== 0){
+		if(germignon_evo2_dos != NULL){
+			ecrisImage(391, 397, germignon_evo2_dos->largeurImage, germignon_evo2_dos->hauteurImage, germignon_evo2_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Hericendre") == 0){
+		if(hericendre_dos != NULL){
+			ecrisImage(391, 397, hericendre_dos->largeurImage, hericendre_dos->hauteurImage, hericendre_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Feurisson")== 0){
+		if(hericendre_evo1_dos != NULL){
+			ecrisImage(391, 397, hericendre_evo1_dos->largeurImage, hericendre_evo1_dos->hauteurImage, hericendre_evo1_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Typhlosion")== 0){
+		if(hericendre_evo2_dos != NULL){
+			ecrisImage(391, 397, hericendre_evo2_dos->largeurImage, hericendre_evo2_dos->hauteurImage, hericendre_evo2_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Kaiminus") == 0){
+		if(kaiminus_dos != NULL){
+			ecrisImage(391, 397, kaiminus_dos->largeurImage, kaiminus_dos->hauteurImage, kaiminus_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Crocrodil")== 0){
+		if(kaiminus_evo1_dos != NULL){
+			ecrisImage(391, 397, kaiminus_evo1_dos->largeurImage, kaiminus_evo1_dos->hauteurImage, kaiminus_evo1_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Aligatueur")== 0){
+		if(kaiminus_evo2_dos != NULL){
+			ecrisImage(391, 397, kaiminus_evo2_dos->largeurImage, kaiminus_evo2_dos->hauteurImage, kaiminus_evo2_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Tortipouss") == 0){
+		if(tortipouss_dos != NULL){
+			ecrisImage(391, 397, tortipouss_dos->largeurImage, tortipouss_dos->hauteurImage, tortipouss_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Boskara")== 0){
+		if(tortipouss_evo1_dos != NULL){
+			ecrisImage(391, 397, tortipouss_evo1_dos->largeurImage, tortipouss_evo1_dos->hauteurImage, tortipouss_evo1_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Torterra")== 0){
+		if(tortipouss_evo2_dos != NULL){
+			ecrisImage(391, 397, tortipouss_evo2_dos->largeurImage, tortipouss_evo2_dos->hauteurImage, tortipouss_evo2_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Ousticram") == 0){
+		if(ouisticram_dos != NULL){
+			ecrisImage(391, 397, ouisticram_dos->largeurImage, ouisticram_dos->hauteurImage, ouisticram_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Chimpenfeu")== 0){
+		if(ouisticram_evo1_dos != NULL){
+			ecrisImage(391, 397, ouisticram_evo1_dos->largeurImage, ouisticram_evo1_dos->hauteurImage, ouisticram_evo1_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Simiabraz")== 0){
+		if(ouisticram_evo2_dos != NULL){
+			ecrisImage(391, 397, ouisticram_evo2_dos->largeurImage, ouisticram_evo2_dos->hauteurImage, ouisticram_evo2_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Tiplouf") == 0){
+		if(tiplouf_dos != NULL){
+			ecrisImage(391, 397, tiplouf_dos->largeurImage, tiplouf_dos->hauteurImage, tiplouf_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Prinplouf")== 0){
+		if(tiplouf_evo1_dos != NULL){
+			ecrisImage(391, 397, tiplouf_evo1_dos->largeurImage, tiplouf_evo1_dos->hauteurImage, tiplouf_evo1_dos->donneesRGB);
+		}
+	}
+	if(strcmp(perso->starter.nom,"Pingoleon")== 0){
+		if(tiplouf_evo2_dos != NULL){
+			ecrisImage(391, 397, tiplouf_evo2_dos->largeurImage, tiplouf_evo2_dos->hauteurImage, tiplouf_evo2_dos->donneesRGB);
+		}
 	}
 	affichePv(*perso);
 	affichePv(tour[salle_actuelle - 1]);
+	afficheAttaque(*perso);
+}
+
+//Fonction qui sert à afficher le nom d'attaque en fonction du pokémon choisit
+void afficheAttaque(dresseur perso){
+	epaisseurDeTrait(6);
+	afficheChaine(perso.starter.att[0].nom,58,150,115);
+	afficheChaine(perso.starter.att[1].nom,58,690,115);
+
 }
 
 //Verifie dans quelle salle on est pour renvoyer dans le case associé à la salle

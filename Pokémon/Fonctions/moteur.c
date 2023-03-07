@@ -1,7 +1,6 @@
 #include "moteur.h"
 
 int ControleDeplacementsHaut(int *placey, int *placex, int etat, int *etatdp, dresseur *perso){
-    //printf("%d\n", *verif_victoire);
     if(*placey >= 805 && *placex >= 881 && *placex <= 1000 && perso->win == 1){ // verification de si on atteint la porte de sortie
         if(etat == 7){ //Pour savoir dans quelle salle on est
             etat = 8; //Pour changer de salle puis remettre le perso au début de la salle
@@ -39,7 +38,7 @@ int ControleDeplacementsHaut(int *placey, int *placex, int etat, int *etatdp, dr
             *placey = 285 - hauteurPerso/2;
         }
         else if(etat == 14){ //Pour savoir dans quelle salle on est
-            printf("fin du jeu !\n");
+            etat = 61;
         }
         perso->win = 0;
     }
