@@ -358,6 +358,7 @@ void initImage(){
 	tiplouf = lisBMPRGB("bmp/pokemons/012_tiplouf/012_tiplouf.bmp");
 	tiplouf_dos = lisBMPRGB("bmp/pokemons/012_tiplouf/012_tiplouf_dos.bmp");
 
+	//Init images Pokemons évo 1
 	bulbizarre_evo1 = lisBMPRGB("bmp/pokemons/001_bulbizarre/bulbizarre_evo1.bmp");
 	bulbizarre_evo1_dos = lisBMPRGB("bmp/pokemons/001_bulbizarre/bulbizarre_evo1_dos.bmp");
 	salameche_evo1 = lisBMPRGB("bmp/pokemons/002_salameche/salameche_evo1.bmp");
@@ -383,6 +384,7 @@ void initImage(){
 	tiplouf_evo1 = lisBMPRGB("bmp/pokemons/012_tiplouf/tiplouf_evo1.bmp");
 	tiplouf_evo1_dos = lisBMPRGB("bmp/pokemons/012_tiplouf/tiplouf_evo1_dos.bmp");
 
+	//Init images Pokemons évo 2
 	bulbizarre_evo2 = lisBMPRGB("bmp/pokemons/001_bulbizarre/bulbizarre_evo2.bmp");
 	bulbizarre_evo2_dos = lisBMPRGB("bmp/pokemons/001_bulbizarre/bulbizarre_evo2_dos.bmp");
 	salameche_evo2 = lisBMPRGB("bmp/pokemons/002_salameche/salameche_evo2.bmp");
@@ -1127,10 +1129,113 @@ switch(etat){
 				effaceFenetre (0, 0, 0);
 				ecrisImage(0, 0, ecran_fin->largeurImage, ecran_fin->hauteurImage, ecran_fin->donneesRGB); // On affiche l'image
 			}
-		break;
+	break;
+
+	// Image de choix d'évo 2
+	case 62:
+		if(choix_pk_evo2 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2->largeurImage, choix_pk_evo2->hauteurImage, choix_pk_evo2->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 1.1
+	case 63:
+		if(choix_pk_evo2_1_1 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_1_1->largeurImage, choix_pk_evo2_1_1->hauteurImage, choix_pk_evo2_1_1->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 1.2
+	case 64:
+		if(choix_pk_evo2_1_2 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_1_2->largeurImage, choix_pk_evo2_1_2->hauteurImage, choix_pk_evo2_1_2->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 1.3
+	case 65:
+		if(choix_pk_evo2_1_3 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_1_3->largeurImage, choix_pk_evo2_1_3->hauteurImage, choix_pk_evo2_1_3->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 1.4
+	case 66:
+		if(choix_pk_evo2_1_4 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_1_4->largeurImage, choix_pk_evo2_1_4->hauteurImage, choix_pk_evo2_1_4->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 2.1
+	case 67:
+		if(choix_pk_evo2_2_1 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_2_1->largeurImage, choix_pk_evo2_2_1->hauteurImage, choix_pk_evo2_2_1->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 2.2
+	case 68:
+		if(choix_pk_evo2_2_2 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_2_2->largeurImage, choix_pk_evo2_2_2->hauteurImage, choix_pk_evo2_2_2->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 2.3
+	case 69:
+		if(choix_pk_evo2_2_3 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_2_3->largeurImage, choix_pk_evo2_2_3->hauteurImage, choix_pk_evo2_2_3->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 2.4
+	case 70:
+		if(choix_pk_evo2_2_4 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_2_4->largeurImage, choix_pk_evo2_2_4->hauteurImage, choix_pk_evo2_2_4->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 3.1
+	case 71:
+		if(choix_pk_evo2_3_1 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_3_1->largeurImage, choix_pk_evo2_3_1->hauteurImage, choix_pk_evo2_3_1->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 3.2
+	case 72:
+		if(choix_pk_evo2_3_2 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_3_2->largeurImage, choix_pk_evo2_3_2->hauteurImage, choix_pk_evo2_3_2->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 3.3
+	case 73:
+		if(choix_pk_evo2_3_3 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_3_3->largeurImage, choix_pk_evo2_3_3->hauteurImage, choix_pk_evo2_3_3->donneesRGB);
+		}
+	break;
+
+	//Survol evo2 3.4
+	case 74:
+		if(choix_pk_evo2_3_4 != NULL){ // Si l'image est lue
+			effaceFenetre(0, 0, 0);
+			ecrisImage(0, 0, choix_pk_evo2_3_4->largeurImage, choix_pk_evo2_3_4->hauteurImage, choix_pk_evo2_3_4->donneesRGB);
+		}
+	break;
+
 	}
-	
-	
 
 return salle_actuelle;
 }
@@ -1231,7 +1336,8 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 		etat = 6;	
 	}
 
-	/*Les cas dans 100 lignes en dessous servent à connaitre le clic sur quel evo on a cliqué*/
+	/*EVOLUTION 1*/
+	/*Les cas dans les 100 lignes en dessous servent à connaitre le clic sur quel evo on a cliqué*/
 
 
 	// Si on est dans le choix pk et qu'on clique sur Bulbizarre, on initie starter à Bulbizarre puis on puis on retourne en salle 3
@@ -1339,6 +1445,116 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 		perso->starter = *starter;
 		strcpy(perso->starter.nom, "Grotichon");
 		etat = 9;	
+	}
+
+	/*EVOLUTION 2*/
+	/*Les cas dans 100 lignes en dessous servent à connaitre le clic sur quel evo on a cliqué*/
+
+	// Si on est dans le choix pk et qu'on clique sur Bulbizarre, on initie starter à Bulbizarre puis on puis on retourne en salle 3
+	else if(etat == 63)
+	{
+		initPk("Bulbizarre",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Florizarre");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Salamèche, on initie starter à Salamèche puis on puis on retourne en salle 3
+	else if(etat == 67)
+	{
+		initPk("Salameche",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Dracaufeu");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Carapuce, on initie starter à Carapuce puis puis on retourne en salle 3
+	else if(etat == 71)
+	{
+		initPk("Carapuce",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Tortank");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Germignon, on initie starter à Germignon puis puis on retourne en salle 3
+	else if(etat == 64)
+	{
+		initPk("Germignon",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Meganium");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Moustillon, on initie starter à Moustillon puis on retourne en salle 3
+	else if(etat == 74)
+	{
+		initPk("Moustillon",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Clamiral");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Héricendre, on initie starter à Héricendre puis on retourne en salle 3
+	else if(etat == 68)
+	{
+		initPk("Hericendre",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Typhlosion");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Kaiminus, on initie starter à Kaiminus puis on retourne en salle 3
+	else if(etat == 72)
+	{
+		initPk("Kaiminus",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Aligatueur");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Tortipouss, on initie starter à Tortipouss puis on retourne en salle 3
+	else if(etat == 65)
+	{
+		initPk("Tortipouss",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Torterra");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Ouisticram, on initie starter à Ouisticram puis on retourne en salle 3
+	else if(etat == 69)
+	{
+		initPk("Ouisticram",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Simiabraz");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Tiplouf, on initie starter à Tiplouf puis on retourne en salle 3
+	else if(etat == 73)
+	{
+		initPk("Tiplouf",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Pingoleon");
+		etat = 12;
+	}
+
+	// Si on est dans le choix pk et qu'on clique sur Vipélierre, on initie starter à Vipélierre puis on retourne en salle 3
+	else if(etat == 66)
+	{
+		initPk("Vipelierre",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Majaspic");
+		etat = 12;
+	}
+	// Si on est dans le choix pk et qu'on clique sur Gruikui, on initie starter à Gruikui puis on retourne en salle 3
+	else if(etat == 70)
+	{
+		initPk("Gruikui",pokedex,starter,tabAtk, salle_actuelle+1);
+		perso->starter = *starter;
+		strcpy(perso->starter.nom, "Roitiflam");
+		etat = 12;	
 	}
 
 	// Si on est dans le premier menu et qu'on clique sur "lancer une partie" : on affiche le choix du pokemon
@@ -1535,6 +1751,9 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 		*placey = 700;
 		if(salle_actuelle == 3){
 			etat = 48;
+		}
+		else if(salle_actuelle == 6){
+			etat = 62;
 		}
 		else{
 			etat = checkSalle(salle_actuelle,etat);
@@ -1801,6 +2020,7 @@ int verif_survol_souris(int etat){
 		}
 	}
 
+	/*EVOLUTION 1*/
 	//Si on est sur le menu de choix d'évolution 1
 	else if(etat == 48)
 	{
@@ -1874,6 +2094,84 @@ int verif_survol_souris(int etat){
 		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
 		{
 			etat = 60;
+		}
+
+	}
+
+	/*EVOLUTION 2*/
+	//Si on est sur le menu de choix d'évolution 1
+	else if(etat == 62)
+	{
+		// Et qu'on survole l'évolution 1 de Bulbizarre : on affiche l'image associée
+		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
+		{
+			etat = 63;
+		}
+
+		// Et qu'on survole l'évolution 1 de Salamèche : on affiche l'image associée
+		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
+		{
+			etat = 67;
+		}
+
+		// Et qu'on survole l'évolution 1 de Carapuce : on affiche l'image associée
+		if(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
+		{
+			etat = 71;
+		}
+
+		// Et qu'on survole l'évolution 1 de Germignon : on affiche l'image associée
+		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
+		{
+			etat = 64;
+		}
+
+		// Et qu'on survole l'évolution 1 de Héricendre : on affiche l'image associée
+		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
+		{
+			etat = 68;
+		}
+
+		// Et qu'on survole l'évolution 1 de Kaiminus : on affiche l'image associée
+		if(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
+		{
+			etat = 72;
+		}
+
+		// Et qu'on survole l'évolution 1 de Tortipouss : on affiche l'image associée
+		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
+		{
+			etat = 65;
+		}
+
+		// Et qu'on survole l'évolution 1 de Ouisticram : on affiche l'image associée
+		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
+		{
+			etat = 69;
+		}
+
+		// Et qu'on survole l'évolution 1 de Tiplouf : on affiche l'image associée
+		if(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
+		{
+			etat = 73;
+		}
+
+		// Et qu'on survole l'évolution 1 de Vipélierre : on affiche l'image associée
+		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717) 
+		{
+			etat = 66;
+		}
+
+		// Et qu'on survole l'évolution 1 de Gruikui : on affiche l'image associée
+		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520) 
+		{
+			etat = 70;
+		};
+
+		// Et qu'on survole l'évolution 1 de Moustillon : on affiche l'image associée
+		if(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350) 
+		{
+			etat = 74;
 		}
 
 	}
@@ -2096,6 +2394,8 @@ int verif_survol_souris(int etat){
 		}
 	}
 
+	/*EVOLUTION 1*/
+
 	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 1.1) mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 49)
 	{
@@ -2203,6 +2503,117 @@ int verif_survol_souris(int etat){
 			etat = 48;
 		}
 	}
+
+	/*EVOLUTIN 2*/
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 1.1) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 63)
+	{
+		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix du d'evo1 (pk 1.2) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 64)
+	{
+		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 1.3) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 65)
+	{
+		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 1.4) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 66)
+	{
+		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 547 && ordonneeSouris() <= 717)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 2.1) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 67)
+	{
+		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 2.2) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 68)
+	{
+		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 2.3) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 69)
+	{
+		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 2.4) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 70)
+	{
+		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 373 && ordonneeSouris() <= 520)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 3.1) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 71)
+	{
+		if(!(abscisseSouris() >= 759 && abscisseSouris() <= 923 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 3.2) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 72)
+	{
+		if(!(abscisseSouris() >= 1064 && abscisseSouris() <= 1203 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 3.3) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 73)
+	{
+		if(!(abscisseSouris() >= 1342 && abscisseSouris() <= 1481 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
+		{
+			etat = 62;
+		}
+	}
+
+	// Si on est sur l'image en survol du menu de choix d'evo1 (pk 3.4) mais qu'on ne le survole plus, on affiche l'image de base
+	else if(etat == 74)
+	{
+		if(!(abscisseSouris() >= 1629 && abscisseSouris() <= 1769 && ordonneeSouris() >= 188 && ordonneeSouris() <= 350)) 
+		{
+			etat = 62;
+		}
+	}
+
+
 
 	//Si on est sur le bouton de l'écran de victoire mais qu'on ne le survole plus, on affiche l'image de base
 	else if(etat == 45){
