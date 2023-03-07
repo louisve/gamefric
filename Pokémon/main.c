@@ -51,7 +51,13 @@ void gestionEvenement(EvenementGfx evenement)
     static int salle_actuelle = 1;
     static int dp = 0;
     static int *etatdp = &dp;
-    
+
+    static int etat_combat = 0;
+    static int *petat_combat = &etat_combat;
+    static int attaque_en_cours = 0;
+    static int *pattaque_en_cours = &attaque_en_cours;
+    static long int start = 0;
+    static long int *pstart = &start;
 
     switch (evenement)
     {
@@ -71,13 +77,36 @@ void gestionEvenement(EvenementGfx evenement)
         case Temporisation:
             {
                 rafraichisFenetre(); //Lance le case [Affichage] en boucle.
+
+                //Tour à Tour attaque
+                if(*pattaque_en_cours == 1){
+                    if (*petat_combat == 0){
+                        if ((double)(clock()-*pstart) / CLOCKS_PER_SEC >= 1){
+                            if(verifVictoireAffichage(etat,pperso) == 15){
+                                *petat_combat = !etat_combat;
+                                Baston(pperso->starter.att[0], pperso, tour, *petat_combat, salle_actuelle);
+                                *pstart = clock();
+                            }
+                            else{
+                                *pattaque_en_cours = !*pattaque_en_cours;
+                            }
+                        }
+                    }
+                    if( *petat_combat == 1){
+                        if((double)(clock()-*pstart) / CLOCKS_PER_SEC >= 1){
+                            *pattaque_en_cours = !*pattaque_en_cours;
+                            *petat_combat = !etat_combat;
+                            etat = verifVictoireAffichage(etat, pperso);
+                        }
+                    }
+                }
             }
             break;
         case Affichage:
             {
-            // On part d'un fond d'ecran noir
-            effaceFenetre (0, 0, 0);
-            salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour, etatdp);
+                // On part d'un fond d'ecran noir
+                effaceFenetre (0, 0, 0);
+                salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour, etatdp);
             }
             break;
 
@@ -117,7 +146,7 @@ void gestionEvenement(EvenementGfx evenement)
                 case 13: //code ascii de la touche "entrée".
                     if(etat == 0)
                     {
-                        etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle);
+                        etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, petat_combat, pattaque_en_cours, pstart);
                     }    
                     break;
                 case 27: //code ascii de la touche "echap".
@@ -177,7 +206,7 @@ void gestionEvenement(EvenementGfx evenement)
         case BoutonSouris:{
             if (etatBoutonSouris() == GaucheAppuye)
             {
-                etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle);
+                etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, petat_combat, pattaque_en_cours, pstart);
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {
@@ -188,7 +217,7 @@ void gestionEvenement(EvenementGfx evenement)
 
         case Souris: // Si la souris est deplacee
             {
-                etat = verif_survol_souris(etat);
+                etat = verif_survol_souris(etat, pperso, tour, salle_actuelle);
             }
             break;
         case Inactivite: // Quand aucun message n'est disponible

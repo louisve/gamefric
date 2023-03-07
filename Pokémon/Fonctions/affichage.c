@@ -1244,7 +1244,7 @@ return salle_actuelle;
  	et en fonction de l'élément survolé lors du clique par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
  	du switch(evenement) dès qu'il y a un appui sur le bouton gauche de la souris. */
 
-int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle){
+int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle, int *etat_combat, int *attaque_en_cours, long int *start){
 	
 	// Si on est sur l'écran d'acceuil et qu'on appuie sur entrée : on affiche le menu 1
 	if (etat == 0)
@@ -1653,66 +1653,32 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	// Si on est dans l'interface de combat, sur le bouton attaque 1
 	else if(etat == 35)
 	{	
-		int etat_combat = 0;
-		// perso->win = s
-		Baston(perso->starter.att[0], perso, tour, etat_combat, salle_actuelle);
-		// effaceFenetre(0,0,0);
-		// interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
-		etat_combat++;
-
-		if(perso->win == 0){
-			// perso->win = 
-			Baston(perso->starter.att[0], perso, tour, etat_combat, salle_actuelle);
-			etat_combat--;
+		if( *etat_combat == 0){
+			Baston(perso->starter.att[0], perso, tour, *etat_combat, salle_actuelle);
+			*attaque_en_cours = 1;
+			*start = clock();
 		}
 
-		// Si le combat n'est pas fini : on affiche l'interface de combat
-		if (perso->win == 0){
-			etat = 15;
-		}
-
-		//Si il y a victoire :  on affiche l'écran de victoire
-		else if (perso->win == 1){
-			etat = 42;
+		etat = verifVictoireAffichage(etat, perso);
+		if(etat == 42){
 			perso->starter.niveau += 5;
-			perso->starter.pv = calculPvMax(*perso);
-		}
-
-		//Si il y a défaite :  on affiche l'écran de défaite
-		else if (perso->win == 2){
-			etat = 43;
+        	perso->starter.pv = calculPvMax(*perso);
 		}
 	}
 
 	// Si on est dans l'interface de combat, sur le bouton attaque 2
 	else if(etat == 36)
 	{	
-		int etat_combat = 0;
-		// perso->win = 
-		Baston(perso->starter.att[1], perso, tour, etat_combat, salle_actuelle);
-		etat_combat++;
-
-		if(perso->win == 0){
-			// perso->win = 
-			Baston(perso->starter.att[1], perso, tour, etat_combat, salle_actuelle);
-			etat_combat--;
+		if( *etat_combat == 0){
+			Baston(perso->starter.att[1], perso, tour, *etat_combat, salle_actuelle);
+			*attaque_en_cours = 1;
+			*start = clock();
 		}
 
-		// Si le combat n'est pas fini : on affiche l'interface de combat
-		if (perso->win == 0){
-			etat = 15;
-		}
-
-		// Si il y a victoire :  on affiche l'écran de victoire
-		else if (perso->win == 1){
-			etat = 42;
+		etat = verifVictoireAffichage(etat, perso);
+		if(etat == 42){
 			perso->starter.niveau += 5;
-			perso->starter.pv = calculPvMax(*perso);
-		}
-
-		// Si il y a défaite :  on affiche l'écran de défaite
-		else if (perso->win == 2){
-			etat = 43;
+        	perso->starter.pv = calculPvMax(*perso);
 		}
 	}
 

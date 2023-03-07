@@ -63,7 +63,6 @@ void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_c
         }
         perso->starter.pv -= attaquer(attaqueUtilisee, tour[salle_actuelle - 1], *perso);
     }
-    sleep(2);
     verifVictoire(perso, tour, salle_actuelle);
 }
 
@@ -91,4 +90,23 @@ int calculPvMax(dresseur pokemon){
         pv *= pokemon.starter.coef2.pv;
     }
     return round(pv);
+}
+
+
+int verifVictoireAffichage(int etat, dresseur *perso){
+    // Si le combat n'est pas fini : on affiche l'interface de combat
+    if (perso->win == 0){
+        etat = 15;
+    }
+
+    //Si il y a victoire :  on affiche l'écran de victoire
+    else if (perso->win == 1){
+        etat = 42;
+    }
+
+    //Si il y a défaite :  on affiche l'écran de défaite
+    else if (perso->win == 2){
+        etat = 43;
+    }
+    return etat;
 }

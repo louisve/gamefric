@@ -18,6 +18,7 @@
 #define NUM_POKEMON 12 //Nombre de pokemon différents
 #define NUM_ATTAQUE 5 //Nombre total d'attaques différentes
 #define NB_ATK 2 //Nombre attaque qu'a un pokemon
+#define NB_DRESSEUR_TOUR 8 // Nombre de boss présents dans la tour
 
 
 typedef struct STATS{
