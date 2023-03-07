@@ -1890,6 +1890,10 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, bulbizarre_evo2_dos->largeurImage, bulbizarre_evo2_dos->hauteurImage, bulbizarre_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("FOUET-LIANES",58,690,115);
+
 	}
 
 	else if(strcmp(perso->starter.nom,"Salameche")== 0){
@@ -1910,6 +1914,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, salameche_evo2_dos->largeurImage, salameche_evo2_dos->hauteurImage, salameche_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("GRIFFE",58,150,115);
+		afficheChaine("FLAMMECHE",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Carapuce")== 0){
@@ -1930,6 +1937,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, carapuce_evo2_dos->largeurImage, carapuce_evo2_dos->hauteurImage, carapuce_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("PISTOLET A O",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Vipelierre")== 0){
@@ -1950,6 +1960,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, vipeliere_evo2_dos->largeurImage, vipeliere_evo2_dos->hauteurImage, vipeliere_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("FOUET-LIANES",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Gruikui")== 0){
@@ -1970,6 +1983,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, gruikui_evo2_dos->largeurImage, gruikui_evo2_dos->hauteurImage, gruikui_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("FLAMMECHE",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Moustillon")== 0){
@@ -1990,6 +2006,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, moustillon_evo2_dos->largeurImage, moustillon_evo2_dos->hauteurImage, moustillon_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("PISTOLET A O",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Germignon")== 0){
@@ -2010,6 +2029,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, germignon_evo2_dos->largeurImage, germignon_evo2_dos->hauteurImage, germignon_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("FOUET-LIANES",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Hericendre")== 0){
@@ -2030,6 +2052,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, hericendre_evo2_dos->largeurImage, hericendre_evo2_dos->hauteurImage, hericendre_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("FLAMMECHE",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Kaiminus")== 0){
@@ -2050,6 +2075,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, kaiminus_evo2_dos->largeurImage, kaiminus_evo2_dos->hauteurImage, kaiminus_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("PISTOLET A O",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Tortipouss")== 0){
@@ -2070,6 +2098,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, tortipouss_evo2_dos->largeurImage, tortipouss_evo2_dos->hauteurImage, tortipouss_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("FOUET-LIANES",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Ouisticram")== 0){
@@ -2090,6 +2121,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, ouisticram_evo2_dos->largeurImage, ouisticram_evo2_dos->hauteurImage, ouisticram_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("FLAMMECHE",58,690,115);
 
 	}
 	else if(strcmp(perso->starter.nom,"Tiplouf")== 0){
@@ -2110,6 +2144,9 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 				ecrisImage(391, 397, tiplouf_evo2_dos->largeurImage, tiplouf_evo2_dos->hauteurImage, tiplouf_evo2_dos->donneesRGB);
 			}
 		}
+		epaisseurDeTrait(6);
+		afficheChaine("CHARGE",58,150,115);
+		afficheChaine("PISTOLET A O",58,690,115);
 
 	}
 	affichePv(*perso);
