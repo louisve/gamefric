@@ -41,6 +41,8 @@ static DonneesImageRGB *defaite_combat = NULL;
 static DonneesImageRGB *victoire_combat_survol = NULL;
 static DonneesImageRGB *defaite_combat_rejouer = NULL;
 static DonneesImageRGB *defaite_combat_quitter = NULL;
+static DonneesImageRGB *ecran_fin = NULL;
+
 
 //Images personnage face
 static DonneesImageRGB *persoFace1 = NULL;
@@ -216,6 +218,8 @@ void initImage(){
 	victoire_combat_survol = lisBMPRGB("bmp/Menus/combat/victoire_combat_survol.bmp");
 	defaite_combat_rejouer = lisBMPRGB("bmp/Menus/combat/defaite_combat_rejouer.bmp");
 	defaite_combat_quitter = lisBMPRGB("bmp/Menus/combat/defaite_combat_quitter.bmp");
+	ecran_fin = lisBMPRGB("bmp/Menus/ecran_fin.bmp");
+
 
 	//Init images persos face
 	persoFace1 = lisBMPRGB("bmp/Perso/perso1/face_fixe.bmp");
@@ -423,6 +427,7 @@ switch(etat){
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle1->largeurImage, salle1->hauteurImage, salle1->donneesRGB);
 		affichePersoChoisis(placex, placey, etatdp, perso);
+		afficheRaccourcis();
 		
 	}
 	salle_actuelle = 1;
@@ -435,6 +440,7 @@ switch(etat){
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle2->largeurImage, salle2->hauteurImage, salle2->donneesRGB);
 		affichePersoChoisis(placex, placey, etatdp, perso);
+		afficheRaccourcis();
 	}
 	salle_actuelle = 2;
 	perso->etage = salle_actuelle;
@@ -446,6 +452,7 @@ switch(etat){
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle3->largeurImage, salle3->hauteurImage, salle3->donneesRGB);
 		affichePersoChoisis(placex, placey, etatdp, perso);
+		afficheRaccourcis();
 	}
 	salle_actuelle = 3;
 	perso->etage = salle_actuelle;
@@ -457,6 +464,7 @@ switch(etat){
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle4->largeurImage, salle4->hauteurImage, salle4->donneesRGB);
 		affichePersoChoisis(placex, placey, etatdp, perso);
+		afficheRaccourcis();
 	}
 	salle_actuelle = 4;
 	perso->etage = salle_actuelle;
@@ -468,6 +476,7 @@ switch(etat){
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle5->largeurImage, salle5->hauteurImage, salle5->donneesRGB);
 		affichePersoChoisis(placex, placey, etatdp, perso);
+		afficheRaccourcis();
 	}
 	salle_actuelle = 5;
 	perso->etage = salle_actuelle;
@@ -479,6 +488,7 @@ switch(etat){
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle6->largeurImage, salle6->hauteurImage, salle6->donneesRGB);
 		affichePersoChoisis(placex, placey, etatdp, perso);
+		afficheRaccourcis();
 	}
 	salle_actuelle = 6;
 	perso->etage = salle_actuelle;
@@ -490,6 +500,7 @@ switch(etat){
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, salle7->largeurImage, salle7->hauteurImage, salle7->donneesRGB);
 		affichePersoChoisis(placex, placey, etatdp, perso);
+		afficheRaccourcis();
 	}
 	salle_actuelle = 7;
 	perso->etage = salle_actuelle;
@@ -947,6 +958,14 @@ switch(etat){
 			ecrisImage(0, 0, defaite_combat_quitter->largeurImage, defaite_combat_quitter->hauteurImage, defaite_combat_quitter->donneesRGB); // On affiche l'image
 		}
 	break;
+
+	case 48:
+		if (ecran_fin != NULL) // Si l'image a pu etre lue
+			{
+				effaceFenetre (0, 0, 0);
+				ecrisImage(0, 0, ecran_fin->largeurImage, ecran_fin->hauteurImage, ecran_fin->donneesRGB); // On affiche l'image
+			}
+		break;
 	}
 
 return salle_actuelle;
@@ -2244,4 +2263,11 @@ void affichePv(dresseur perso){
 
 	//Affiche Nom Pokemon
 	afficheChaine(perso.starter.nom, taille, x1 + taille/4, y2 + taille/2);
+}
+
+void afficheRaccourcis(){
+	epaisseurDeTrait(2);
+	couleurCourante(0,0,0);
+	afficheChaine("Pour afficher le menu de pause : Echap",20,34,196);
+	afficheChaine("Pour quitter : Q",20,34,227);
 }
