@@ -5,7 +5,7 @@ attaque* readAttaque(){
     attaque *tabAtk;
     tabAtk = calloc(NUM_ATTAQUE, sizeof(attaque));
     FILE* f;
-    f = fopen("/home/isen/ProjetS4/v16/Fonctions/BDD/attaque.txt","r");
+    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/attaque.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_ATTAQUE; ++i)
         {
@@ -24,7 +24,7 @@ Pokemon* readPokedex(){
     Pokemon *tab;
     tab = calloc(NUM_POKEMON, sizeof(Pokemon));
     FILE* f;
-    f = fopen("/home/isen/ProjetS4/v16/Fonctions/BDD/pokedex.txt","r");
+    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/pokedex.txt","r");
     if(f != NULL){
         for (int i = 0; i < NUM_POKEMON; ++i)
         {
@@ -47,7 +47,7 @@ dresseur* readTour(Pokemon *pokedex, attaque *tabAtk){
     dresseur *tab;
     tab = calloc(NB_DRESSEUR_TOUR, sizeof(dresseur));
     FILE* f;
-    f = fopen("/home/isen/ProjetS4/v16/Fonctions/BDD/tour.txt","r");
+    f = fopen("/home/isen/ProjetS4/Pokémon/Fonctions/BDD/tour.txt","r");
     if(f != NULL){
         for (int i = 0; i < NB_DRESSEUR_TOUR; ++i)
         {
