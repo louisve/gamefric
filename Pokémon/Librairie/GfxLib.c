@@ -478,7 +478,7 @@ static int *BVR2ARVB(int largeur, int hauteur, const unsigned char *donnees)
 		ptrPixel[1] = ptrDonnees[1];
 		ptrPixel[2] = ptrDonnees[2];
 		ptrPixel[3] = 255;
-		if(ptrPixel[0] == 0 && ptrPixel[1] == 0 && ptrPixel[2] == 0){
+		if(ptrPixel[0] > 135 && ptrPixel[0] < 145 && ptrPixel[1] > 70 && ptrPixel[1] < 80 && ptrPixel[2] > 125 && ptrPixel[2] < 135){
 			ptrPixel[3] = 0;
 		}
 		ptrDonnees += 3; /* On passe a la premiere composante du pixel suivant */
