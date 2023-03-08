@@ -125,52 +125,34 @@ static DonneesImageRGB *salle6_iris = NULL;
 static DonneesImageRGB *salle7_morgane = NULL;
 static DonneesImageRGB *salle8_pierre = NULL;
 
-//Images Pokemons
-static DonneesImageRGB *bulbizarre = NULL;
+//Images Pokemons starter
 static DonneesImageRGB *bulbizarre_dos = NULL;
 static DonneesImageRGB *salameche = NULL;
 static DonneesImageRGB *salameche_dos = NULL;
-static DonneesImageRGB *carapuce = NULL;
 static DonneesImageRGB *carapuce_dos = NULL;
 static DonneesImageRGB *vipeliere = NULL;
 static DonneesImageRGB *vipeliere_dos = NULL;
-static DonneesImageRGB *gruikui = NULL;
 static DonneesImageRGB *gruikui_dos = NULL;
 static DonneesImageRGB *moustillon = NULL;
 static DonneesImageRGB *moustillon_dos = NULL;
-static DonneesImageRGB *germignon = NULL;
 static DonneesImageRGB *germignon_dos = NULL;
-static DonneesImageRGB *hericendre = NULL;
 static DonneesImageRGB *hericendre_dos = NULL;
-static DonneesImageRGB *kaiminus = NULL;
 static DonneesImageRGB *kaiminus_dos = NULL;
-static DonneesImageRGB *tortipouss = NULL;
 static DonneesImageRGB *tortipouss_dos = NULL;
-static DonneesImageRGB *ouisticram = NULL;
 static DonneesImageRGB *ouisticram_dos = NULL;
-static DonneesImageRGB *tiplouf = NULL;
 static DonneesImageRGB *tiplouf_dos = NULL;
 
 //Images Pokemons évo 1
-static DonneesImageRGB *bulbizarre_evo1 = NULL;
 static DonneesImageRGB *bulbizarre_evo1_dos = NULL;
-static DonneesImageRGB *salameche_evo1 = NULL;
 static DonneesImageRGB *salameche_evo1_dos = NULL;
-static DonneesImageRGB *carapuce_evo1 = NULL;
 static DonneesImageRGB *carapuce_evo1_dos = NULL;
-static DonneesImageRGB *vipeliere_evo1 = NULL;
 static DonneesImageRGB *vipeliere_evo1_dos = NULL;
-static DonneesImageRGB *gruikui_evo1 = NULL;
 static DonneesImageRGB *gruikui_evo1_dos = NULL;
-static DonneesImageRGB *moustillon_evo1 = NULL;
 static DonneesImageRGB *moustillon_evo1_dos = NULL;
 static DonneesImageRGB *germignon_evo1 = NULL;
 static DonneesImageRGB *germignon_evo1_dos = NULL;
-static DonneesImageRGB *hericendre_evo1 = NULL;
 static DonneesImageRGB *hericendre_evo1_dos = NULL;
-static DonneesImageRGB *kaiminus_evo1 = NULL;
 static DonneesImageRGB *kaiminus_evo1_dos = NULL;
-static DonneesImageRGB *tortipouss_evo1 = NULL;
 static DonneesImageRGB *tortipouss_evo1_dos = NULL;
 static DonneesImageRGB *ouisticram_evo1 = NULL;
 static DonneesImageRGB *ouisticram_evo1_dos = NULL;
@@ -178,29 +160,19 @@ static DonneesImageRGB *tiplouf_evo1 = NULL;
 static DonneesImageRGB *tiplouf_evo1_dos = NULL;
 
 //Images Pokemons évo 2
-static DonneesImageRGB *bulbizarre_evo2 = NULL;
 static DonneesImageRGB *bulbizarre_evo2_dos = NULL;
-static DonneesImageRGB *salameche_evo2 = NULL;
 static DonneesImageRGB *salameche_evo2_dos = NULL;
-static DonneesImageRGB *carapuce_evo2 = NULL;
 static DonneesImageRGB *carapuce_evo2_dos = NULL;
-static DonneesImageRGB *vipeliere_evo2 = NULL;
 static DonneesImageRGB *vipeliere_evo2_dos = NULL;
-static DonneesImageRGB *gruikui_evo2 = NULL;
 static DonneesImageRGB *gruikui_evo2_dos = NULL;
-static DonneesImageRGB *moustillon_evo2 = NULL;
 static DonneesImageRGB *moustillon_evo2_dos = NULL;
-static DonneesImageRGB *germignon_evo2 = NULL;
 static DonneesImageRGB *germignon_evo2_dos = NULL;
-static DonneesImageRGB *hericendre_evo2 = NULL;
 static DonneesImageRGB *hericendre_evo2_dos = NULL;
 static DonneesImageRGB *kaiminus_evo2 = NULL;
 static DonneesImageRGB *kaiminus_evo2_dos = NULL;
 static DonneesImageRGB *tortipouss_evo2 = NULL;
 static DonneesImageRGB *tortipouss_evo2_dos = NULL;
-static DonneesImageRGB *ouisticram_evo2 = NULL;
 static DonneesImageRGB *ouisticram_evo2_dos = NULL;
-static DonneesImageRGB *tiplouf_evo2 = NULL;
 static DonneesImageRGB *tiplouf_evo2_dos = NULL;
 
 // Création des fonctions
@@ -215,25 +187,6 @@ void initImage(){
 	variante_menu_1 = lisBMPRGB("bmp/Menus/menu_variante_1.bmp");
 	variante_menu_2 = lisBMPRGB("bmp/Menus/menu_variante_2.bmp");
 	variante_menu_3 = lisBMPRGB("bmp/Menus/menu_variante_3.bmp");
-	choix_perso = lisBMPRGB("bmp/Menus/choix_perso.bmp");
-	choix_pk_1_1 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_1.1.bmp");
-	choix_pk_1_2 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_1.2.bmp");
-	choix_pk_1_3 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_1.3.bmp");
-	choix_pk_1_4 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_1.4.bmp");
-	choix_pk_2_1 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_2.1.bmp");
-	choix_pk_2_2 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_2.2.bmp");
-	choix_pk_2_3 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_2.3.bmp");
-	choix_pk_2_4 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_2.4.bmp");
-	choix_pk_3_1 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_3.1.bmp");
-	choix_pk_3_2 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_3.2.bmp");
-	choix_pk_3_3 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_3.3.bmp");
-	choix_pk_3_4 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_3.4.bmp");
-	choix_perso_1_1 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_1.1.bmp");
-	choix_perso_1_2 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_1.2.bmp");
-	choix_perso_1_3 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_1.3.bmp");
-	choix_perso_2_1 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_2.1.bmp");
-	choix_perso_2_2 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_2.2.bmp");
-	choix_perso_2_3 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_2.3.bmp");
 	combat_att1 = lisBMPRGB("bmp/Menus/combat/combat_att1.bmp");
 	combat_att2 = lisBMPRGB("bmp/Menus/combat/combat_att2.bmp");
 	combat_quitter = lisBMPRGB("bmp/Menus/combat/combat_quitter.bmp");
@@ -249,7 +202,30 @@ void initImage(){
 	defaite_combat_quitter = lisBMPRGB("bmp/Menus/combat/defaite_combat_quitter.bmp");
 	ecran_fin = lisBMPRGB("bmp/Menus/ecran_fin.bmp");
 
-	//Init des images d'évo1
+	//Init des images de choix des persos
+	choix_perso = lisBMPRGB("bmp/Menus/choix_perso.bmp");
+	choix_perso_1_1 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_1.1.bmp");
+	choix_perso_1_2 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_1.2.bmp");
+	choix_perso_1_3 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_1.3.bmp");
+	choix_perso_2_1 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_2.1.bmp");
+	choix_perso_2_2 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_2.2.bmp");
+	choix_perso_2_3 = lisBMPRGB("bmp/Menus/perso_survol/choix_perso_2.3.bmp");
+
+	//Init des images de choix des pokémons
+	choix_pk_1_1 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_1.1.bmp");
+	choix_pk_1_2 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_1.2.bmp");
+	choix_pk_1_3 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_1.3.bmp");
+	choix_pk_1_4 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_1.4.bmp");
+	choix_pk_2_1 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_2.1.bmp");
+	choix_pk_2_2 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_2.2.bmp");
+	choix_pk_2_3 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_2.3.bmp");
+	choix_pk_2_4 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_2.4.bmp");
+	choix_pk_3_1 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_3.1.bmp");
+	choix_pk_3_2 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_3.2.bmp");
+	choix_pk_3_3 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_3.3.bmp");
+	choix_pk_3_4 = lisBMPRGB("bmp/Menus/pk_survol/choix_pk_3.4.bmp");
+
+	//Init des images de choix d'évo1
 	choix_pk_evo1 = lisBMPRGB("bmp/Menus/choix_pk_evo1.bmp");
 	choix_pk_evo1_1_1 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_1.1.bmp");
 	choix_pk_evo1_1_2 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_1.2.bmp");
@@ -265,7 +241,7 @@ void initImage(){
 	choix_pk_evo1_3_4 = lisBMPRGB("bmp/Menus/pk_evo1_survol/choix_pk_evo1_3.4.bmp");
 
 
-	//Init des images d'évo2
+	//Init des images de choix d'évo2
 	choix_pk_evo2 = lisBMPRGB("bmp/Menus/choix_pk_evo2.bmp");
 	choix_pk_evo2_1_1 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_1.1.bmp");
 	choix_pk_evo2_1_2 = lisBMPRGB("bmp/Menus/pk_evo2_survol/choix_pk_evo2_1.2.bmp");
@@ -333,51 +309,33 @@ void initImage(){
 	salle8_pierre= lisBMPRGB("bmp/Boss/salle8_pierre.bmp");
 
 	//Init images Pokemons
-	bulbizarre = lisBMPRGB("bmp/pokemons/001_bulbizarre/001_bulbizarre.bmp");
 	bulbizarre_dos = lisBMPRGB("bmp/pokemons/001_bulbizarre/001_bulbizarre_dos.bmp");
 	salameche = lisBMPRGB("bmp/pokemons/002_salameche/002_salameche.bmp");
 	salameche_dos = lisBMPRGB("bmp/pokemons/002_salameche/002_salameche_dos.bmp");
-	carapuce = lisBMPRGB("bmp/pokemons/003_carapuce/003_carapuce.bmp");
 	carapuce_dos = lisBMPRGB("bmp/pokemons/003_carapuce/003_carapuce_dos.bmp");
 	vipeliere = lisBMPRGB("bmp/pokemons/004_vipeliere/004_vipeliere.bmp");
 	vipeliere_dos = lisBMPRGB("bmp/pokemons/004_vipeliere/004_vipeliere_dos.bmp");
-	gruikui = lisBMPRGB("bmp/pokemons/005_gruikui/005_gruikui.bmp");
 	gruikui_dos = lisBMPRGB("bmp/pokemons/005_gruikui/005_gruikui_dos.bmp");
 	moustillon = lisBMPRGB("bmp/pokemons/006_moustillon/006_moustillon.bmp");
 	moustillon_dos = lisBMPRGB("bmp/pokemons/006_moustillon/006_moustillon_dos.bmp");
-	germignon = lisBMPRGB("bmp/pokemons/007_germignon/007_germignon.bmp");
 	germignon_dos = lisBMPRGB("bmp/pokemons/007_germignon/007_germignon_dos.bmp");
-	hericendre = lisBMPRGB("bmp/pokemons/008_hericendre/008_hericendre.bmp");
 	hericendre_dos = lisBMPRGB("bmp/pokemons/008_hericendre/008_hericendre_dos.bmp");
-	kaiminus = lisBMPRGB("bmp/pokemons/009_kaiminus/009_kaiminus.bmp");
 	kaiminus_dos = lisBMPRGB("bmp/pokemons/009_kaiminus/009_kaiminus_dos.bmp");
-	tortipouss = lisBMPRGB("bmp/pokemons/010_tortipouss/010_tortipouss.bmp");
 	tortipouss_dos = lisBMPRGB("bmp/pokemons/010_tortipouss/010_tortipouss_dos.bmp");
-	ouisticram = lisBMPRGB("bmp/pokemons/011_ouisticram/011_ouisticram.bmp");
 	ouisticram_dos = lisBMPRGB("bmp/pokemons/011_ouisticram/011_ouisticram_dos.bmp");
-	tiplouf = lisBMPRGB("bmp/pokemons/012_tiplouf/012_tiplouf.bmp");
 	tiplouf_dos = lisBMPRGB("bmp/pokemons/012_tiplouf/012_tiplouf_dos.bmp");
 
 	//Init images Pokemons évo 1
-	bulbizarre_evo1 = lisBMPRGB("bmp/pokemons/001_bulbizarre/bulbizarre_evo1.bmp");
 	bulbizarre_evo1_dos = lisBMPRGB("bmp/pokemons/001_bulbizarre/bulbizarre_evo1_dos.bmp");
-	salameche_evo1 = lisBMPRGB("bmp/pokemons/002_salameche/salameche_evo1.bmp");
 	salameche_evo1_dos = lisBMPRGB("bmp/pokemons/002_salameche/salameche_evo1_dos.bmp");
-	carapuce_evo1 = lisBMPRGB("bmp/pokemons/003_carapuce/carapuce_evo1.bmp");
 	carapuce_evo1_dos = lisBMPRGB("bmp/pokemons/003_carapuce/carapuce_evo1_dos.bmp");
-	vipeliere_evo1 = lisBMPRGB("bmp/pokemons/004_vipeliere/vipeliere_evo1.bmp");
 	vipeliere_evo1_dos = lisBMPRGB("bmp/pokemons/004_vipeliere/vipeliere_evo1_dos.bmp");
-	gruikui_evo1 = lisBMPRGB("bmp/pokemons/005_gruikui/gruikui_evo1.bmp");
 	gruikui_evo1_dos = lisBMPRGB("bmp/pokemons/005_gruikui/gruikui_evo1_dos.bmp");
-	moustillon_evo1 = lisBMPRGB("bmp/pokemons/006_moustillon/moustillon_evo1.bmp");
 	moustillon_evo1_dos = lisBMPRGB("bmp/pokemons/006_moustillon/moustillon_evo1_dos.bmp");
 	germignon_evo1 = lisBMPRGB("bmp/pokemons/007_germignon/germignon_evo1.bmp");
 	germignon_evo1_dos = lisBMPRGB("bmp/pokemons/007_germignon/germignon_evo1_dos.bmp");
-	hericendre_evo1 = lisBMPRGB("bmp/pokemons/008_hericendre/hericendre_evo1.bmp");
 	hericendre_evo1_dos = lisBMPRGB("bmp/pokemons/008_hericendre/hericendre_evo1_dos.bmp");
-	kaiminus_evo1 = lisBMPRGB("bmp/pokemons/009_kaiminus/kaiminus_evo1.bmp");
 	kaiminus_evo1_dos = lisBMPRGB("bmp/pokemons/009_kaiminus/kaiminus_evo1_dos.bmp");
-	tortipouss_evo1 = lisBMPRGB("bmp/pokemons/010_tortipouss/tortipouss_evo1.bmp");
 	tortipouss_evo1_dos = lisBMPRGB("bmp/pokemons/010_tortipouss/tortipouss_evo1_dos.bmp");
 	ouisticram_evo1 = lisBMPRGB("bmp/pokemons/011_ouisticram/ouisticram_evo1.bmp");
 	ouisticram_evo1_dos = lisBMPRGB("bmp/pokemons/011_ouisticram/ouisticram_evo1_dos.bmp");
@@ -385,29 +343,19 @@ void initImage(){
 	tiplouf_evo1_dos = lisBMPRGB("bmp/pokemons/012_tiplouf/tiplouf_evo1_dos.bmp");
 
 	//Init images Pokemons évo 2
-	bulbizarre_evo2 = lisBMPRGB("bmp/pokemons/001_bulbizarre/bulbizarre_evo2.bmp");
 	bulbizarre_evo2_dos = lisBMPRGB("bmp/pokemons/001_bulbizarre/bulbizarre_evo2_dos.bmp");
-	salameche_evo2 = lisBMPRGB("bmp/pokemons/002_salameche/salameche_evo2.bmp");
 	salameche_evo2_dos = lisBMPRGB("bmp/pokemons/002_salameche/salameche_evo2_dos.bmp");
-	carapuce_evo2 = lisBMPRGB("bmp/pokemons/003_carapuce/carapuce_evo2.bmp");
 	carapuce_evo2_dos = lisBMPRGB("bmp/pokemons/003_carapuce/carapuce_evo2_dos.bmp");
-	vipeliere_evo2 = lisBMPRGB("bmp/pokemons/004_vipeliere/vipeliere_evo2.bmp");
 	vipeliere_evo2_dos = lisBMPRGB("bmp/pokemons/004_vipeliere/vipeliere_evo2_dos.bmp");
-	gruikui_evo2 = lisBMPRGB("bmp/pokemons/005_gruikui/gruikui_evo2.bmp");
 	gruikui_evo2_dos = lisBMPRGB("bmp/pokemons/005_gruikui/gruikui_evo2_dos.bmp");
-	moustillon_evo2 = lisBMPRGB("bmp/pokemons/006_moustillon/moustillon_evo2.bmp");
 	moustillon_evo2_dos = lisBMPRGB("bmp/pokemons/006_moustillon/moustillon_evo2_dos.bmp");
-	germignon_evo2 = lisBMPRGB("bmp/pokemons/007_germignon/germignon_evo2.bmp");
 	germignon_evo2_dos = lisBMPRGB("bmp/pokemons/007_germignon/germignon_evo2_dos.bmp");
-	hericendre_evo2 = lisBMPRGB("bmp/pokemons/008_hericendre/hericendre_evo2.bmp");
 	hericendre_evo2_dos = lisBMPRGB("bmp/pokemons/008_hericendre/hericendre_evo2_dos.bmp");
 	kaiminus_evo2 = lisBMPRGB("bmp/pokemons/009_kaiminus/kaiminus_evo2.bmp");
 	kaiminus_evo2_dos = lisBMPRGB("bmp/pokemons/009_kaiminus/kaiminus_evo2_dos.bmp");
 	tortipouss_evo2 = lisBMPRGB("bmp/pokemons/010_tortipouss/tortipouss_evo2.bmp");
 	tortipouss_evo2_dos = lisBMPRGB("bmp/pokemons/010_tortipouss/tortipouss_evo2_dos.bmp");
-	ouisticram_evo2 = lisBMPRGB("bmp/pokemons/011_ouisticram/ouisticram_evo2.bmp");
 	ouisticram_evo2_dos = lisBMPRGB("bmp/pokemons/011_ouisticram/ouisticram_evo2_dos.bmp");
-	tiplouf_evo2 = lisBMPRGB("bmp/pokemons/012_tiplouf/tiplouf_evo2.bmp");
 	tiplouf_evo2_dos = lisBMPRGB("bmp/pokemons/012_tiplouf/tiplouf_evo2_dos.bmp");
 
 }
