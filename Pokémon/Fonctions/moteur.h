@@ -1,7 +1,7 @@
 #ifndef MOTEUR_H
 #define MOTEUR_H
 
-#define VPerso 8
+#define VPerso 12
 #define largeurPerso 50
 #define hauteurPerso 60
 

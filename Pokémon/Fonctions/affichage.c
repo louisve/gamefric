@@ -300,7 +300,7 @@ void initImage(){
     salle5 = lisBMPRGB("bmp/Etages/salle5.bmp");
     salle6 = lisBMPRGB("bmp/Etages/salle6.bmp");
     salle7 = lisBMPRGB("bmp/Etages/salle7.bmp");
-	salle8 = lisBMPRGB("bmp/Etages/salle8.bmp");	
+	salle8 = lisBMPRGB("bmp/Etages/salle8.bmp");
 
 	//Init images Boss
 	salle1_marc = lisBMPRGB("bmp/Boss/salle1_marc.bmp");

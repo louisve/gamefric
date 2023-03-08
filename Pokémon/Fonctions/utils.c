@@ -41,7 +41,7 @@ float FaiblessesResistance(attaque attaqueUtilisee, dresseur pokemonVictime){
         faibl = 0.75;
     }
     else if ((strcmp(attaqueUtilisee.type, "Feu") == 0 && strcmp(pokemonVictime.starter.type, "Plante") == 0) || (strcmp(attaqueUtilisee.type, "Eau") == 0 && strcmp(pokemonVictime.starter.type, "Feu") == 0) || (strcmp(attaqueUtilisee.type, "Plante") == 0 && strcmp(pokemonVictime.starter.type, "Eau") == 0)){
-        faibl = 1.5;
+        faibl = 1.25;
     }
     return faibl;
 }
@@ -55,12 +55,7 @@ void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_c
     //Tour adverse
     else if(etat_combat == 1){
         srand(time(NULL));
-        if (rand()%(100) < 40){
-            attaqueUtilisee = tour[salle_actuelle - 1].starter.att[0];
-        }
-        else{
-            attaqueUtilisee = tour[salle_actuelle - 1].starter.att[1];
-        }
+        attaqueUtilisee = tour[salle_actuelle - 1].starter.att[rand()%(2)];
         perso->starter.pv -= attaquer(attaqueUtilisee, tour[salle_actuelle - 1], *perso);
     }
     verifVictoire(perso, tour, salle_actuelle);

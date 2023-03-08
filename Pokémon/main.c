@@ -155,7 +155,7 @@ void gestionEvenement(EvenementGfx evenement)
                     }    
                     break;
                 case 27: //code ascii de la touche "echap".
-                    if(etat != 0 && etat != 1 && etat != 3 && etat != 4 && etat != 5 ) // Si on est pas sur l'acceuil ou le menu principal->
+                    if(!(etat >= 1 && etat <= 6) && !(etat >= 17 && etat <= 34) && !(etat >= 48 && etat <= 60) && !(etat >= 62 && etat <= 74) ) // Si on est pas sur l'acceuil ou le menu principal->
                     {
                         etat = 38; //-> Alors on peut passer à l'état 38 (écran pause) si la touche échap est préssé.
                     }
