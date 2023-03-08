@@ -9,7 +9,7 @@ int ControleDeplacementsHaut(int *placey, int *placex, int etat, int *etatdp, dr
             *placey = 285 - hauteurPerso/2;
         }
         else if(etat == 14){ //Pour savoir dans quelle salle on est
-            printf("fin du jeu !\n");
+            etat = 61;
         }
         perso->win = 0;
     }

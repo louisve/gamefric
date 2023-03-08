@@ -2775,7 +2775,7 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 			ecrisImage(391, 397, moustillon_evo2_dos->largeurImage, moustillon_evo2_dos->hauteurImage, moustillon_evo2_dos->donneesRGB);
 		}
 	}
-	if(strcmp(perso->starter.nom,"Germinion") == 0){
+	if(strcmp(perso->starter.nom,"Germignon") == 0){
 		if(germignon_dos != NULL){
 			ecrisImage(391, 397, germignon_dos->largeurImage, germignon_dos->hauteurImage, germignon_dos->donneesRGB);
 		}
@@ -2835,7 +2835,7 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 			ecrisImage(391, 397, tortipouss_evo2_dos->largeurImage, tortipouss_evo2_dos->hauteurImage, tortipouss_evo2_dos->donneesRGB);
 		}
 	}
-	if(strcmp(perso->starter.nom,"Ousticram") == 0){
+	if(strcmp(perso->starter.nom,"Ouisticram") == 0){
 		if(ouisticram_dos != NULL){
 			ecrisImage(391, 397, ouisticram_dos->largeurImage, ouisticram_dos->hauteurImage, ouisticram_dos->donneesRGB);
 		}
