@@ -1653,7 +1653,7 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	// Si on est dans l'interface de combat, sur le bouton attaque 1
 	else if(etat == 35)
 	{	
-		if( *etat_combat == 0){
+		if( *etat_combat == 0 && *attaque_en_cours == 0){
 			Baston(perso->starter.att[0], perso, tour, *etat_combat, salle_actuelle);
 			*attaque_en_cours = 1;
 			*start = clock();
@@ -1669,7 +1669,7 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	// Si on est dans l'interface de combat, sur le bouton attaque 2
 	else if(etat == 36)
 	{	
-		if( *etat_combat == 0){
+		if( *etat_combat == 0 && *attaque_en_cours == 0){
 			Baston(perso->starter.att[1], perso, tour, *etat_combat, salle_actuelle);
 			*attaque_en_cours = 1;
 			*start = clock();
