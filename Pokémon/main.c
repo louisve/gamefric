@@ -33,6 +33,7 @@ int main(int argc, char **argv)
 des qu'une evenement survient */
 void gestionEvenement(EvenementGfx evenement)
 {
+
     static int etat = 0; // on commence à état = 0 (ecran-titre)
     static bool pleinEcran = true; // Pour savoir si on est en mode plein ecran ou pas
     activeGestionDeplacementPassifSouris(); //Pour suivre la souris en continu.
@@ -217,7 +218,7 @@ void gestionEvenement(EvenementGfx evenement)
 
         case Souris: // Si la souris est deplacee
             {
-                etat = verif_survol_souris(etat, pperso, tour, salle_actuelle);
+                etat = verif_survol_souris(etat);
             }
             break;
         case Inactivite: // Quand aucun message n'est disponible

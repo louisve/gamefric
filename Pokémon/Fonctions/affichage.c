@@ -2658,76 +2658,76 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 	// Affiche le boss et son pokemon associé
 	if(salle_actuelle == 1){
 		if(moustillon != NULL){
-		ecrisImage(1050, 650,  moustillon->largeurImage, moustillon->hauteurImage, moustillon->donneesRGB);
+		ecrisImage(1030, 650,  moustillon->largeurImage, moustillon->hauteurImage, moustillon->donneesRGB);
 		}
 		if(salle1_marc != NULL){
-			ecrisImage(1350, 600, salle1_marc->largeurImage, salle1_marc->hauteurImage, salle1_marc->donneesRGB);
+			ecrisImage(1350, 570, salle1_marc->largeurImage, salle1_marc->hauteurImage, salle1_marc->donneesRGB);
 		}
 	}
 
 	else if(salle_actuelle == 2){
 		if(vipeliere != NULL){
-		ecrisImage(1050, 650,  vipeliere->largeurImage, vipeliere->hauteurImage, vipeliere->donneesRGB);
+		ecrisImage(1030, 650,  vipeliere->largeurImage, vipeliere->hauteurImage, vipeliere->donneesRGB);
 		}
 		if(salle2_rachid != NULL){
-			ecrisImage(1350, 600, salle2_rachid->largeurImage, salle2_rachid->hauteurImage, salle2_rachid->donneesRGB);
+			ecrisImage(1350, 570, salle2_rachid->largeurImage, salle2_rachid->hauteurImage, salle2_rachid->donneesRGB);
 		}
 	}
 	
 	else if(salle_actuelle == 3){
 		if(salameche != NULL){
-		ecrisImage(1050, 650,  salameche->largeurImage, salameche->hauteurImage, salameche->donneesRGB);
+		ecrisImage(1030, 650,  salameche->largeurImage, salameche->hauteurImage, salameche->donneesRGB);
 		}
 
 		if(salle3_bastien != NULL){
-			ecrisImage(1350, 600, salle3_bastien->largeurImage, salle3_bastien->hauteurImage, salle3_bastien->donneesRGB);
+			ecrisImage(1350, 570, salle3_bastien->largeurImage, salle3_bastien->hauteurImage, salle3_bastien->donneesRGB);
 		}
 	}
 
 	else if(salle_actuelle == 4){
 		if(ouisticram_evo1 != NULL){
-		ecrisImage(1050, 650,  ouisticram_evo1->largeurImage, ouisticram_evo1->hauteurImage, ouisticram_evo1->donneesRGB);
+		ecrisImage(1030, 650,  ouisticram_evo1->largeurImage, ouisticram_evo1->hauteurImage, ouisticram_evo1->donneesRGB);
 		}
 		if(salle4_adriane != NULL){
-			ecrisImage(1350, 600, salle4_adriane->largeurImage, salle4_adriane->hauteurImage, salle4_adriane->donneesRGB);
+			ecrisImage(1350, 570, salle4_adriane->largeurImage, salle4_adriane->hauteurImage, salle4_adriane->donneesRGB);
 		}
 	}
 
 	else if(salle_actuelle == 5){
 		if(tiplouf_evo1 != NULL){
-		ecrisImage(1050, 650,  tiplouf_evo1->largeurImage, tiplouf_evo1->hauteurImage, tiplouf_evo1->donneesRGB);
+		ecrisImage(1030, 650,  tiplouf_evo1->largeurImage, tiplouf_evo1->hauteurImage, tiplouf_evo1->donneesRGB);
 		}
 
 		if(salle5_blue != NULL){
-			ecrisImage(1350, 600, salle5_blue->largeurImage, salle5_blue->hauteurImage, salle5_blue->donneesRGB);
+			ecrisImage(1350, 570, salle5_blue->largeurImage, salle5_blue->hauteurImage, salle5_blue->donneesRGB);
 		}
 	}
 
 	else if(salle_actuelle == 6){
 		if(germignon_evo1 != NULL){
-		ecrisImage(1050, 650,  germignon_evo1->largeurImage, germignon_evo1->hauteurImage, germignon_evo1->donneesRGB);
+		ecrisImage(1030, 650,  germignon_evo1->largeurImage, germignon_evo1->hauteurImage, germignon_evo1->donneesRGB);
 		}
 		if(salle6_iris != NULL){
-			ecrisImage(1350, 600, salle6_iris->largeurImage, salle6_iris->hauteurImage, salle6_iris->donneesRGB);
+			ecrisImage(1350, 570, salle6_iris->largeurImage, salle6_iris->hauteurImage, salle6_iris->donneesRGB);
 		}
 	}
 
 	else if(salle_actuelle == 7){
 		if(tortipouss_evo2 != NULL){
-		ecrisImage(1050, 650,  tortipouss_evo2->largeurImage, tortipouss_evo2->hauteurImage, tortipouss_evo2->donneesRGB);
+		ecrisImage(1030, 650,  tortipouss_evo2->largeurImage, tortipouss_evo2->hauteurImage, tortipouss_evo2->donneesRGB);
 		}
 
 		if(salle7_morgane != NULL){
-			ecrisImage(1350, 600, salle7_morgane->largeurImage, salle7_morgane->hauteurImage, salle7_morgane->donneesRGB);
+			ecrisImage(1350, 570, salle7_morgane->largeurImage, salle7_morgane->hauteurImage, salle7_morgane->donneesRGB);
 		}
 	}
 
 	else if(salle_actuelle == 8){
 		if(kaiminus_evo2 != NULL){
-		ecrisImage(1050, 650,  kaiminus_evo2->largeurImage, kaiminus_evo2->hauteurImage, kaiminus_evo2->donneesRGB);
+		ecrisImage(1030, 650,  kaiminus_evo2->largeurImage, kaiminus_evo2->hauteurImage, kaiminus_evo2->donneesRGB);
 		}
 		if(salle8_pierre != NULL){
-			ecrisImage(1350, 600, salle8_pierre->largeurImage, salle8_pierre->hauteurImage, salle8_pierre->donneesRGB);
+			ecrisImage(1350, 570, salle8_pierre->largeurImage, salle8_pierre->hauteurImage, salle8_pierre->donneesRGB);
 		}
 	}
 
