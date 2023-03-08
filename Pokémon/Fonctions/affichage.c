@@ -5,29 +5,9 @@
 //Images de menu
 static DonneesImageRGB *accueil = NULL;
 static DonneesImageRGB *menu = NULL;
-static DonneesImageRGB *choix_pk = NULL;
 static DonneesImageRGB *variante_menu_1 = NULL;
 static DonneesImageRGB *variante_menu_2 = NULL;
 static DonneesImageRGB *variante_menu_3 = NULL;
-static DonneesImageRGB *choix_perso = NULL;
-static DonneesImageRGB *choix_pk_1_1 = NULL;
-static DonneesImageRGB *choix_pk_1_2 = NULL;
-static DonneesImageRGB *choix_pk_1_3 = NULL;
-static DonneesImageRGB *choix_pk_1_4 = NULL;
-static DonneesImageRGB *choix_pk_2_1 = NULL;
-static DonneesImageRGB *choix_pk_2_2 = NULL;
-static DonneesImageRGB *choix_pk_2_3 = NULL;
-static DonneesImageRGB *choix_pk_2_4 = NULL;
-static DonneesImageRGB *choix_pk_3_1 = NULL;
-static DonneesImageRGB *choix_pk_3_2 = NULL;
-static DonneesImageRGB *choix_pk_3_3 = NULL;
-static DonneesImageRGB *choix_pk_3_4 = NULL;
-static DonneesImageRGB *choix_perso_1_1 = NULL;
-static DonneesImageRGB *choix_perso_1_2 = NULL;
-static DonneesImageRGB *choix_perso_1_3 = NULL;
-static DonneesImageRGB *choix_perso_2_1 = NULL;
-static DonneesImageRGB *choix_perso_2_2 = NULL;
-static DonneesImageRGB *choix_perso_2_3 = NULL;
 static DonneesImageRGB *combat_att1 = NULL;
 static DonneesImageRGB *combat_att2 = NULL;
 static DonneesImageRGB *combat_quitter = NULL;
@@ -42,6 +22,30 @@ static DonneesImageRGB *victoire_combat_survol = NULL;
 static DonneesImageRGB *defaite_combat_rejouer = NULL;
 static DonneesImageRGB *defaite_combat_quitter = NULL;
 static DonneesImageRGB *ecran_fin = NULL;
+
+//Images choix perso
+static DonneesImageRGB *choix_perso = NULL;
+static DonneesImageRGB *choix_perso_1_1 = NULL;
+static DonneesImageRGB *choix_perso_1_2 = NULL;
+static DonneesImageRGB *choix_perso_1_3 = NULL;
+static DonneesImageRGB *choix_perso_2_1 = NULL;
+static DonneesImageRGB *choix_perso_2_2 = NULL;
+static DonneesImageRGB *choix_perso_2_3 = NULL;
+
+//Images des starter 
+static DonneesImageRGB *choix_pk = NULL;
+static DonneesImageRGB *choix_pk_1_1 = NULL;
+static DonneesImageRGB *choix_pk_1_2 = NULL;
+static DonneesImageRGB *choix_pk_1_3 = NULL;
+static DonneesImageRGB *choix_pk_1_4 = NULL;
+static DonneesImageRGB *choix_pk_2_1 = NULL;
+static DonneesImageRGB *choix_pk_2_2 = NULL;
+static DonneesImageRGB *choix_pk_2_3 = NULL;
+static DonneesImageRGB *choix_pk_2_4 = NULL;
+static DonneesImageRGB *choix_pk_3_1 = NULL;
+static DonneesImageRGB *choix_pk_3_2 = NULL;
+static DonneesImageRGB *choix_pk_3_3 = NULL;
+static DonneesImageRGB *choix_pk_3_4 = NULL;
 
 //Images d'évo1
 static DonneesImageRGB *choix_pk_evo1 = NULL;
@@ -532,7 +536,7 @@ switch(etat){
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat->largeurImage, combat->hauteurImage, combat->donneesRGB);
-		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
 
@@ -709,8 +713,7 @@ switch(etat){
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_att1->largeurImage, combat_att1->hauteurImage, combat_att1->donneesRGB);
-		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
-
+		interfaceCombat(perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
 
@@ -720,8 +723,7 @@ switch(etat){
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_att2->largeurImage, combat_att2->hauteurImage, combat_att2->donneesRGB);
-		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
-
+		interfaceCombat(perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
 
@@ -731,8 +733,7 @@ switch(etat){
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_quitter->largeurImage, combat_quitter->hauteurImage, combat_quitter->donneesRGB);
-		interfaceCombat(perso,tour,bulbizarre,bulbizarre_dos,salameche,salameche_dos,carapuce,carapuce_dos,vipeliere,vipeliere_dos,gruikui,gruikui_dos,moustillon,moustillon_dos,germignon,germignon_dos,hericendre,hericendre_dos,kaiminus,kaiminus_dos,tortipouss,tortipouss_dos,ouisticram,ouisticram_dos,tiplouf,tiplouf_dos,bulbizarre_evo1,bulbizarre_evo1_dos,salameche_evo1,salameche_evo1_dos,carapuce_evo1,carapuce_evo1_dos,vipeliere_evo1,vipeliere_evo1_dos,gruikui_evo1,gruikui_evo1_dos,moustillon_evo1,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1,hericendre_evo1_dos,kaiminus_evo1,kaiminus_evo1_dos,tortipouss_evo1,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2,bulbizarre_evo2_dos,salameche_evo2,salameche_evo2_dos,carapuce_evo2,carapuce_evo2_dos,vipeliere_evo2,vipeliere_evo2_dos,gruikui_evo2,gruikui_evo2_dos,moustillon_evo1,moustillon_evo2_dos,germignon_evo2,germignon_evo2_dos,hericendre_evo2,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2,ouisticram_evo2_dos,tiplouf_evo2,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
-
+		interfaceCombat(perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
 
@@ -795,30 +796,10 @@ switch(etat){
 		//Liberation des menus
 		libereDonneesImageRGB(&accueil); 
 		libereDonneesImageRGB(&menu);
-		libereDonneesImageRGB(&choix_pk);
-		libereDonneesImageRGB(&choix_perso);
 		libereDonneesImageRGB(&variante_menu_1);
 		libereDonneesImageRGB(&variante_menu_2); 
 		libereDonneesImageRGB(&variante_menu_3);
 		libereDonneesImageRGB(&combat);
-		libereDonneesImageRGB(&choix_pk_1_1);
-		libereDonneesImageRGB(&choix_pk_1_2);
-		libereDonneesImageRGB(&choix_pk_1_3);
-		libereDonneesImageRGB(&choix_pk_1_4);
-		libereDonneesImageRGB(&choix_pk_2_1);
-		libereDonneesImageRGB(&choix_pk_2_2);
-		libereDonneesImageRGB(&choix_pk_2_3);
-		libereDonneesImageRGB(&choix_pk_2_4);
-		libereDonneesImageRGB(&choix_pk_3_1);
-		libereDonneesImageRGB(&choix_pk_3_2);
-		libereDonneesImageRGB(&choix_pk_3_3);
-		libereDonneesImageRGB(&choix_pk_3_4);
-		libereDonneesImageRGB(&choix_perso_1_1);
-		libereDonneesImageRGB(&choix_perso_1_2);
-		libereDonneesImageRGB(&choix_perso_1_3);
-		libereDonneesImageRGB(&choix_perso_2_1);
-		libereDonneesImageRGB(&choix_perso_2_2);
-		libereDonneesImageRGB(&choix_perso_2_3);
 		libereDonneesImageRGB(&combat_att1);
 		libereDonneesImageRGB(&combat_att2);
 		libereDonneesImageRGB(&combat_quitter);
@@ -831,6 +812,30 @@ switch(etat){
 		libereDonneesImageRGB(&victoire_combat_survol);
 		libereDonneesImageRGB(&defaite_combat_rejouer);
 		libereDonneesImageRGB(&defaite_combat_quitter);
+
+		//Libération des images du menu perso
+		libereDonneesImageRGB(&choix_perso);
+		libereDonneesImageRGB(&choix_perso_1_1);
+		libereDonneesImageRGB(&choix_perso_1_2);
+		libereDonneesImageRGB(&choix_perso_1_3);
+		libereDonneesImageRGB(&choix_perso_2_1);
+		libereDonneesImageRGB(&choix_perso_2_2);
+		libereDonneesImageRGB(&choix_perso_2_3);
+
+		//Libération des images du menu starter
+		libereDonneesImageRGB(&choix_pk);
+		libereDonneesImageRGB(&choix_pk_1_1);
+		libereDonneesImageRGB(&choix_pk_1_2);
+		libereDonneesImageRGB(&choix_pk_1_3);
+		libereDonneesImageRGB(&choix_pk_1_4);
+		libereDonneesImageRGB(&choix_pk_2_1);
+		libereDonneesImageRGB(&choix_pk_2_2);
+		libereDonneesImageRGB(&choix_pk_2_3);
+		libereDonneesImageRGB(&choix_pk_2_4);
+		libereDonneesImageRGB(&choix_pk_3_1);
+		libereDonneesImageRGB(&choix_pk_3_2);
+		libereDonneesImageRGB(&choix_pk_3_3);
+		libereDonneesImageRGB(&choix_pk_3_4);
 
 		//Libération des persos
 		libereDonneesImageRGB(&persoFace1);
@@ -861,51 +866,33 @@ switch(etat){
 		libereDonneesImageRGB(&salle8_pierre);
 
 		//Libération des pokemons
-		libereDonneesImageRGB(&bulbizarre);
 		libereDonneesImageRGB(&bulbizarre_dos);
 		libereDonneesImageRGB(&salameche);
 		libereDonneesImageRGB(&salameche_dos);
-		libereDonneesImageRGB(&carapuce);
 		libereDonneesImageRGB(&carapuce_dos);
 		libereDonneesImageRGB(&vipeliere);
 		libereDonneesImageRGB(&vipeliere_dos);
-		libereDonneesImageRGB(&gruikui);
 		libereDonneesImageRGB(&gruikui_dos);
 		libereDonneesImageRGB(&moustillon);
 		libereDonneesImageRGB(&moustillon_dos);
-		libereDonneesImageRGB(&germignon);
 		libereDonneesImageRGB(&germignon_dos);
-		libereDonneesImageRGB(&hericendre);
 		libereDonneesImageRGB(&hericendre_dos);
-		libereDonneesImageRGB(&kaiminus);
 		libereDonneesImageRGB(&kaiminus_dos);
-		libereDonneesImageRGB(&tortipouss);
 		libereDonneesImageRGB(&tortipouss_dos);
-		libereDonneesImageRGB(&ouisticram);
 		libereDonneesImageRGB(&ouisticram_dos);
-		libereDonneesImageRGB(&tiplouf);
 		libereDonneesImageRGB(&tiplouf_dos);
 
 		//Libération de la première évolution des pokemons
-		libereDonneesImageRGB(&bulbizarre_evo1);
 		libereDonneesImageRGB(&bulbizarre_evo1_dos);
-		libereDonneesImageRGB(&salameche_evo1);
 		libereDonneesImageRGB(&salameche_evo1_dos);
-		libereDonneesImageRGB(&carapuce_evo1);
 		libereDonneesImageRGB(&carapuce_evo1_dos);
-		libereDonneesImageRGB(&vipeliere_evo1);
 		libereDonneesImageRGB(&vipeliere_evo1_dos);
-		libereDonneesImageRGB(&gruikui_evo1);
 		libereDonneesImageRGB(&gruikui_evo1_dos);
-		libereDonneesImageRGB(&moustillon_evo1);
 		libereDonneesImageRGB(&moustillon_evo1_dos);
 		libereDonneesImageRGB(&germignon_evo1);
 		libereDonneesImageRGB(&germignon_evo1_dos);
-		libereDonneesImageRGB(&hericendre_evo1);
 		libereDonneesImageRGB(&hericendre_evo1_dos);
-		libereDonneesImageRGB(&kaiminus_evo1);
 		libereDonneesImageRGB(&kaiminus_evo1_dos);
-		libereDonneesImageRGB(&tortipouss_evo1);
 		libereDonneesImageRGB(&tortipouss_evo1_dos);
 		libereDonneesImageRGB(&ouisticram_evo1);
 		libereDonneesImageRGB(&ouisticram_evo1_dos);
@@ -913,29 +900,19 @@ switch(etat){
 		libereDonneesImageRGB(&tiplouf_evo1_dos);
 
 		//Libération de la deuxième évolution des pokemons
-		libereDonneesImageRGB(&bulbizarre_evo2);
 		libereDonneesImageRGB(&bulbizarre_evo2_dos);
-		libereDonneesImageRGB(&salameche_evo2);
 		libereDonneesImageRGB(&salameche_evo2_dos);
-		libereDonneesImageRGB(&carapuce_evo2);
 		libereDonneesImageRGB(&carapuce_evo2_dos);
-		libereDonneesImageRGB(&vipeliere_evo2);
 		libereDonneesImageRGB(&vipeliere_evo2_dos);
-		libereDonneesImageRGB(&gruikui_evo2);
 		libereDonneesImageRGB(&gruikui_evo2_dos);
-		libereDonneesImageRGB(&moustillon_evo2);
 		libereDonneesImageRGB(&moustillon_evo2_dos);
-		libereDonneesImageRGB(&germignon_evo2);
 		libereDonneesImageRGB(&germignon_evo2_dos);
-		libereDonneesImageRGB(&hericendre_evo2);
 		libereDonneesImageRGB(&hericendre_evo2_dos);
 		libereDonneesImageRGB(&kaiminus_evo2);
 		libereDonneesImageRGB(&kaiminus_evo2_dos);
 		libereDonneesImageRGB(&tortipouss_evo2);
 		libereDonneesImageRGB(&tortipouss_evo2_dos);
-		libereDonneesImageRGB(&ouisticram_evo2);
 		libereDonneesImageRGB(&ouisticram_evo2_dos);
-		libereDonneesImageRGB(&tiplouf_evo2);
 		libereDonneesImageRGB(&tiplouf_evo2_dos);
 
 		
@@ -2601,7 +2578,7 @@ void affichePersoChoisis(int *placex, int *placey, int *etatdp, dresseur *perso)
 }
 
 //Affiche l'interface de combat avec le pokemon choisit et le boss et son pokemon lié à la salle actuelle
-void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre,DonneesImageRGB *bulbizarre_dos,DonneesImageRGB *salameche,DonneesImageRGB *salameche_dos,DonneesImageRGB *carapuce,DonneesImageRGB *carapuce_dos,DonneesImageRGB *vipeliere,DonneesImageRGB *vipeliere_dos,DonneesImageRGB *gruikui,DonneesImageRGB *gruikui_dos,DonneesImageRGB *moustillon,DonneesImageRGB *moustillon_dos,DonneesImageRGB *germignon,DonneesImageRGB *germignon_dos,DonneesImageRGB *hericendre,DonneesImageRGB *hericendre_dos,DonneesImageRGB *kaiminus,DonneesImageRGB *kaiminus_dos,DonneesImageRGB *tortipouss,DonneesImageRGB *tortipouss_dos,DonneesImageRGB *ouisticram,DonneesImageRGB *ouisticram_dos,DonneesImageRGB *tiplouf,DonneesImageRGB *tiplouf_dos,DonneesImageRGB *bulbizarre_evo1,DonneesImageRGB *bulbizarre_evo1_dos,DonneesImageRGB *salameche_evo1,DonneesImageRGB *salameche_evo1_dos,DonneesImageRGB *carapuce_evo1,DonneesImageRGB *carapuce_evo1_dos,DonneesImageRGB *vipeliere_evo1,DonneesImageRGB *vipeliere_evo1_dos,DonneesImageRGB *gruikui_evo1,DonneesImageRGB *gruikui_evo1_dos,DonneesImageRGB *moustillon_evo1,DonneesImageRGB *moustillon_evo1_dos,DonneesImageRGB *germignon_evo1,DonneesImageRGB *germignon_evo1_dos,DonneesImageRGB *hericendre_evo1,DonneesImageRGB *hericendre_evo1_dos,DonneesImageRGB *kaiminus_evo1,DonneesImageRGB *kaiminus_evo1_dos,DonneesImageRGB *tortipouss_evo1,DonneesImageRGB *tortipouss_evo1_dos,DonneesImageRGB *ouisticram_evo1,DonneesImageRGB *ouisticram_evo1_dos,DonneesImageRGB *tiplouf_evo1,DonneesImageRGB *tiplouf_evo1_dos,DonneesImageRGB *bulbizarre_evo2,DonneesImageRGB *bulbizarre_evo2_dos,DonneesImageRGB *salameche_evo2,DonneesImageRGB *salameche_evo2_dos,DonneesImageRGB *carapuce_evo2,DonneesImageRGB *carapuce_evo2_dos,DonneesImageRGB *vipeliere_evo2,DonneesImageRGB *vipeliere_evo2_dos,DonneesImageRGB *gruikui_evo2,DonneesImageRGB *gruikui_evo2_dos,DonneesImageRGB *moustillon_evo2,DonneesImageRGB *moustillon_evo2_dos,DonneesImageRGB *germignon_evo2,DonneesImageRGB *germignon_evo2_dos,DonneesImageRGB *hericendre_evo2,DonneesImageRGB *hericendre_evo2_dos,DonneesImageRGB *kaiminus_evo2,DonneesImageRGB *kaiminus_evo2_dos,DonneesImageRGB *tortipouss_evo2,DonneesImageRGB *tortipouss_evo2_dos,DonneesImageRGB *ouisticram_evo2,DonneesImageRGB *ouisticram_evo2_dos,DonneesImageRGB *tiplouf_evo2,DonneesImageRGB *tiplouf_evo2_dos,DonneesImageRGB *salle1_marc,DonneesImageRGB *salle2_rachid,DonneesImageRGB *salle3_bastien,DonneesImageRGB *salle4_adriane,DonneesImageRGB *salle5_blue,DonneesImageRGB *salle6_iris,DonneesImageRGB *salle7_morgane,DonneesImageRGB *salle8_pierre, int salle_actuelle){
+void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre_dos,DonneesImageRGB *salameche,DonneesImageRGB *salameche_dos,DonneesImageRGB *carapuce_dos,DonneesImageRGB *vipeliere,DonneesImageRGB *vipeliere_dos,DonneesImageRGB *gruikui_dos,DonneesImageRGB *moustillon,DonneesImageRGB *moustillon_dos,DonneesImageRGB *germignon_dos,DonneesImageRGB *hericendre_dos,DonneesImageRGB *kaiminus_dos,DonneesImageRGB *tortipouss_dos,DonneesImageRGB *ouisticram_dos,DonneesImageRGB *tiplouf_dos,DonneesImageRGB *bulbizarre_evo1_dos,DonneesImageRGB *salameche_evo1_dos,DonneesImageRGB *carapuce_evo1_dos,DonneesImageRGB *vipeliere_evo1_dos,DonneesImageRGB *gruikui_evo1_dos,DonneesImageRGB *moustillon_evo1_dos,DonneesImageRGB *germignon_evo1,DonneesImageRGB *germignon_evo1_dos,DonneesImageRGB *hericendre_evo1_dos,DonneesImageRGB *kaiminus_evo1_dos,DonneesImageRGB *tortipouss_evo1_dos,DonneesImageRGB *ouisticram_evo1,DonneesImageRGB *ouisticram_evo1_dos,DonneesImageRGB *tiplouf_evo1,DonneesImageRGB *tiplouf_evo1_dos,DonneesImageRGB *bulbizarre_evo2_dos,DonneesImageRGB *salameche_evo2_dos,DonneesImageRGB *carapuce_evo2_dos,DonneesImageRGB *vipeliere_evo2_dos,DonneesImageRGB *gruikui_evo2_dos,DonneesImageRGB *moustillon_evo2_dos,DonneesImageRGB *germignon_evo2_dos,DonneesImageRGB *hericendre_evo2_dos,DonneesImageRGB *kaiminus_evo2,DonneesImageRGB *kaiminus_evo2_dos,DonneesImageRGB *tortipouss_evo2,DonneesImageRGB *tortipouss_evo2_dos,DonneesImageRGB *ouisticram_evo2_dos,DonneesImageRGB *tiplouf_evo2_dos,DonneesImageRGB *salle1_marc,DonneesImageRGB *salle2_rachid,DonneesImageRGB *salle3_bastien,DonneesImageRGB *salle4_adriane,DonneesImageRGB *salle5_blue,DonneesImageRGB *salle6_iris,DonneesImageRGB *salle7_morgane,DonneesImageRGB *salle8_pierre, int salle_actuelle){
 	
 	// Affiche le boss et son pokemon associé
 	if(salle_actuelle == 1){
