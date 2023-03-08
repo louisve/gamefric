@@ -50,6 +50,12 @@ void gestionEvenement(EvenementGfx evenement)
     static int salle_actuelle = 1;
     static int dp = 0;
     static int *etatdp = &dp;
+    static int startdelai = 0;
+    static int *pstartdelai = &startdelai;
+    static int findelai = 0;
+    static int *pfindelai = &findelai;
+    static int tpsJeu = 0;
+    static int *ptpsJeu = &tpsJeu;
 
     static int etat_combat = 0;
     static int *petat_combat = &etat_combat;
@@ -105,7 +111,7 @@ void gestionEvenement(EvenementGfx evenement)
             {
                 // On part d'un fond d'ecran noir
                 effaceFenetre (0, 0, 0);
-                salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour, etatdp);
+                salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour, etatdp, ptpsJeu);
             }
             break;
 
@@ -145,7 +151,7 @@ void gestionEvenement(EvenementGfx evenement)
                 case 13: //code ascii de la touche "entrée".
                     if(etat == 0)
                     {
-                        etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, petat_combat, pattaque_en_cours, pstart);
+                        etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, petat_combat, pattaque_en_cours, pstart, pstartdelai);
                     }    
                     break;
                 case 27: //code ascii de la touche "echap".
@@ -188,7 +194,7 @@ void gestionEvenement(EvenementGfx evenement)
          switch(toucheClavier())
             {
                 case 13: //Pour se déplacer vers le haut grâce à la flèche du haut
-                    etat = ControleDeplacementsHaut(placey, placex, etat, etatdp, pperso);
+                    etat = ControleDeplacementsHaut(placey, placex, etat, etatdp, pperso, pstartdelai, pfindelai, ptpsJeu);
                     break;
                 case 14: //Pour se déplacer vers le bas grâce à la flèche du bas
                     etat = ControleDeplacementsBas(placey, placex, etat, etatdp, pperso);
@@ -205,7 +211,7 @@ void gestionEvenement(EvenementGfx evenement)
         case BoutonSouris:{
             if (etatBoutonSouris() == GaucheAppuye)
             {
-                etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, petat_combat, pattaque_en_cours, pstart);
+                etat = gereClicBoutons(placey,etat,pokedex,pstarter,pperso,tour,tabAtk,salle_actuelle, petat_combat, pattaque_en_cours, pstart, pstartdelai);
             }
             else if (etatBoutonSouris() == GaucheRelache)
             {

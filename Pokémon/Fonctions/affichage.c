@@ -367,7 +367,7 @@ void initImage(){
 /* Fonction qui affiche l'image du menu adéquat en fonction de l'état, cette fonction sera appelé en boucle dans le 
 	case [Affichage:] du switch(evenement) afin de créer une interractivité avec l'utilisateur.  */
 
-int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp){
+int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp, int *ptpsJeu){
 
 switch(etat){
 
@@ -1053,6 +1053,7 @@ switch(etat){
 			{
 				effaceFenetre (0, 0, 0);
 				ecrisImage(0, 0, ecran_fin->largeurImage, ecran_fin->hauteurImage, ecran_fin->donneesRGB); // On affiche l'image
+				afficheTps(ptpsJeu);
 			}
 	break;
 
@@ -1169,7 +1170,7 @@ return salle_actuelle;
  	et en fonction de l'élément survolé lors du clique par l'user. Cette fonction est appelé dans le case [BoutonSouris] 
  	du switch(evenement) dès qu'il y a un appui sur le bouton gauche de la souris. */
 
-int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle, int *etat_combat, int *attaque_en_cours, long int *start){
+int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle, int *etat_combat, int *attaque_en_cours, long int *start, int *pstartdelai){
 	
 	// Si on est sur l'écran d'acceuil et qu'on appuie sur entrée : on affiche le menu 1
 	if (etat == 0)
@@ -1486,6 +1487,7 @@ int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dre
 	else if (etat == 3)
 	{
 		etat = 2;
+		debutTempsJeu(pstartdelai);
 		remove("save_partie.dat");
 	}
 
@@ -1679,7 +1681,7 @@ Il a fallu pour ce faire apppeler la fonction "activeGestionDeplacementPassifSou
 int verif_survol_souris(int etat){
 
 	// Si on est sur le 1er menu
-	if (etat==1)
+	if (etat == 1)
 	{
 		// Et qu'on survol le bouton "charger une partie" : on affiche l'image associée
 		if(abscisseSouris() >= 486 && abscisseSouris() <= 1437 && ordonneeSouris() >= 439 && ordonneeSouris() <= 640)
@@ -2953,4 +2955,36 @@ void afficheRaccourcis(){
 	couleurCourante(0,0,0);
 	afficheChaine("Pour afficher le menu de pause : Echap",20,34,196);
 	afficheChaine("Pour quitter : Q",20,34,227);
+}
+
+void afficheTps(int *ptpsJeu){
+
+    //determination des minutes de jeu
+    int min = *ptpsJeu/60;
+
+    //determination des secondes de jeu
+    int sec = 0;
+    if(min != 0){
+        sec = *ptpsJeu - (min*60);
+    }
+    else{
+        sec = *ptpsJeu;
+    }
+    //conversion des minutes en chaine de caractères pour l'afficher
+    char mins[sizeof(int)];
+    sprintf(mins, "%hu", min);
+
+    //conversion des secondes en chaine de caractères pour l'afficher
+    char secs[sizeof(int)];
+    sprintf(secs, "%hu", sec);
+    
+    //affichage des minutes
+    couleurCourante(0, 0, 0);
+    epaisseurDeTrait(10);
+    afficheChaine(mins, 65, 725, 33);
+
+
+    //affichage des secondes
+    afficheChaine(secs, 65, 1088, 33);
+
 }

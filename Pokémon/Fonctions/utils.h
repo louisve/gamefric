@@ -14,6 +14,7 @@ void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_c
 void verifVictoire(dresseur *perso, dresseur *tour, int salle_actuelle);
 int calculPvMax(dresseur pokemon);
 int verifVictoireAffichage(int etat, dresseur *perso);
-
+void debutTempsJeu(int *pstartdelai);
+void finTempsJeu(int *pstartdelai, int *pfindelai, int *ptpsJeu);
 
 #endif

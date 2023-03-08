@@ -35,8 +35,8 @@
 //Initialisation de fonctions/structures
 
 void initImage(); 
-int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp);
-int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle, int *etat_combat, int *attaque_en_cours, long int *start);
+int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp, int *ptpsJeu);
+int gereClicBoutons(int *placey,int etat, Pokemon *pokedex,Pokemon *starter, dresseur *perso, dresseur *tour, attaque *tabAtk, int salle_actuelle, int *etat_combat, int *attaque_en_cours, long int *start, int *pstartdelai);
 int verif_survol_souris(int etat);
 void affichePerso(int *placex, int *placey, int *etatdp, DonneesImageRGB *persoFace, DonneesImageRGB *persoDos, DonneesImageRGB *persoCoteDroit, DonneesImageRGB *persoCoteGauche);
 void affichePersoChoisis(int *placex, int *placey, int *etatdp, dresseur *perso);
@@ -45,5 +45,6 @@ int checkSalle(int salle_actuelle, int etat);
 void affichePv(dresseur perso);
 void afficheRaccourcis();
 void afficheAttaque(dresseur perso);
+void afficheTps(int *ptpsJeu);
 
 #endif

@@ -50,7 +50,7 @@ float FaiblessesResistance(attaque attaqueUtilisee, dresseur pokemonVictime){
 void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_combat, int salle_actuelle){
     //Tour dresseur
     if(etat_combat == 0){
-        tour[salle_actuelle - 1].starter.pv -= attaquer(attaqueUtilisee, *perso, tour[salle_actuelle - 1]);
+        tour[salle_actuelle - 1].starter.pv -= attaquer(attaqueUtilisee, *perso, tour[salle_actuelle - 1])*100;
     }
     //Tour adverse
     else if(etat_combat == 1){
@@ -109,4 +109,18 @@ int verifVictoireAffichage(int etat, dresseur *perso){
         etat = 43;
     }
     return etat;
+}
+
+void debutTempsJeu(int *pstartdelai){ //fonction a appeler au lancement du jeu pour démarrer le compteur de temps
+
+    *pstartdelai = clock();
+
+}
+
+void finTempsJeu(int *pstartdelai, int *pfindelai, int *ptpsJeu){ //Fonction à appeler à la fin du jeu 
+
+    *pfindelai = clock();
+
+    *ptpsJeu = (*pfindelai - *pstartdelai)/CLOCKS_PER_SEC; //la variable tpsJeu contient le temps en seconde passé dans le jeu
+
 }
