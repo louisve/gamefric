@@ -3,9 +3,7 @@
 #include "Librairie/ESLib.h" // Pour utiliser valeurAleatoire()
 #include "Fonctions/affichage.h"
 #include "Fonctions/sauvegarde.h"
-#include "Fonctions/moteur.h" 
-#include "Fonctions/pokedex.h"
-#include "Fonctions/utils.h"
+#include "Fonctions/moteur.h"
 
 // definition des constantes correspondant à nos criteres.
 #define LargeurFenetre 1920

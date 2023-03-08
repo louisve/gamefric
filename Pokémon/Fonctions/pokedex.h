@@ -3,14 +3,11 @@
 
 //Include des librairies
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
 #include <string.h>
 #include <time.h>
-#include <unistd.h>
-
-//include des fichiers
 
 //Initialisation de fonctions/structures
 
