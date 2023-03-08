@@ -49,5 +49,6 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 int checkSalle(int salle_actuelle, int etat);
 void affichePv(dresseur perso);
 void afficheRaccourcis();
+void afficheAttaque(dresseur perso);
 
 #endif
