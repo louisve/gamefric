@@ -367,7 +367,7 @@ void initImage(){
 /* Fonction qui affiche l'image du menu adéquat en fonction de l'état, cette fonction sera appelé en boucle dans le 
 	case [Affichage:] du switch(evenement) afin de créer une interractivité avec l'utilisateur.  */
 
-int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp, int *ptpsJeu){
+int afficheImg_menus(int salle_actuelle,int etat,int *placex,int *placey, dresseur *perso, dresseur *tour, int *etatdp, int *ptpsJeu, int *etat_combat){
 
 switch(etat){
 
@@ -536,7 +536,7 @@ switch(etat){
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat->largeurImage, combat->hauteurImage, combat->donneesRGB);
-		interfaceCombat(perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(etat_combat, perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
 
@@ -713,7 +713,7 @@ switch(etat){
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_att1->largeurImage, combat_att1->hauteurImage, combat_att1->donneesRGB);
-		interfaceCombat(perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(etat_combat,perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
 
@@ -723,7 +723,7 @@ switch(etat){
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_att2->largeurImage, combat_att2->hauteurImage, combat_att2->donneesRGB);
-		interfaceCombat(perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(etat_combat,perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
 
@@ -733,7 +733,7 @@ switch(etat){
 	{
 		effaceFenetre (0, 0, 0);
 		ecrisImage(0, 0, combat_quitter->largeurImage, combat_quitter->hauteurImage, combat_quitter->donneesRGB);
-		interfaceCombat(perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
+		interfaceCombat(etat_combat,perso,tour,bulbizarre_dos,salameche,salameche_dos,carapuce_dos,vipeliere,vipeliere_dos,gruikui_dos,moustillon,moustillon_dos,germignon_dos,hericendre_dos,kaiminus_dos,tortipouss_dos,ouisticram_dos,tiplouf_dos,bulbizarre_evo1_dos,salameche_evo1_dos,carapuce_evo1_dos,vipeliere_evo1_dos,gruikui_evo1_dos,moustillon_evo1_dos,germignon_evo1,germignon_evo1_dos,hericendre_evo1_dos,kaiminus_evo1_dos,tortipouss_evo1_dos,ouisticram_evo1,ouisticram_evo1_dos,tiplouf_evo1,tiplouf_evo1_dos,bulbizarre_evo2_dos,salameche_evo2_dos,carapuce_evo2_dos,vipeliere_evo2_dos,gruikui_evo2_dos,moustillon_evo2_dos,germignon_evo2_dos,hericendre_evo2_dos,kaiminus_evo2,kaiminus_evo2_dos,tortipouss_evo2,tortipouss_evo2_dos,ouisticram_evo2_dos,tiplouf_evo2_dos,salle1_marc,salle2_rachid,salle3_bastien,salle4_adriane,salle5_blue,salle6_iris,salle7_morgane,salle8_pierre,salle_actuelle);
 	}
 	break;
 
@@ -2580,7 +2580,7 @@ void affichePersoChoisis(int *placex, int *placey, int *etatdp, dresseur *perso)
 }
 
 //Affiche l'interface de combat avec le pokemon choisit et le boss et son pokemon lié à la salle actuelle
-void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre_dos,DonneesImageRGB *salameche,DonneesImageRGB *salameche_dos,DonneesImageRGB *carapuce_dos,DonneesImageRGB *vipeliere,DonneesImageRGB *vipeliere_dos,DonneesImageRGB *gruikui_dos,DonneesImageRGB *moustillon,DonneesImageRGB *moustillon_dos,DonneesImageRGB *germignon_dos,DonneesImageRGB *hericendre_dos,DonneesImageRGB *kaiminus_dos,DonneesImageRGB *tortipouss_dos,DonneesImageRGB *ouisticram_dos,DonneesImageRGB *tiplouf_dos,DonneesImageRGB *bulbizarre_evo1_dos,DonneesImageRGB *salameche_evo1_dos,DonneesImageRGB *carapuce_evo1_dos,DonneesImageRGB *vipeliere_evo1_dos,DonneesImageRGB *gruikui_evo1_dos,DonneesImageRGB *moustillon_evo1_dos,DonneesImageRGB *germignon_evo1,DonneesImageRGB *germignon_evo1_dos,DonneesImageRGB *hericendre_evo1_dos,DonneesImageRGB *kaiminus_evo1_dos,DonneesImageRGB *tortipouss_evo1_dos,DonneesImageRGB *ouisticram_evo1,DonneesImageRGB *ouisticram_evo1_dos,DonneesImageRGB *tiplouf_evo1,DonneesImageRGB *tiplouf_evo1_dos,DonneesImageRGB *bulbizarre_evo2_dos,DonneesImageRGB *salameche_evo2_dos,DonneesImageRGB *carapuce_evo2_dos,DonneesImageRGB *vipeliere_evo2_dos,DonneesImageRGB *gruikui_evo2_dos,DonneesImageRGB *moustillon_evo2_dos,DonneesImageRGB *germignon_evo2_dos,DonneesImageRGB *hericendre_evo2_dos,DonneesImageRGB *kaiminus_evo2,DonneesImageRGB *kaiminus_evo2_dos,DonneesImageRGB *tortipouss_evo2,DonneesImageRGB *tortipouss_evo2_dos,DonneesImageRGB *ouisticram_evo2_dos,DonneesImageRGB *tiplouf_evo2_dos,DonneesImageRGB *salle1_marc,DonneesImageRGB *salle2_rachid,DonneesImageRGB *salle3_bastien,DonneesImageRGB *salle4_adriane,DonneesImageRGB *salle5_blue,DonneesImageRGB *salle6_iris,DonneesImageRGB *salle7_morgane,DonneesImageRGB *salle8_pierre, int salle_actuelle){
+void interfaceCombat(int *etat_combat,dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre_dos,DonneesImageRGB *salameche,DonneesImageRGB *salameche_dos,DonneesImageRGB *carapuce_dos,DonneesImageRGB *vipeliere,DonneesImageRGB *vipeliere_dos,DonneesImageRGB *gruikui_dos,DonneesImageRGB *moustillon,DonneesImageRGB *moustillon_dos,DonneesImageRGB *germignon_dos,DonneesImageRGB *hericendre_dos,DonneesImageRGB *kaiminus_dos,DonneesImageRGB *tortipouss_dos,DonneesImageRGB *ouisticram_dos,DonneesImageRGB *tiplouf_dos,DonneesImageRGB *bulbizarre_evo1_dos,DonneesImageRGB *salameche_evo1_dos,DonneesImageRGB *carapuce_evo1_dos,DonneesImageRGB *vipeliere_evo1_dos,DonneesImageRGB *gruikui_evo1_dos,DonneesImageRGB *moustillon_evo1_dos,DonneesImageRGB *germignon_evo1,DonneesImageRGB *germignon_evo1_dos,DonneesImageRGB *hericendre_evo1_dos,DonneesImageRGB *kaiminus_evo1_dos,DonneesImageRGB *tortipouss_evo1_dos,DonneesImageRGB *ouisticram_evo1,DonneesImageRGB *ouisticram_evo1_dos,DonneesImageRGB *tiplouf_evo1,DonneesImageRGB *tiplouf_evo1_dos,DonneesImageRGB *bulbizarre_evo2_dos,DonneesImageRGB *salameche_evo2_dos,DonneesImageRGB *carapuce_evo2_dos,DonneesImageRGB *vipeliere_evo2_dos,DonneesImageRGB *gruikui_evo2_dos,DonneesImageRGB *moustillon_evo2_dos,DonneesImageRGB *germignon_evo2_dos,DonneesImageRGB *hericendre_evo2_dos,DonneesImageRGB *kaiminus_evo2,DonneesImageRGB *kaiminus_evo2_dos,DonneesImageRGB *tortipouss_evo2,DonneesImageRGB *tortipouss_evo2_dos,DonneesImageRGB *ouisticram_evo2_dos,DonneesImageRGB *tiplouf_evo2_dos,DonneesImageRGB *salle1_marc,DonneesImageRGB *salle2_rachid,DonneesImageRGB *salle3_bastien,DonneesImageRGB *salle4_adriane,DonneesImageRGB *salle5_blue,DonneesImageRGB *salle6_iris,DonneesImageRGB *salle7_morgane,DonneesImageRGB *salle8_pierre, int salle_actuelle){
 	
 	// Affiche le boss et son pokemon associé
 	if(salle_actuelle == 1){
@@ -2846,14 +2846,23 @@ void interfaceCombat(dresseur *perso, dresseur *tour,DonneesImageRGB *bulbizarre
 	}
 	affichePv(*perso);
 	affichePv(tour[salle_actuelle - 1]);
-	afficheAttaque(*perso);
+	afficheAttaque(*perso, *etat_combat);
 }
 
 //Fonction qui sert à afficher le nom d'attaque en fonction du pokémon choisit
-void afficheAttaque(dresseur perso){
+void afficheAttaque(dresseur perso, int etat_combat){
 	epaisseurDeTrait(6);
 	afficheChaine(perso.starter.att[0].nom,58,150,115);
 	afficheChaine(perso.starter.att[1].nom,58,690,115);
+	couleurCourante(0,0,0);
+	epaisseurDeTrait(7);
+
+	if(etat_combat == 0){
+		afficheChaine("A votre tour", 55, 1300, 253);
+	}
+	else{
+		afficheChaine("Tour adverse", 58, 1300, 253);
+	}
 
 }
 

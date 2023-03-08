@@ -50,7 +50,7 @@ float FaiblessesResistance(attaque attaqueUtilisee, dresseur pokemonVictime){
 void Baston(attaque attaqueUtilisee, dresseur *perso, dresseur *tour, int etat_combat, int salle_actuelle){
     //Tour dresseur
     if(etat_combat == 0){
-        tour[salle_actuelle - 1].starter.pv -= attaquer(attaqueUtilisee, *perso, tour[salle_actuelle - 1])*100;
+        tour[salle_actuelle - 1].starter.pv -= attaquer(attaqueUtilisee, *perso, tour[salle_actuelle - 1]);
     }
     //Tour adverse
     else if(etat_combat == 1){

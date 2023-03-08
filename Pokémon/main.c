@@ -111,7 +111,7 @@ void gestionEvenement(EvenementGfx evenement)
             {
                 // On part d'un fond d'ecran noir
                 effaceFenetre (0, 0, 0);
-                salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour, etatdp, ptpsJeu);
+                salle_actuelle = afficheImg_menus(salle_actuelle,etat,placex,placey,pperso,tour, etatdp, ptpsJeu, petat_combat);
             }
             break;
 
